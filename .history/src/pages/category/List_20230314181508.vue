@@ -1,13 +1,13 @@
 <template>
   <q-page padding>
     <div class="row">
-      <q-table title="Categorias" :rows="categories" :columns="columns" row-key="id" class="col-12" :loading="loading">
+      <q-table title="Categorias" :rows="rows" :columns="columns" row-key="id" class="col-12">
         <template v-slot:top>
           <span class="text-h6 text-black">
             Categorias
           </span>
           <q-space />
-          <q-btn label="Adicionar" color="primary" icon="mdi-plus" :to="{ name: 'form-category' }" />
+          <q-btn label="Adicionar" color="primary" />
         </template>
         <template v-slot:body-cell-actions="props">
           <q-td :props="props" class="q-gutter-x-sm">
@@ -31,42 +31,37 @@
 <script>
 const columns = [
   // { name: 'id', required: true, label: 'ID', align: 'right', field: row => row.name, format: val => `${val}`, sortable: true },
-  { name: 'name', align: 'left', label: 'Categoria', field: 'name', sortable: true },
-  { name: 'actions', label: 'Ações', field: 'actions', sortable: false }
+  { name: 'Categoria', align: 'left', label: 'Category', field: 'name', sortable: true },
+  { name: 'actions', label: 'Ações', field: 'actions', sortable: true }
 ]
 
+const rows = [
+  { id: '123', name: 'Tenis' },
+  { id: '12', name: 'Frozen Yogurt' }
+]
 
-import { defineComponent, ref, onMounted } from 'vue'
-import useApi from 'src/composables/UseApi'
-import useNotify from 'src/composables/UseNotify'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: "PageCategoryList",
 
   setup () {
     const categories = ref([])
-    const loading = ref(true)
     const { list } = useApi()
-    const { notifyError, notifySuccess } = useNotify()
 
     const handleListCategories = async () => {
       try {
-        loading.value = true
-        categories.value = await list("category")
-        loading.value = false
+        categories.value = await list('category')
       } catch (error) {
-        notifyError(error.message)
-      }
-    }
 
-    onMounted(() => {
-      handleListCategories()
-    })
+      }
+
+    }
 
     return {
       columns,
-      categories,
-      loading
+      rows,
+      categories
     }
   }
 })

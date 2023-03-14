@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lff" class="shadow-2 rounded-borders">
+  <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
@@ -18,25 +18,12 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered elevated class="bg-white text-black">
-      <q-img class="absolute-top"
-        src="https://as2.ftcdn.net/v2/jpg/03/16/92/61/1000_F_316926143_cVdnI6bJPbhlo1yZVTJk0R0sjBx4vVnO.jpg"
-        style="height: 150px">
-        <div class="absolute-bottom bg-transparent">
-          <q-avatar size="56px" class="q-mb-sm">
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png">
-          </q-avatar>
-          <div class="text-weight-bold text-white text-bold text-h6">Rômulo Franco</div>
-          <div class=" text-white text-bold text-h7">@romulo_franco</div>
-        </div>
-      </q-img>
-      <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd">
-        <q-list padding>
-          <q-item-label header class="text-h6 text-bold"> Menu </q-item-label>
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered elevated class="bg-secondary text-black">
+      <q-list>
+        <q-item-label header class="text-h6 text-bold"> Menu </q-item-label>
 
-          <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" class="text-bold" />
-        </q-list>
-      </q-scroll-area>
+        <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
+      </q-list>
     </q-drawer>
 
     <q-page-container>

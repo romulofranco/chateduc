@@ -26,8 +26,8 @@
           <q-avatar size="56px" class="q-mb-sm">
             <img src="https://cdn.quasar.dev/img/boy-avatar.png">
           </q-avatar>
-          <div class="text-weight-bold text-white text-bold text-h6">Rômulo Franco</div>
-          <div class=" text-white text-bold text-h7">@romulo_franco</div>
+          <div class="text-weight-bold text-white text-bold">Rômulo Franco</div>
+          <div class=" text-white text-bold">@romulo_franco</div>
         </div>
       </q-img>
       <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd">

@@ -1,13 +1,13 @@
 <template>
   <q-page padding>
     <div class="row">
-      <q-table title="Categorias" :rows="categories" :columns="columns" row-key="id" class="col-12" :loading="loading">
+      <q-table title="Categorias" :rows="categories" :columns="columns" row-key="id" class="col-12">
         <template v-slot:top>
           <span class="text-h6 text-black">
             Categorias
           </span>
           <q-space />
-          <q-btn label="Adicionar" color="primary" icon="mdi-plus" :to="{ name: 'form-category' }" />
+          <q-btn label="Adicionar" color="primary" />
         </template>
         <template v-slot:body-cell-actions="props">
           <q-td :props="props" class="q-gutter-x-sm">
@@ -51,9 +51,7 @@ export default defineComponent({
 
     const handleListCategories = async () => {
       try {
-        loading.value = true
         categories.value = await list("category")
-        loading.value = false
       } catch (error) {
         notifyError(error.message)
       }

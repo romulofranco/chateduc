@@ -51,7 +51,7 @@ const routes = [
       {
         path: "form-category",
         name: "form-category",
-        component: () => import("src/pages/category/FormCategory.vue"),
+        component: () => import("pages/category/Form.vue"),
       },
     ],
     meta: {

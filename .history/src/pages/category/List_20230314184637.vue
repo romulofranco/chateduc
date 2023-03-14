@@ -7,7 +7,7 @@
             Categorias
           </span>
           <q-space />
-          <q-btn label="Adicionar" color="primary" icon="mdi-plus" :to="{ name: 'form-category' }" />
+          <q-btn label=" Adicionar " color="primary" icon="mdi-plus" />
         </template>
         <template v-slot:body-cell-actions="props">
           <q-td :props="props" class="q-gutter-x-sm">
