@@ -32,14 +32,13 @@
 const columns = [
   // { name: 'id', required: true, label: 'ID', align: 'right', field: row => row.name, format: val => `${val}`, sortable: true },
   { name: 'name', align: 'left', label: 'Categoria', field: 'name', sortable: true },
-  { name: 'actions', label: '', field: 'actions', sortable: false }
+  { name: 'actions', label: 'Ações', field: 'actions', sortable: false }
 ]
 
 
 import { defineComponent, ref, onMounted } from 'vue'
 import useApi from 'src/composables/UseApi'
 import useNotify from 'src/composables/UseNotify'
-import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: "PageCategoryList",
@@ -47,8 +46,6 @@ export default defineComponent({
   setup () {
     const categories = ref([])
     const loading = ref(true)
-    const router = useRouter()
-
     const { list } = useApi()
     const { notifyError, notifySuccess } = useNotify()
 
@@ -73,8 +70,7 @@ export default defineComponent({
     return {
       columns,
       categories,
-      loading,
-      handleEdit
+      loading
     }
   }
 })
