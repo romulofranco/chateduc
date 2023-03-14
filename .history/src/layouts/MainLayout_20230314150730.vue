@@ -53,7 +53,7 @@ const linksList = [
     title: "Categorias",
     caption: "",
     icon: "mdi-shape-outline",
-    routeName: "category",
+    routeName: "me",
   },
 ];
 

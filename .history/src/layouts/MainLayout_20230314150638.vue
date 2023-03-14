@@ -20,7 +20,7 @@
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label header class="text-h6 text-bold"> Menu </q-item-label>
+        <q-item-label header> Essential Links </q-item-label>
 
         <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
       </q-list>
@@ -44,7 +44,7 @@ import useDialog from "src/composables/UseDialog";
 
 const linksList = [
   {
-    title: "Dashboard",
+    title: "Menu",
     caption: "",
     icon: "mdi-home",
     routeName: "me",
@@ -53,7 +53,7 @@ const linksList = [
     title: "Categorias",
     caption: "",
     icon: "mdi-shape-outline",
-    routeName: "category",
+    routeName: "me",
   },
 ];
 

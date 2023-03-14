@@ -33,6 +33,11 @@ const routes = [
         name: "reset-password",
         component: () => import("pages/ResetPasswordPage.vue"),
       },
+      {
+        path: "category",
+        name: "category",
+        component: () => import("pages/category/List.vue"),
+      },
     ],
     meta: {
       requiresAuth: false,
@@ -43,11 +48,6 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [
       { path: "me", name: "me", component: () => import("pages/MePage.vue") },
-      {
-        path: "category",
-        name: "category",
-        component: () => import("pages/category/List.vue"),
-      },
     ],
     meta: {
       requiresAuth: true,

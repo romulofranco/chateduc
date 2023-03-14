@@ -33,6 +33,7 @@ const routes = [
         name: "reset-password",
         component: () => import("pages/ResetPasswordPage.vue"),
       },
+      ,
     ],
     meta: {
       requiresAuth: false,

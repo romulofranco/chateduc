@@ -18,10 +18,11 @@
                 <q-icon name="close" @click="password = ''" class="cursor-pointer" />
               </template>
 
-
-              <q-btn v-if="visibility == 'password'" round dense flat icon="visibility" @click="changeTypeEdit()"></q-btn>
-              <q-btn v-else round dense flat icon="visibility_off" @click="changeTypeEdit()"></q-btn>
-
+              <template v-slot:after>
+                <q-btn v-if="visibility == 'password'" round dense flat icon="visibility"
+                  @click="changeTypeEdit()"></q-btn>
+                <q-btn v-else round dense flat icon="visibility_off" @click="changeTypeEdit()"></q-btn>
+              </template>
             </q-input>
             <q-btn label="Recuperar Senha" color="primary" class="full-width" type="submit"></q-btn>
           </div>
