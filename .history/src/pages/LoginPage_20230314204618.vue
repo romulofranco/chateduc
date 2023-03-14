@@ -16,7 +16,8 @@
                 <q-icon name="email" size="xs" dense />
               </template>
               <template v-slot:append>
-                <q-icon name="close" size="xs" @click="form.email = ''" />
+                <q-icon name="close" @click="form.email = ''" />
+                <q-icon name="close" @click="form.email = ''" />
               </template>
 
             </q-input>
@@ -29,6 +30,8 @@
               <template v-slot:append>
                 <q-icon name="close" size="xs" dense @click="form.password = ''" class="cursor-pointer" />
               </template>
+
+
 
               <q-btn v-if="visibility == 'password'" round dense flat icon="visibility" @click="changeTypeEdit()"></q-btn>
               <q-btn v-else round dense flat icon="visibility_off" @click="changeTypeEdit()"></q-btn>

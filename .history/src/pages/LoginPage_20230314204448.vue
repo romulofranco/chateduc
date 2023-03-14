@@ -13,10 +13,10 @@
               isValidEmail,
             ]">
               <template v-slot:prepend>
-                <q-icon name="email" size="xs" dense />
+                <q-icon name="email" size="xs" />
               </template>
               <template v-slot:append>
-                <q-icon name="close" size="xs" @click="form.email = ''" />
+                <q-icon name="close" @click="form.email = ''" />
               </template>
 
             </q-input>
@@ -24,11 +24,13 @@
               (val) => (val && val.length > 0) || 'Senha é obrigatória',
             ]">
               <template v-slot:prepend>
-                <q-icon name="lock" size="xs" dense />
+                <q-icon name="lock" />
               </template>
               <template v-slot:append>
-                <q-icon name="close" size="xs" dense @click="form.password = ''" class="cursor-pointer" />
+                <q-icon name="close" @click="form.password = ''" class="cursor-pointer" />
               </template>
+
+
 
               <q-btn v-if="visibility == 'password'" round dense flat icon="visibility" @click="changeTypeEdit()"></q-btn>
               <q-btn v-else round dense flat icon="visibility_off" @click="changeTypeEdit()"></q-btn>
