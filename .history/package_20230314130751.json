@@ -1,9 +1,9 @@
 {
-  "name": "chateduc",
+  "name": "estoque-quasar-supabase",
   "version": "0.0.1",
-  "description": "Projeto para formação de competências digitais nos Educadores",
-  "productName": "ChatEduc",
-  "author": "Rômulo José Franco <romulojosefranco@gmail.com>",
+  "description": "A Quasar Project",
+  "productName": "Quasar App",
+  "author": "Bruno Silva <brunno.linkin@gmail.com>",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
