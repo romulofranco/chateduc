@@ -35,6 +35,7 @@ const columns = [
   { name: 'actions', label: '', field: 'actions', sortable: false }
 ]
 
+
 import { defineComponent, ref, onMounted } from 'vue'
 import useApi from 'src/composables/UseApi'
 import useNotify from 'src/composables/UseNotify'
@@ -45,18 +46,17 @@ export default defineComponent({
   name: "PageCategoryList",
 
   setup () {
-    const table = 'category'
     const categories = ref([])
     const loading = ref(true)
     const router = useRouter()
     const $q = useQuasar()
-    const { list, remove } = useApi()
+    const { list } = useApi()
     const { notifyError, notifySuccess } = useNotify()
 
     const handleListCategories = async () => {
       try {
         loading.value = true
-        categories.value = await list(table)
+        categories.value = await list("category")
         loading.value = false
       } catch (error) {
         notifyError(error.message)
@@ -92,8 +92,7 @@ export default defineComponent({
       columns,
       categories,
       loading,
-      handleEdit,
-      handleRemove
+      handleEdit
     }
   }
 })
