@@ -7,7 +7,8 @@
             Categorias
           </span>
           <q-space />
-          <q-btn class="desktop-only" label="Adicionar" color="primary" icon="mdi-plus" :to="{ name: 'form-category' }" />
+          <q-btn v-if="$q.platform.is.desktop" label="Adicionar" color="primary" icon="mdi-plus"
+            :to="{ name: 'form-category' }" />
         </template>
         <template v-slot:body-cell-actions="props">
           <q-td :props="props" class="q-gutter-x-sm">
@@ -26,7 +27,7 @@
       </q-table>
     </div>
 
-    <q-page-sticky class="mobile-only" position="bottom-right" :offset="[20, 20]">
+    <q-page-sticky v-if="$q.platform.is.mobile" position="bottom-right" :offset="[20, 20]">
       <q-btn fab icon="mdi-plus" color="accent" :to="{ name: 'form-category' }" />
     </q-page-sticky>
   </q-page>
