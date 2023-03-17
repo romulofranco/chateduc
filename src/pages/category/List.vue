@@ -1,7 +1,8 @@
 <template>
   <q-page padding>
     <div class="row">
-      <q-table title="Categorias" :rows="categories" :columns="columns" row-key="id" class="col-12" :loading="loading">
+      <q-table title="Categorias" :rows="categories" :columns="columnsCategory" row-key="id" class="col-12"
+        :loading="loading">
         <template v-slot:top>
           <span class="text-h6 text-black">
             Categorias
@@ -33,17 +34,13 @@
 </template>
 
 <script>
-const columns = [
-  // { name: 'id', required: true, label: 'ID', align: 'right', field: row => row.name, format: val => `${val}`, sortable: true },
-  { name: 'name', align: 'left', label: 'Categoria', field: 'name', sortable: true },
-  { name: 'actions', label: '', field: 'actions', sortable: false }
-]
 
 import { defineComponent, ref, onMounted } from 'vue'
 import useApi from 'src/composables/UseApi'
 import useNotify from 'src/composables/UseNotify'
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
+import { columnsCategory } from './table'
 
 export default defineComponent({
   name: "PageCategoryList",
@@ -93,7 +90,7 @@ export default defineComponent({
     })
 
     return {
-      columns,
+      columnsCategory,
       categories,
       loading,
       handleEdit,

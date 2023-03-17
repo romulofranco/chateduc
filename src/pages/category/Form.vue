@@ -10,6 +10,8 @@
         <q-card-section>
           <q-input label="Nome" v-model="form.name" color="primary" autofocus
             :rules="[val => (val && val.length > 0) || 'Nome da categoria é obrigatório']" />
+
+          <q-input label="Peso" v-model="form.peso" color="primary" />
         </q-card-section>
 
         <q-space />
@@ -38,7 +40,8 @@ export default defineComponent({
     let category = {}
 
     const form = ref({
-      name: ''
+      name: '',
+      peso: 1
     })
 
     const isUpdate = computed(() => route.params.id)
