@@ -71,6 +71,10 @@ const routes = [
                 path: "digcompedu-intro",
                 name: "digcompedu-intro",
                 component: () => import ("pages/digcompedu/Intro.vue")
+            }, {
+                path: "level-list",
+                name: "level-list",
+                component: () => import ("pages/digcompedu/level/List.vue")
             },
         ],
         meta: {

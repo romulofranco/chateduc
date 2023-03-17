@@ -1,6 +1,41 @@
 <template>
   <q-page padding>
+    <q-dialog v-model="abreDlg" :maximized="true" @click="abreDlg = false">
+      <q-card flat>
+        <q-card-section class="row items-center q-pb-none">
+          <div class="text-h6">DigCompEdu - Áreas</div>
+          <q-space />
+          <q-btn icon="close" flat round dense v-close-popup />
+        </q-card-section>
+        <q-img src="areas/digcompedu2.jpg"> </q-img>
+        <q-card-section>
+          <div class="absolute-bottom text-right">
+            <div class="text-overline">
+              Fonte: Lucas, M., & Moreira, A. (2018). DigCompEdu: quadro europeu de
+              competência digital para educadores. Aveiro: UA
+            </div>
+          </div>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
+
     <div class="row q-pa-md">
+      <div>
+        <p class="col-12 text-h5 text-left">Áreas do DigCompEdu</p>
+      </div>
+      <q-separator color="primary" class="full-width" />
+      <br />
+      <q-card class="full-width" flat>
+        <q-img src="areas/digcompedu2.jpg" fit="contain" @click="abreDlg = true">
+          <div class="absolute-bottom text-right" style="height: 50px">
+            <div class="text-overline">
+              Fonte: Lucas, M., & Moreira, A. (2018). DigCompEdu: quadro europeu de
+              competência digital para educadores. Aveiro: UA
+            </div>
+          </div>
+        </q-img>
+      </q-card>
+
       <div v-for="area in this.areasList" :key="area.id" class="full-width">
         <q-expansion-item
           expand-separator
@@ -48,6 +83,7 @@
               </q-card>
             </div>
           </q-card>
+          <br />
         </q-expansion-item>
       </div>
     </div>
@@ -55,69 +91,19 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from "vue";
-import useApi from "src/composables/UseApi";
-import useNotify from "src/composables/UseNotify";
-import { useRouter } from "vue-router";
-import { useQuasar } from "quasar";
+import { ref } from "vue";
 import { areasList } from "./areas";
 
-export default defineComponent({
+export default {
   name: "PageAreaList",
 
   setup() {
-    const table = "category";
-    const categories = ref([]);
-    const loading = ref(true);
-    const router = useRouter();
-    const $q = useQuasar();
-    const { list, remove } = useApi();
-    const { notifyError, notifySuccess } = useNotify();
-
-    const handleListCategories = async () => {
-      try {
-        loading.value = true;
-        categories.value = await list(table);
-        loading.value = false;
-      } catch (error) {
-        notifyError(error.message);
-      }
-    };
-
-    const handleEdit = (category) => {
-      router.push({ name: "form-category", params: { id: category.id } });
-    };
-
-    const handleRemove = async (category) => {
-      try {
-        $q.dialog({
-          title: "Excluir categoria",
-          message: `Deseja excluir a categoria ${category.name} ?`,
-          cancel: true,
-          persistent: true,
-        }).onOk(async () => {
-          await remove(table, category.id);
-          notifySuccess("Categoria excluída!");
-          handleListCategories();
-        });
-      } catch (error) {
-        notifyError(error.message);
-      }
-    };
-
-    onMounted(() => {
-      handleListCategories();
-    });
-
     return {
+      abreDlg: ref(false),
       areasList,
-      categories,
-      loading,
-      handleEdit,
-      handleRemove,
     };
   },
-});
+};
 </script>
 
 <style>

@@ -127,7 +127,7 @@ const digiCompEduLinkList = [
     title: "Níveis de Competência",
     caption: "",
     icon: "mdi-shape-outline",
-    routeName: "digcompedu-level",
+    routeName: "level-list",
   },
   {
     title: "Auto avaliação",
