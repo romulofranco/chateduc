@@ -1,56 +1,56 @@
-const levelList = [
+const mainText = [{
+        id: 1,
+        description: "Adaptamos a SELFIEforTEACHERS dentro desta aplicação para facilitar a execução de Autoreflexão e também para a promoção de competências digitais nos Professores. Esta é uma ferramenta online que visa apoiar os professores dos ensinos básico e secundário no desenvolvimento da sua competência digital e na utilização de tecnologias digitais na sua atividade profissional. Ao passarem por um processo de autorreflexão, os professores podem aprender mais sobre as competências digitais que possuem e identificar os seus pontos fortes, bem como as lacunas que podem melhorar.",
+        img_url: "checkin/checkin.png"
+    }];
+
+
+const checkinList = [
     {
         id: "1",
-        name: "Recém-chegado",
-        icon: "",
-        cor: "",
-        img_url: "levels/a1.png",
-        description: "Os recém-chegados estão conscientes do potencial das tecnologias digitais para melhorar a prática pedagógica e profissional. No entanto, têm tido muito pouco contacto com as tecnologias digitais e utilizam-nas principalmente para a preparação das aulas, a administração ou a comunicação organizacional. Os recém-chegados precisam de orientação e incentivo para expandir o seu repertório e aplicar a sua competência digital existente no domínio pedagógico.",
-        subdesc: "Aqueles que tiveram muito pouco contato com ferramentas digitais e precisam de orientação para expandir seu repertório.",
-        sigla: "A1",
-        areas: [
+        checkin_date: "2022-04-23T18:25:43",
+        img_url: "levels/a2.png",
+        prof_expected: "Recém-chegado",
+        prof_result: "Explorador",
+        grade: "24/192",
+        main_statement: "Utilizar pouco as tecnologias digitais para a comunicação",
+        proficient_statement: "Estou ciente dos limites da minha própria competência digital e das minhas necessidades de formação.",
+        subareas: [
             {
                 id: "1.1",
                 name: "Comunicação institucional",
-                cor: "area1",
+                cor: "subarea1",
                 icon: "mdi-account-group-outline",
-                main_statement: "Utilizar pouco as tecnologias digitais para a comunicação",
-                proficient_statement: "Raramente uso tecnologias digitais para a comunicação."
+                description: "Usar tecnologias digitais para melhorar a comunicação institucional com os alunos, encarregados de educação e terceiros. Contribuir, colaborativamente, para desenvolver e melhorar as estratégias decomunicação institucional."
             },
             {
                 id: "1.2",
-                name: "Colaboração Profissional",
-                cor: "area1",
+                name: "Ambientes de aprendizagem online",
+                cor: "subarea1",
                 icon: "mdi-notebook-check-outline",
-                main_statement: "Fazer pouco uso das tecnologias digitais para a colaboração",
-                proficient_statement: "Raramente uso tecnologias digitais para colaborar com colegas."
+                description: "Gestão de ambientes de aprendizagem online tendo em conta a gestão de dados e a ética."
             },
             {
                 id: "1.3",
-                name: "Prática reflexiva",
-                cor: "area1",
+                name: "Colaboração profissional",
+                cor: "subarea1",
                 icon: "mdi-account-group",
-                main_statement: "Não ter certeza sobre as necessidades de desenvolvimento de uma pessoa",
-                proficient_statement: "Eu sei que preciso melhorar minhas habilidades digitais, mas não tenho certeza de como e por onde começar."
+                description: "Usar tecnologias digitais para colaborar com outros educadores, partilhar e trocar conhecimento e experiência, bem como para inovar práticas pedagógicas de forma colaborativa."
             },
             {
                 id: "1.4",
                 name: "Tecnologias digitais e infraestrutura escolar",
-                cor: "area1",
-                icon: "mdi-desktop-mac-dashboard",
-                main_statement: "Fazer pouco uso da Internet para atualizar os conhecimentos",
-                proficient_statement: "Eu só raramente, se de todo, uso a internet para atualizar meus conhecimentos ou habilidades."
+                cor: "subarea1",
+                icon: "mdi-desktop-mac-dashboard"
             }, {
-                id: "2.1",
-                name: "Selecionar recursos digitais",
-                cor: "area2",
-                icon: "mdi-reflect-vertical",
-                main_statement: "Fazendo pouco uso da internet para encontrar recursos",
-                proficient_statement: "Eu só raramente, se em tudo, uso a internet para encontrar recursos para o ensino e aprendizagem."
+                id: "1.5",
+                name: "Prática reflexiva",
+                cor: "subarea1",
+                icon: "mdi-reflect-vertical"
             }, {
-                id: "2.2",
+                id: "1.6",
                 name: "Vida digital",
-                cor: "area2",
+                cor: "subarea1",
                 icon: "mdi-account-group-outline"
             }, {
                 id: "1.7",
@@ -72,12 +72,11 @@ const levelList = [
     },
     {
         id: "2",
-        name: "Explorador ",
+        name: "Área 2 - Recursos Digitais",
         icon: "",
-        img_url: "levels/a2.png",
-        cor: "",
-        description: "Os exploradores estão conscientes do potencial das tecnologias digitais e estão interessados em explorá-las para melhorar a prática pedagógica e profissional. Começaram a utilizar tecnologias digitais em alguns domínios da competência digital, sem, no entanto, seguirem uma abordagem abrangente ou coerente. Os exploradores precisam de incentivo, visão e inspiração, por exemplo, através do exemplo e da orientação dos colegas, integrados num intercâmbio colaborativo de práticas.",
-        sigla: "A2",
+        img_url: "areas/area2.jpg",
+        cor: "area2",
+        description: "",
         subareas: [
             {
                 id: "2.1",
@@ -107,12 +106,11 @@ const levelList = [
     },
     {
         id: "3",
-        name: "Integrador ",
+        name: "Área 3 - Ensino e aprendizagem",
         icon: "",
-        img_url: "levels/b1.png",
-        cor: "",
-        description: "Os integradores experimentam tecnologias digitais em diversos contextos e para diversos fins, integrando-as em muitas das suas práticas. Eles os usam criativamente para aprimorar diversos aspetos de seu engajamento profissional. Eles estão ansiosos para expandir seu repertório de práticas. No entanto, continuam a trabalhar na compreensão das ferramentas que melhor funcionam em que situações e na adaptação das tecnologias digitais a estratégias e métodos pedagógicos. Os integradores só precisam de mais algum tempo para experimentação e reflexão, complementados pelo incentivo colaborativo e pelo intercâmbio de conhecimentos para se tornarem especialistas.Os integradores experimentam tecnologias digitais em diversos contextos e para diversos fins, integrando-as em muitas das suas práticas. Eles os usam criativamente para aprimorar diversos aspetos de seu engajamento profissional. Eles estão ansiosos para expandir seu repertório de práticas. No entanto, continuam a trabalhar na compreensão das ferramentas que melhor funcionam em que situações e na adaptação das tecnologias digitais a estratégias e métodos pedagógicos. Os integradores só precisam de mais algum tempo para experimentação e reflexão, complementados pelo incentivo colaborativo e pelo intercâmbio de conhecimentos para se tornarem especialistas.Os integradores experimentam tecnologias digitais em diversos contextos e para diversos fins, integrando-as em muitas das suas práticas. Eles os usam criativamente para aprimorar diversos aspetos de seu engajamento profissional. Eles estão ansiosos para expandir seu repertório de práticas. No entanto, continuam a trabalhar na compreensão das ferramentas que melhor funcionam em que situações e na adaptação das tecnologias digitais a estratégias e métodos pedagógicos. Os integradores só precisam de mais algum tempo para experimentação e reflexão, complementados pelo incentivo colaborativo e pelo intercâmbio de conhecimentos para se tornarem especialistas.",
-        sigla: "B1",
+        img_url: "areas/area3.jpg",
+        cor: "area3",
+        description: "",
         subareas: [
             {
                 id: "3.1",
@@ -142,12 +140,11 @@ const levelList = [
     },
     {
         id: "4",
-        name: "Especialista ",
+        name: "Área 4 - Avaliação",
         icon: "",
-        img_url: "levels/b2.png",
-        cor: "",
-        description: "Os especialistas utilizam uma gama de tecnologias digitais com confiança, criatividade e crítica para melhorar as suas atividades profissionais. Eles selecionam propositadamente tecnologias digitais para situações específicas e tentam entender os benefícios e desvantagens das diferentes estratégias digitais. Eles são curiosos e abertos a novas ideias, sabendo que há muitas coisas que ainda não experimentaram. Eles usam a experimentação como um meio de expandir, estruturar e consolidar seu repertório de estratégias. Os especialistas são a espinha dorsal de qualquer organização educacional quando se trata de prática inovadora.",
-        sigla: "B2",
+        img_url: "areas/area4.jpg",
+        cor: "area4",
+        description: "",
         subareas: [
             {
                 id: "4.1",
@@ -161,16 +158,15 @@ const levelList = [
                 id: "4.3",
                 name: "Feedback e planificação",
                 description: "Utilização de tecnologias digitais para dar feedback aos alunos, facilitando a planificação de ações adicionais."
-            },
+            }
         ]
     }, {
         id: "5",
-        name: "Líder",
+        name: "Área 5 - Capacitação dos aprendentes",
         icon: "",
-        img_url: "levels/c1.png",
-        cor: "",
-        description: "Os líderes têm uma abordagem consistente e abrangente para usar tecnologias digitais para melhorar as práticas pedagógicas e profissionais. Eles contam com um amplo repertório de estratégias digitais a partir das quais eles sabem como escolher o mais adequado para qualquer situação. Refletem e desenvolvem continuamente as suas práticas. Trocando com os pares, eles mantêm-se atualizados sobre novos desenvolvimentos e ideias. Eles são uma fonte de inspiração para os outros, para quem eles transmitem seus conhecimentos.",
-        sigla: "C1",
+        img_url: "areas/area5.jpg",
+        cor: "area5",
+        description: "",
         subareas: [
             {
                 id: "5.1",
@@ -192,12 +188,11 @@ const levelList = [
         ]
     }, {
         id: "6",
-        name: "Pioneiro ",
+        name: "Área 6 - Ensino e aprendizagem",
         icon: "",
-        img_url: "levels/c2.png",
-        cor: "",
-        description: "Os pioneiros questionam a adequação das práticas digitais e pedagógicas contemporâneas, das quais eles próprios são Líderes. Estão preocupados com as limitações ou desvantagens destas práticas e impulsionados pelo impulso para inovar ainda mais a educação. Pioneiros experimentam tecnologias digitais altamente inovadoras e complexas e/ou desenvolvem novas abordagens pedagógicas. Os pioneiros são uma espécie única e rara. Lideram a inovação e constituem um modelo para os professores mais jovens.",
-        sigla: "C2",
+        img_url: "areas/area6.jpg",
+        cor: "area6",
+        description: "",
         subareas: [
             {
                 id: "6.1",
@@ -229,8 +224,10 @@ const levelList = [
             },
         ]
     },
+
 ];
 
 export {
-    levelList
+    checkinList,
+    mainText
 };

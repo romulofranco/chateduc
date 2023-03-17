@@ -130,7 +130,7 @@ const digiCompEduLinkList = [
     routeName: "level-list",
   },
   {
-    title: "Auto avaliação",
+    title: "Autorreflexão individual",
     caption: "",
     icon: "mdi-frequently-asked-questions",
     routeName: "digcompedu-checkin",

@@ -17,6 +17,7 @@
     "core-js": "^3.6.5",
     "dotenv": "^16.0.1",
     "jshint": "^2.13.4",
+    "moment": "^2.29.4",
     "quasar": "^2.6.0",
     "save-dev": "^0.0.1-security",
     "vue": "^3.0.0",
