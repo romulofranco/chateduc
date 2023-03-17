@@ -1,73 +1,36 @@
-const mainText = [{
-        id: 1,
-        description: "Adaptamos a SELFIEforTEACHERS dentro desta aplicação para facilitar a execução de Autoreflexão e também para a promoção de competências digitais nos Professores. Esta é uma ferramenta online que visa apoiar os professores dos ensinos básico e secundário no desenvolvimento da sua competência digital e na utilização de tecnologias digitais na sua atividade profissional. Ao passarem por um processo de autorreflexão, os professores podem aprender mais sobre as competências digitais que possuem e identificar os seus pontos fortes, bem como as lacunas que podem melhorar.",
-        img_url: "checkin/checkin.png"
-    }];
-
-
+const mainDesc = "Adaptamos a SELFIEforTEACHERS dentro desta aplicação para facilitar a execução de Autoreflexão e também para a promoção de competências digitais nos Professores. Esta é uma ferramenta online que visa apoiar os professores dos ensinos básico e secundário no desenvolvimento da sua competência digital e na utilização de tecnologias digitais na sua atividade profissional. Ao passarem por um processo de autorreflexão, os professores podem aprender mais sobre as competências digitais que possuem e identificar os seus pontos fortes, bem como as lacunas que podem melhorar.";
+const imgUrl = "checkin/checkin.png";
 const checkinList = [
     {
         id: "1",
         checkin_date: "2022-04-23T18:25:43",
         img_url: "levels/a2.png",
-        prof_expected: "Recém-chegado",
-        prof_result: "Explorador",
+        prof_expected: "A1 Recém-chegado",
+        prof_result: "A2 Explorador",
         grade: "24/192",
         main_statement: "Utilizar pouco as tecnologias digitais para a comunicação",
         proficient_statement: "Estou ciente dos limites da minha própria competência digital e das minhas necessidades de formação.",
-        subareas: [
+        areas: [
             {
-                id: "1.1",
-                name: "Comunicação institucional",
-                cor: "subarea1",
-                icon: "mdi-account-group-outline",
-                description: "Usar tecnologias digitais para melhorar a comunicação institucional com os alunos, encarregados de educação e terceiros. Contribuir, colaborativamente, para desenvolver e melhorar as estratégias decomunicação institucional."
+                id: "1",
+                name: "Envolvimento Profissional",
+                cor: "orange",
+                subcor: "orange-3",
+                nota: 10
+            }, {
+                id: "2",
+                name: "Recursos digitais",
+                cor: "green",
+                subcor: "green-3",
+                nota: 12
+            }, {
+                id: "3",
+                name: "Ensino e aprendizagem",
+                cor: "blue",
+                subcor: "blue-3",
+                nota: 18
             },
-            {
-                id: "1.2",
-                name: "Ambientes de aprendizagem online",
-                cor: "subarea1",
-                icon: "mdi-notebook-check-outline",
-                description: "Gestão de ambientes de aprendizagem online tendo em conta a gestão de dados e a ética."
-            },
-            {
-                id: "1.3",
-                name: "Colaboração profissional",
-                cor: "subarea1",
-                icon: "mdi-account-group",
-                description: "Usar tecnologias digitais para colaborar com outros educadores, partilhar e trocar conhecimento e experiência, bem como para inovar práticas pedagógicas de forma colaborativa."
-            },
-            {
-                id: "1.4",
-                name: "Tecnologias digitais e infraestrutura escolar",
-                cor: "subarea1",
-                icon: "mdi-desktop-mac-dashboard"
-            }, {
-                id: "1.5",
-                name: "Prática reflexiva",
-                cor: "subarea1",
-                icon: "mdi-reflect-vertical"
-            }, {
-                id: "1.6",
-                name: "Vida digital",
-                cor: "subarea1",
-                icon: "mdi-account-group-outline"
-            }, {
-                id: "1.7",
-                name: "Aprendizagem profissional (através de tecnologias digitais)",
-                cor: "subarea1",
-                icon: "mdi-account-group-outline"
-            }, {
-                id: "1.8",
-                name: "Aprendizagem profissional (sobre tecnologias digitais)",
-                cor: "subarea1",
-                icon: "mdi-account-group-outline"
-            }, {
-                id: "1.9",
-                name: "Pensamento computacional",
-                cor: "subarea1",
-                icon: "mdi-account-group-outline"
-            },
+
         ]
     },
     {
@@ -229,5 +192,7 @@ const checkinList = [
 
 export {
     checkinList,
-    mainText
+    mainDesc,
+    imgUrl
+
 };

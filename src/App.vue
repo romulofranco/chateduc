@@ -4,7 +4,6 @@
 
 <script>
 import { defineComponent } from "vue";
-
 export default defineComponent({
   name: "App",
 });
@@ -12,13 +11,13 @@ export default defineComponent({
 
 <style lang="scss">
 .q-card {
-  margin: 0.8rem !important;
+  margin: 0.2rem !important;
   min-width: 420px;
 }
 
 @media (max-width: 600px) {
   .q-card {
-    margin: 0.8rem !important;
+    margin: 0.2rem !important;
     min-width: 300px;
   }
 }

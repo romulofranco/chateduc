@@ -6,15 +6,22 @@
       </div>
       <q-separator color="primary" class="full-width" />
       <br />
-      <q-card class="full-width text-center" flat>
-        <q-img src="checkin/checkin.png" height="300px" width="400px"> </q-img>
+
+      <q-card class="text-center" flat>
+        <q-card-section>
+          <q-img :src="this.imgUrl" style="max-width: 380px; max-height: 390px" />
+        </q-card-section>
+        <q-card-section>
+          <div class="text-justify">
+            <p>
+              {{ this.mainDesc }}
+            </p>
+          </div>
+        </q-card-section>
       </q-card>
 
+      <p class="text-bold text-h6">Últimas avaliações</p>
       <q-separator color="primary" class="full-width" />
-      <div>
-        <p>{{ this.mainText.description }}</p>
-      </div>
-
       <div
         v-for="checkinItem in this.checkinList"
         :key="checkinItem.id"
@@ -36,8 +43,6 @@
               <q-item-section>
                 {{ formatDate(checkinItem.checkin_date) }}
               </q-item-section>
-
-              <q-space />
 
               <q-item-section class="desktop-only">
                 <q-item-label
@@ -69,53 +74,78 @@
               </q-item-section>
             </template>
 
-            <q-card class="justify-items text-left shadow-5">
-              <q-item-section class="mobile-only">
-                <q-item-label
-                  >{{ checkinItem.prof_result }}
-                  <q-badge
-                    label="Resultado"
-                    v-if="checkinItem.prof_result"
-                    color="green"
-                  />
-                </q-item-label>
-              </q-item-section>
-              <br />
-
-              <q-card-section horizontal>
-                <q-item-section class="mobile-only">
-                  <q-item-label
-                    >{{ checkinItem.prof_expected }}
-                    <q-badge
-                      v-if="checkinItem.prof_expected"
-                      label="Esperado"
-                      color="orange"
-                    />
-                  </q-item-label>
-                </q-item-section>
-                <br />
-                <q-separator />
-
+            <q-card flat>
+              <q-card-section>
                 <q-card-section>
-                  <q-item-label class="text-bold text-subtitle"
-                    >Principal característica
-                  </q-item-label>
+                  <q-card class="justify-items text-left shadow-5" flat>
+                    <q-card-section>
+                      <q-card-section>
+                        <q-card-section class="mobile-only">
+                          <q-item-label
+                            >{{ checkinItem.prof_result }}
+                            <q-badge
+                              label="Resultado"
+                              v-if="checkinItem.prof_result"
+                              color="green"
+                            />
+                          </q-item-label>
+                        </q-card-section>
+                        <q-card-section class="mobile-only">
+                          <q-item-label
+                            >{{ checkinItem.prof_expected }}
+                            <q-badge
+                              v-if="checkinItem.prof_expected"
+                              label="Esperado"
+                              color="orange"
+                            />
+                          </q-item-label>
+                        </q-card-section>
+                      </q-card-section>
+                    </q-card-section>
+                    <q-card-section>
+                      <q-card-section>
+                        <q-item-label class="text-bold text-subtitle"
+                          >Principal característica
+                        </q-item-label>
 
-                  <q-item-label class="text-italic" :inset-level="2">
-                    {{ checkinItem.main_statement }}</q-item-label
-                  >
-                  <br />
-                  <q-item-label class="text-bold text-subtitle"
-                    >Declaração de proficiência</q-item-label
-                  >
-                  <q-item-label class="text-italic">
-                    {{ checkinItem.proficient_statement }}</q-item-label
-                  >
+                        <q-item-label class="text-italic" :inset-level="2">
+                          {{ checkinItem.main_statement }}</q-item-label
+                        >
+                      </q-card-section>
+                      <q-card-section>
+                        <q-item-label class="text-bold text-subtitle"
+                          >Declaração de proficiência</q-item-label
+                        >
+                        <q-item-label class="text-italic">
+                          {{ checkinItem.proficient_statement }}</q-item-label
+                        >
+                      </q-card-section>
+                    </q-card-section>
+                  </q-card>
                 </q-card-section>
+                <p class="text-center text-bold text-subtitle">Notas por área</p>
+                <q-separator />
+                <q-tabs v-model="tab">
+                  <div v-for="area in checkinItem.areas" :key="area.id">
+                    <q-tab :name="area.id" :label="area.name" :class="'text-' + area.cor">
+                      <div class="q-mt-md text-center text-black">
+                        <q-knob
+                          :step="25"
+                          v-model="area.nota"
+                          show-value
+                          size="110px"
+                          :thickness="0.35"
+                          :color="area.cor"
+                          :track-color="area.subcor"
+                          :class="'text-' + area.cor"
+                          readonly
+                        />
+                      </div>
+                    </q-tab>
+                  </div>
+                </q-tabs>
               </q-card-section>
             </q-card>
-
-            <br />
           </q-expansion-item>
         </q-card>
       </div>
@@ -125,11 +155,15 @@
 
 <script>
 import { ref } from "vue";
-import { checkinList, mainText } from "./checkin";
+import { checkinList, imgUrl, mainDesc } from "./checkin";
 import moment from "moment";
 
 export default {
   name: "PageCheckinList",
+
+  data: function () {
+    return {};
+  },
 
   methods: {
     formatDate(value) {
@@ -140,11 +174,12 @@ export default {
   },
 
   setup() {
-    console.log(mainText.description);
     return {
       abreDlg: ref(false),
       checkinList,
-      mainText,
+      imgUrl,
+      mainDesc,
+      tab: ref("1"),
     };
   },
 };

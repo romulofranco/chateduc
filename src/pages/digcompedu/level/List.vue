@@ -48,21 +48,20 @@
         </q-card-sectio>
 
         <q-card-section>
-          <q-img src="areas/digcompedu_level.jpg" fit="fill" @click="abreDlg = true" />
-        </q-card-section>
-        <q-card-section>
-          <div class="absolute-top text-right">
-            <div class="text-subtitle">Modelo de progressão DigCompEdu</div>
-            <div class="text-caption">
-              Fonte: Lucas, M., & Moreira, A. (2018). DigCompEdu: quadro europeu de
-              competência digital para educadores. Aveiro: UA
-            </div>
-          </div>
+          <q-img
+            src="areas/digcompedu_level.jpg"
+            style="max-height: 650px; max-width: 450px"
+            @click="abreDlg = true"
+          >
+            <div class="absolute-bottom text-center">
+              <div class="text-caption">Modelo de progressão DigCompEdu</div>
+            </div></q-img
+          >
         </q-card-section>
       </q-card>
 
       <div v-for="level in this.levelList" :key="level.id" class="full-width">
-        <q-card class="full-width" flat>
+        <q-card class="full-width">
           <q-expansion-item
             expand-separator
             group="accordeon-group-1"
