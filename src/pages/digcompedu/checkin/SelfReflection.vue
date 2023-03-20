@@ -5,7 +5,6 @@
         <p class="col-12 text-h5 text-left">Autoreflexão individual</p>
       </div>
       <q-separator color="primary" class="full-width" />
-      <br />
 
       <div>
         <flow-form
@@ -17,7 +16,7 @@
           v-on:timer="onTimer"
           v-bind:questions="questions"
           v-bind:language="language"
-          v-bind:standalone="false"
+          v-bind:standalone="true"
           v-bind:timer="true"
           timer-start-step="html_1"
         >
@@ -88,234 +87,54 @@ import {
 } from "@ditdot-dev/vue-flow-form";
 // If using the npm package, use the following line instead of the ones above.
 // import FlowForm, { QuestionModel, QuestionType, ChoiceOption, LanguageModel } from '@ditdot-dev/vue-flow-form'
-export default {
+import { areasList } from "../areas/areas";
+import { defineComponent, ref, onMounted } from "vue";
+
+export default defineComponent({
   name: "PageSelfReflexion",
   components: {
     FlowForm,
   },
+
   data() {
     return {
+      areasList,
       submitted: false,
       completed: false,
       score: 0,
       total: 8,
       time: 0,
       formattedTime: "",
-      answers: {
-        html_1: ["2", "3"],
-        html_2: "false",
-        html_3: "2",
-        html_4: ["3", "4"],
-        ux_1: ["1", "2", "4"],
-        ux_2: "false",
-        ux_3: "4",
-        ux_4: "true",
-      },
+
       language: new LanguageModel(),
       // Create question list with QuestionModel instances
-      questions: [
-        new QuestionModel({
-          id: "start",
-          tagline: "8 questions",
-          title: "How much do you know about forms?",
-          content: "Test how well you know HTML forms in the first quiz section.",
-          type: QuestionType.SectionBreak,
-          required: true,
-        }),
-        new QuestionModel({
-          id: "html_1",
-          title: "Which of the following are valid input field types?",
-          helpText: "Choose all answers that apply.",
-          type: QuestionType.MultipleChoice,
-          required: true,
-          multiple: true,
-          options: [
-            new ChoiceOption({
-              label: "check",
-              value: "1",
-            }),
-            new ChoiceOption({
-              label: "date",
-              value: "2",
-            }),
-            new ChoiceOption({
-              label: "image",
-              value: "3",
-            }),
-            new ChoiceOption({
-              label: "telephone",
-              value: "4",
-            }),
-          ],
-        }),
-        new QuestionModel({
-          id: "html_2",
-          title: '<label> is associated with <input> using the "name" attribute.',
-          helpTextShow: false,
-          type: QuestionType.MultipleChoice,
-          required: true,
-          multiple: false,
-          options: [
-            new ChoiceOption({
-              label: "True",
-              value: "true",
-            }),
-            new ChoiceOption({
-              label: "False",
-              value: "false",
-            }),
-          ],
-        }),
-        new QuestionModel({
-          id: "html_3",
-          title: "Which HTML element is used to define a dropdown list?",
-          helpText: "Which one sounds right? There's only one right answer.",
-          type: QuestionType.MultipleChoice,
-          required: true,
-          multiple: false,
-          options: [
-            new ChoiceOption({
-              label: "<form>",
-              value: "1",
-            }),
-            new ChoiceOption({
-              label: "<select>",
-              value: "2",
-            }),
-            new ChoiceOption({
-              label: "<fieldset>",
-              value: "3",
-            }),
-            new ChoiceOption({
-              label: "<legend>",
-              value: "4",
-            }),
-          ],
-        }),
-        new QuestionModel({
-          id: "html_4",
-          title: "To which elements can :invalid pseudo class be applied?",
-          type: QuestionType.MultipleChoice,
-          multiple: true,
-          helpText: "Select one or more correct answers.",
-          required: true,
-          options: [
-            new ChoiceOption({
-              label: "<legend>",
-              value: "1",
-            }),
-            new ChoiceOption({
-              label: "<fieldset>",
-              value: "2",
-            }),
-            new ChoiceOption({
-              label: "<form>",
-              value: "3",
-            }),
-            new ChoiceOption({
-              label: "<input>",
-              value: "4",
-            }),
-          ],
-        }),
-        new QuestionModel({
-          title: "Excellent! You are halfway through.",
-          content:
-            "Form UX is important too. Test your form usability knowledge in the following section.",
-          type: QuestionType.SectionBreak,
-        }),
-        new QuestionModel({
-          id: "ux_1",
-          title: "How to reduce the perceived complexity of the long form?",
-          type: QuestionType.MultipleChoice,
-          multiple: true,
-          helpText: "Select all that apply.",
-          required: true,
-          options: [
-            new ChoiceOption({
-              label: "Divide the form into multiple steps",
-              value: "1",
-            }),
-            new ChoiceOption({
-              label: "Add progress tracking",
-              value: "2",
-            }),
-            new ChoiceOption({
-              label: "Use as many emojis as possible",
-              value: "3",
-            }),
-            new ChoiceOption({
-              label: "Group questions into sections",
-              value: "4",
-            }),
-          ],
-        }),
-        new QuestionModel({
-          id: "ux_2",
-          title: "Error messages are bad because they confuse users.",
-          helpTextShow: false,
-          type: QuestionType.MultipleChoice,
-          multiple: false,
-          required: true,
-          options: [
-            new ChoiceOption({
-              label: "True",
-              value: "true",
-            }),
-            new ChoiceOption({
-              label: "False",
-              value: "false",
-            }),
-          ],
-        }),
-        new QuestionModel({
-          id: "ux_3",
-          title: "How to make the input format clear?",
-          type: QuestionType.MultipleChoice,
-          multiple: false,
-          helpText: "Select one correct answer.",
-          required: true,
-          options: [
-            new ChoiceOption({
-              label: "Add progress bar to the form",
-              value: "1",
-            }),
-            new ChoiceOption({
-              label: "Mark required vs. optional fields",
-              value: "2",
-            }),
-            new ChoiceOption({
-              label: "Use bold color palette",
-              value: "3",
-            }),
-            new ChoiceOption({
-              label: "Use placeholder and masked input",
-              value: "4",
-            }),
-          ],
-        }),
-        new QuestionModel({
-          id: "ux_4",
-          title: "Inline validation should have a real time feedback.",
-          helpTextShow: false,
-          type: QuestionType.MultipleChoice,
-          multiple: false,
-          required: true,
-          options: [
-            new ChoiceOption({
-              label: "True",
-              value: "true",
-            }),
-            new ChoiceOption({
-              label: "False",
-              value: "false",
-            }),
-          ],
-        }),
-      ],
+      questions: this.prepareQuestions(),
     };
   },
   methods: {
+    prepareQuestions() {
+      const questionPrepared = ref([]);
+      areasList[0].subareas.forEach((a) => {
+        let qModel = new QuestionModel();
+        qModel.id = a.id;
+        qModel.title = a.question;
+        qModel.content = a.description;
+        qModel.type = QuestionType.MultipleChoice;
+        qModel.required = true;
+        qModel.multiple = false;
+        qModel.helpText = "Escolha uma alternativa que reflete melhor a sua realidade";
+        a.options.forEach((op) => {
+          let opChoice = new ChoiceOption();
+          opChoice.label = op.label;
+          opChoice.id = op.id;
+          opChoice.value = op.id;
+          qModel.options.push(opChoice);
+        });
+        questionPrepared.value.push(qModel);
+      });
+      console.log(questionPrepared);
+      return questionPrepared;
+    },
     /* eslint-disable-next-line no-unused-vars */
     onComplete(completed, questionList) {
       // This method is called whenever the "completed" status is changed.
@@ -333,15 +152,8 @@ export default {
       this.questions.forEach((question) => {
         if (question.type !== QuestionType.SectionBreak) {
           let answer = question.answer;
-          if (typeof answer === "object") {
-            answer.sort((a, b) => a - b);
-            if (this.arrayEquals(answer, this.answers[question.id])) {
-              this.score++;
-            }
-          }
-          if (answer == this.answers[question.id]) {
-            this.score++;
-          }
+          console.log(answer);
+          this.score = this.score + answer;
         }
       });
     },
@@ -358,7 +170,7 @@ export default {
       this.formattedTime = formattedTime;
     },
   },
-};
+});
 </script>
 
 <style>
