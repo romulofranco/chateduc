@@ -9,14 +9,9 @@
       <strong>{{ $route.query.email }}</strong
       >.
     </p>
-    <div class="row justify-center">
+    <div class="row">
       <div class="col-md-4 col-sm-6 col-xs-10 q-gutter-y-md">
-        <q-btn
-          label="Voltar para login"
-          color="primary"
-          class="full-width"
-          :to="{ name: 'login' }"
-        />
+        <q-btn label="Voltar para login" color="primary" :to="{ name: 'login' }" />
       </div>
     </div>
   </q-page>

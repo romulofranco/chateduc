@@ -8,10 +8,18 @@
 
         <q-card-section>
           <div class="col-md-4 col-sm-6 col-xs-10 q-gutter-y-md">
-            <q-input bottom-slots v-model="form.name" label="Nome" counter maxlength="50" :rules="[
-              (val) => (val && val.length > 0) || 'Nome é obrigatório',
-              isNameBiggerThan50,
-            ]" hint="Digite seu nome">
+            <q-input
+              bottom-slots
+              v-model="form.name"
+              label="Nome"
+              counter
+              maxlength="50"
+              :rules="[
+                (val) => (val && val.length > 0) || 'Nome é obrigatório',
+                isNameBiggerThan50,
+              ]"
+              hint="Digite seu nome"
+            >
               <template v-slot:prepend>
                 <q-icon name="account_circle" />
               </template>
@@ -19,10 +27,18 @@
                 <q-icon name="close" @click="form.name = ''" class="cursor-pointer" />
               </template>
             </q-input>
-            <q-input bottom-slots v-model="form.email" label="Email" type="email" lazy-rules :rules="[
-              (val) => (val && val.length > 0) || 'Email é obrigatório',
-              isValidEmail,
-            ]" hint="Digite um email válido">
+            <q-input
+              bottom-slots
+              v-model="form.email"
+              label="Email"
+              type="email"
+              lazy-rules
+              :rules="[
+                (val) => (val && val.length > 0) || 'Email é obrigatório',
+                isValidEmail,
+              ]"
+              hint="Digite um email válido"
+            >
               <template v-slot:prepend>
                 <q-icon name="email" />
               </template>
@@ -30,10 +46,17 @@
                 <q-icon name="close" @click="form.email = ''" class="cursor-pointer" />
               </template>
             </q-input>
-            <q-input bottom-slots v-model="form.password" label="Nova senha" :type="visibility" lazy-rules :rules="[
-              (val) => (val && val.length > 0) || 'Senha é obrigatória',
-              isValidPassword,
-            ]">
+            <q-input
+              bottom-slots
+              v-model="form.password"
+              label="Nova senha"
+              :type="visibility"
+              lazy-rules
+              :rules="[
+                (val) => (val && val.length > 0) || 'Senha é obrigatória',
+                isValidPassword,
+              ]"
+            >
               <template v-slot:prepend>
                 <q-icon name="lock" />
               </template>
@@ -42,13 +65,36 @@
               </template>
               <template v-slot:hint> Digite uma senha forte </template>
 
-
-              <q-btn v-if="visibility == 'password'" round dense flat icon="visibility" @click="changeTypeEdit()"></q-btn>
-              <q-btn v-else round dense flat icon="visibility_off" @click="changeTypeEdit()"></q-btn>
-
+              <q-btn
+                v-if="visibility == 'password'"
+                round
+                dense
+                flat
+                icon="visibility"
+                @click="changeTypeEdit()"
+              ></q-btn>
+              <q-btn
+                v-else
+                round
+                dense
+                flat
+                icon="visibility_off"
+                @click="changeTypeEdit()"
+              ></q-btn>
             </q-input>
-            <q-btn label="Registrar" color="primary" class="full-width" type="submit"></q-btn>
-            <q-btn label="Voltar" color="primary" class="full-width" flat :to="{ name: 'login' }"></q-btn>
+            <q-btn
+              label="Registrar"
+              color="primary"
+              class="full-width"
+              type="submit"
+            ></q-btn>
+            <q-btn
+              label="Voltar"
+              color="primary"
+              class="full-width"
+              flat
+              :to="{ name: 'login' }"
+            ></q-btn>
           </div>
         </q-card-section>
       </q-card>
@@ -65,7 +111,7 @@ import useNotify from "src/composables/UseNotify";
 
 export default defineComponent({
   name: "RegisterPage",
-  setup () {
+  setup() {
     const router = useRouter();
     const { register } = useAuthUser();
     const { notifyError, notifySuccess } = useNotify();
@@ -91,7 +137,7 @@ export default defineComponent({
 
     return { form, handlerRegister };
   },
-  data () {
+  data() {
     return {
       email: "",
       password: "",
@@ -99,24 +145,22 @@ export default defineComponent({
     };
   },
   methods: {
-    changeTypeEdit () {
+    changeTypeEdit() {
       if (this.visibility == "password") {
         this.visibility = "text";
       } else {
         this.visibility = "password";
       }
     },
-    isValidEmail (val) {
-      const emailPattern =
-        /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/;
+    isValidEmail(val) {
+      const emailPattern = /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/;
       return emailPattern.test(val) || "Formato de email inválido!";
     },
-    isValidPassword (val) {
-      const passwordPattern =
-        /^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$/; // regex de senha segurar email
+    isValidPassword(val) {
+      const passwordPattern = /^(?=.*[a-zA-Z0-9@._%+-])(?=.*[0-9])(?=.*[a-z]).{6,15}$/; // regex de senha segurar email
       return (passwordPattern.test(val) && val.length >= 6) || "Senha fraca!";
     },
-    isNameBiggerThan50 (val) {
+    isNameBiggerThan50(val) {
       return !(val.length == 50) || "Nome não pode ter mais de 50 caracteres.";
     },
   },
