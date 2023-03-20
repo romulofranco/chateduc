@@ -18,7 +18,7 @@
           v-bind:language="language"
           v-bind:standalone="true"
           v-bind:timer="true"
-          timer-start-step="html_1"
+          timer-start-step="1"
         >
           <!-- Custom content for the Complete/Submit screen slots in the FlowForm component -->
           <!-- We've overriden the default "complete" slot content -->
@@ -114,23 +114,35 @@ export default defineComponent({
   methods: {
     prepareQuestions() {
       const questionPrepared = ref([]);
-      areasList[0].subareas.forEach((a) => {
+
+      areasList.forEach((area) => {
         let qModel = new QuestionModel();
-        qModel.id = a.id;
-        qModel.title = a.question;
-        qModel.content = a.description;
-        qModel.type = QuestionType.MultipleChoice;
+        qModel.id = area.id;
+        qModel.tagline = area.name;
+        qModel.content = area.description;
+        qModel.type = QuestionType.SectionBreak;
         qModel.required = true;
-        qModel.multiple = false;
-        qModel.helpText = "Escolha uma alternativa que reflete melhor a sua realidade";
-        a.options.forEach((op) => {
-          let opChoice = new ChoiceOption();
-          opChoice.label = op.label;
-          opChoice.id = op.id;
-          opChoice.value = op.id;
-          qModel.options.push(opChoice);
-        });
+        qModel.helpText = "Escolha uma alternativa que melhor reflete a sua realidade";
         questionPrepared.value.push(qModel);
+        area.subareas.forEach((a) => {
+          let qModel = new QuestionModel();
+          qModel.id = a.id;
+          qModel.tagline = a.id + " - " + a.name;
+          qModel.title = a.question;
+          qModel.content = a.description;
+          qModel.type = QuestionType.MultipleChoice;
+          qModel.required = true;
+          qModel.multiple = false;
+          qModel.helpText = "Escolha uma alternativa que melhor reflete a sua realidade";
+          a.options.forEach((op) => {
+            let opChoice = new ChoiceOption();
+            opChoice.label = op.label;
+            opChoice.id = op.id;
+            opChoice.value = op.id;
+            qModel.options.push(opChoice);
+          });
+          questionPrepared.value.push(qModel);
+        });
       });
       console.log(questionPrepared);
       return questionPrepared;
@@ -156,6 +168,7 @@ export default defineComponent({
           this.score = this.score + answer;
         }
       });
+      console.log("total score " + this.score);
     },
     onQuizSubmit() {
       // Set `submitted` to true so the form knows not to allow back/forward
@@ -195,6 +208,7 @@ export default defineComponent({
 .f-progress-bar-inner {
   background-color: orange !important;
 }
+
 /* Import Vue Flow Form base CSS */
 @import "~@ditdot-dev/vue-flow-form/dist/vue-flow-form.css";
 /* Import one of the Vue Flow Form CSS themes (optional) */
