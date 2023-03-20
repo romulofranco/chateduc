@@ -1,9 +1,23 @@
 <template>
   <q-page padding>
-    <div class="row q-pa-md">
-      <div>
-        <p class="col-12 text-h5 text-left">Autoreflexão individual</p>
+    <div>
+      <div class="q-pa-md">
+        <div class="row">
+          <div class="col">
+            <p class="text-h5 text-left">Autoreflexão individual</p>
+          </div>
+          <div class="col text-right">
+            <q-btn
+              label="Iniciar"
+              class="col-12"
+              color="primary"
+              icon="mdi-plus"
+              :to="{ name: 'digcompedu-checkin' }"
+            />
+          </div>
+        </div>
       </div>
+
       <q-separator color="primary" class="full-width" />
       <br />
 
@@ -125,7 +139,7 @@
                 </q-card-section>
                 <p class="text-center text-bold text-subtitle">Notas por área</p>
                 <q-separator />
-                <q-tabs v-model="tab">
+                <q-tabs v-model="tab" swipeable>
                   <div v-for="area in checkinItem.areas" :key="area.id">
                     <q-tab :name="area.id" :label="area.name" :class="'text-' + area.cor">
                       <div class="q-mt-md text-center text-black">

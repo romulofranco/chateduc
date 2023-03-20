@@ -1,4 +1,4 @@
-const columnsPrompt = [
+const columns = [
     {
         name: 'name',
         align: 'left',
@@ -21,5 +21,5 @@ const columnsPrompt = [
 ]
 
 export {
-    columnsPrompt
+    columns
 }

@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lff" class="shadow-2 rounded-borders">
+  <q-layout view="lHh Lpr lff" class="shadow-2 rounded-borders bg-white">
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
@@ -133,7 +133,7 @@ const digiCompEduLinkList = [
     title: "Autorreflexão individual",
     caption: "",
     icon: "mdi-frequently-asked-questions",
-    routeName: "digcompedu-checkin",
+    routeName: "digcompedu-checkin-list",
   },
 ];
 

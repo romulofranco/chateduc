@@ -76,9 +76,13 @@ const routes = [
                 name: "level-list",
                 component: () => import ("pages/digcompedu/level/List.vue")
             }, {
+                path: "digcompedu-checkin-list",
+                name: "digcompedu-checkin-list",
+                component: () => import ("pages/digcompedu/checkin/List.vue")
+            }, {
                 path: "digcompedu-checkin",
                 name: "digcompedu-checkin",
-                component: () => import ("pages/digcompedu/checkin/List.vue")
+                component: () => import ("pages/digcompedu/checkin/SelfReflection.vue")
             },
         ],
         meta: {
