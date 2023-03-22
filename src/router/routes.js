@@ -6,30 +6,30 @@ const routes = [
             {
                 path: "",
                 name: "loginDefault",
-                component: () => import ("pages/LoginPage.vue")
+                component: () => import ("pages/login/LoginPage.vue")
             },
             {
                 path: "login",
                 name: "login",
-                component: () => import ("pages/LoginPage.vue")
+                component: () => import ("pages/login/LoginPage.vue")
             },
             {
                 path: "register",
                 name: "register",
-                component: () => import ("pages/RegisterPage.vue")
+                component: () => import ("pages/login/RegisterPage.vue")
             },
             {
                 path: "email-confirmation",
                 name: "email-confirmation",
-                component: () => import ("pages/EmailConfirmationPage.vue")
+                component: () => import ("pages/login/EmailConfirmationPage.vue")
             }, {
                 path: "forgot-password",
                 name: "forgot-password",
-                component: () => import ("pages/ForgotPasswordPage.vue")
+                component: () => import ("pages/login/ForgotPasswordPage.vue")
             }, {
                 path: "reset-password",
                 name: "reset-password",
-                component: () => import ("pages/ResetPasswordPage.vue")
+                component: () => import ("pages/login/ResetPasswordPage.vue")
             },
 
         ],
@@ -46,16 +46,28 @@ const routes = [
                 component: () => import ("pages/MePage.vue")
             },
             {
+                path: "chatbot",
+                name: "chatbot",
+                component: () => import ("pages/bot/Chat.vue")
+            },
+            {
+                path: "whatsapp",
+                name: "whatsapp",
+                component: () => import ("pages/category/Whatsapp.vue")
+            },
+            {
+                path: "maisum",
+                name: "maisum",
+                component: () => import ("pages/bot/Chat.vue")
+            }, {
                 path: "category",
                 name: "category",
                 component: () => import ("pages/category/List.vue")
-            },
-            {
+            }, {
                 path: "form-category/:id?",
                 name: "form-category",
                 component: () => import ("src/pages/category/Form.vue")
-            },
-            {
+            }, {
                 path: "prompt",
                 name: "prompt",
                 component: () => import ("pages/prompt/List.vue")

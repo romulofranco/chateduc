@@ -97,6 +97,18 @@ const mainMenuLinkList = [
     routeName: "me",
   },
   {
+    title: "Whatsapp",
+    caption: "",
+    icon: "mdi-home",
+    routeName: "whatsapp",
+  },
+  {
+    title: "ChatGPT",
+    caption: "",
+    icon: "mdi-home",
+    routeName: "chatbot",
+  },
+  {
     title: "Categorias",
     caption: "",
     icon: "mdi-shape-outline",

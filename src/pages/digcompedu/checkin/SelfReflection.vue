@@ -73,11 +73,7 @@
 </template>
 
 <script>
-/*
-    Copyright (c) 2020 - present, DITDOT Ltd. - MIT Licence
-    https://www.ditdot.hr/en
-  */
-// Import necessary components and classes
+
 import {
   FlowForm,
   QuestionModel,
@@ -122,7 +118,6 @@ export default defineComponent({
         qModel.content = area.description;
         qModel.type = QuestionType.SectionBreak;
         qModel.required = true;
-        qModel.helpText = "Escolha uma alternativa que melhor reflete a sua realidade";
         questionPrepared.value.push(qModel);
         area.subareas.forEach((a) => {
           let qModel = new QuestionModel();
@@ -133,7 +128,9 @@ export default defineComponent({
           qModel.type = QuestionType.MultipleChoice;
           qModel.required = true;
           qModel.multiple = false;
-          qModel.helpText = "Escolha uma alternativa que melhor reflete a sua realidade";
+          qModel.helpText =
+            "Escolha uma alternativa que melhor reflete a sua realidade considerando as competências digitais relacionadas à " +
+            area.name;
           a.options.forEach((op) => {
             let opChoice = new ChoiceOption();
             opChoice.label = op.label;
