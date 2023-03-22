@@ -52,6 +52,7 @@ go to [OpenAI Portal](https://openai.com/) get your key
 
 **Others tasks could be added in the future**
 
-## License
+
+### License
 
 MIT License, Copyright (c) 2023 Rômulo Franco
