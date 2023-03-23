@@ -73,7 +73,6 @@
 </template>
 
 <script>
-
 import {
   FlowForm,
   QuestionModel,
@@ -119,6 +118,7 @@ export default defineComponent({
         qModel.type = QuestionType.SectionBreak;
         qModel.required = true;
         questionPrepared.value.push(qModel);
+        console.log(area.name);
         area.subareas.forEach((a) => {
           let qModel = new QuestionModel();
           qModel.id = a.id;
@@ -131,6 +131,7 @@ export default defineComponent({
           qModel.helpText =
             "Escolha uma alternativa que melhor reflete a sua realidade considerando as competências digitais relacionadas à " +
             area.name;
+          console.log(a.name);
           a.options.forEach((op) => {
             let opChoice = new ChoiceOption();
             opChoice.label = op.label;
@@ -195,7 +196,60 @@ export default defineComponent({
   color: black !important;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+.vff {
+  font-size: 18px !important;
+}
 
+.vff {
+  margin: 30px 5px !important;
+}
+.vff .fh2,
+.vff h2 {
+  font-size: 14px !important;
+  margin: 0 0 0 0 !important;
+  line-height: 25px !important;
+}
+
+.vff .fh2 span.f-tagline {
+  font-size: 20px !important;
+  font-weight: 500px !important;
+  color: orangered !important;
+}
+.vff .f-radios-desc,
+.vff ul.f-radios li,
+.vff ul.f-radios li input[type="text"] {
+  font-size: 14px !important;
+}
+.vff ul.f-radios li {
+  border: 0px solid var(--vff-secondary-text-color) !important;
+}
+
+.vff ul.f-radios li.f-selected,
+.vff ul.f-radios li:active {
+  background-color: rgb(231, 141, 80);
+}
+
+.f-label-wrap {
+  width: 100% !important;
+}
+.vff .f-help {
+  font-size: 14px !important;
+  font-weight: 500px !important;
+  color: rgb(24, 23, 23) !important;
+}
+
+.f-text {
+  font-size: 18px !important;
+}
+.f-label {
+  font-size: 15px !important;
+  font-weight: 200px !important;
+}
+
+.f-key {
+  font-size: 15px !important;
+  font-weight: 200px !important;
+}
 .f-prev .f-next .f-disabled {
   background-color: orange !important;
 }

@@ -106,7 +106,7 @@ const routes = [
     // but you can also remove it
     {
         path: "/:catchAll(.*)*",
-        component: () => import ("pages/ErrorNotFoundPage.vue")
+        component: () => import ("pages/login/ErrorNotFoundPage.vue")
     },
 ];
 
