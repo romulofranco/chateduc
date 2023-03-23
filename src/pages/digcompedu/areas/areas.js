@@ -1000,8 +1000,8 @@ const areasList = [
       }, {
         id: "5.4",
         name: "Aprendizagem mista",
-        description: "Utilização de recursos e ferramentas digitais, ambientes e plataformas de aprendizagem online para assegurar a aprendizagem dos alunos dentro e fora da sala de aula."
-        question: "Utilizar recursos e ferramentas digitais, ambientes e plataformas de aprendizagem online para garantir aprendizagem dos alunos dentro e fora da sala de aula."
+        description: "Utilização de recursos e ferramentas digitais, ambientes e plataformas de aprendizagem online para assegurar a aprendizagem dos alunos dentro e fora da sala de aula.",
+        question: "Utilizar recursos e ferramentas digitais, ambientes e plataformas de aprendizagem online para garantir aprendizagem dos alunos dentro e fora da sala de aula.",
         option: [
           {
             id:1,
@@ -1045,8 +1045,8 @@ const areasList = [
       {
         id: "6.1",
         name: "Literacia da informação e de dados",
-        description: "Incorporação de atividades de aprendizagem que exigem dos alunos a utilização de tecnologias digitais para pesquisar, avaliar e gerir informações e dados em ambientes digitais."
-        question: "Incorporar atividades de aprendizagem, que exigem que os alunos usem tecnologias digitais para pesquisar, avaliar e gerenciar informações e dados em ambientes digitais."
+        description: "Incorporação de atividades de aprendizagem que exigem dos alunos a utilização de tecnologias digitais para pesquisar, avaliar e gerir informações e dados em ambientes digitais.",
+        question: "Incorporar atividades de aprendizagem, que exigem que os alunos usem tecnologias digitais para pesquisar, avaliar e gerenciar informações e dados em ambientes digitais.",
         option: [
           {
             id:1,
@@ -1081,8 +1081,8 @@ const areasList = [
       {
         id: "6.2",
         name: "Comunicação e colaboração",
-        description: "Implementação de atividades de aprendizagem que requerem que os alunos comuniquem e colaborem utilizando tecnologias digitais."
-        question: "implementando atividades de aprendizagem que exigem que os alunos se comuniquem e colaborem usando as tecnologias digitais."
+        description: "Implementação de atividades de aprendizagem que requerem que os alunos comuniquem e colaborem utilizando tecnologias digitais.",
+        question: "implementando atividades de aprendizagem que exigem que os alunos se comuniquem e colaborem usando as tecnologias digitais.",
         option: [
           {
             id:1,
@@ -1117,8 +1117,8 @@ const areasList = [
       {
         id: "6.3",
         name: "Criação de conteúdo",
-        description: "Incorporação de atividades de aprendizagem que requerem que os alunos se expressem através da criação de artefactos digitais."
-        question: "incorporando atividades de aprendizagem que exigem que os alunos se expressem criando artefatos."
+        description: "Incorporação de atividades de aprendizagem que requerem que os alunos se expressem através da criação de artefactos digitais.",
+        question: "incorporando atividades de aprendizagem que exigem que os alunos se expressem criando artefatos.",
         option: [
           {
             id:1,
@@ -1153,8 +1153,8 @@ const areasList = [
       {
         id: "6.4",
         name: "Segurança e bem-estar",
-        description: "Capacitação dos alunos para a utilização de tecnologias digitais com segurança, atenuando simultaneamente os riscos, para assegurar o bem-estar físico, psicológico e social."
-        question: "Capacitar os alunos a usar tecnologias digitais com segurança, ao mesmo tempo em que reduz os riscos para garantir a segurança física, bem-estar psicológico e social."
+        description: "Capacitação dos alunos para a utilização de tecnologias digitais com segurança, atenuando simultaneamente os riscos, para assegurar o bem-estar físico, psicológico e social.",
+        question: "Capacitar os alunos a usar tecnologias digitais com segurança, ao mesmo tempo em que reduz os riscos para garantir a segurança física, bem-estar psicológico e social.",
         option: [
           {
             id:1,
@@ -1188,8 +1188,8 @@ const areasList = [
       }, {
         id: "6.5",
         name: "Uso responsável",
-        description: "Capacitação dos alunos para a utilização de tecnologias digitais de forma responsável e ética, gerindo a sua identidade digital, pegada digital e reputação digital."
-        question: "Capacitar os alunos a usar tecnologias digitais de forma responsável e ética, gerenciando sua identidade digital, presença e reputação digital."
+        description: "Capacitação dos alunos para a utilização de tecnologias digitais de forma responsável e ética, gerindo a sua identidade digital, pegada digital e reputação digital.",
+        question: "Capacitar os alunos a usar tecnologias digitais de forma responsável e ética, gerenciando sua identidade digital, presença e reputação digital.",
         option: [
           {
             id:1,
@@ -1223,8 +1223,8 @@ const areasList = [
       }, {
         id: "6.6",
         name: "Resolução de problemas",
-        description: "Incorporação de atividades de aprendizagem, nas quais os alunos utilizam tecnologias digitais para compreender e resolver problemas."
-        question: "Incorporando atividades de aprendizagem, onde os alunos usam tecnologias digitais para entender e resolver problemas."
+        description: "Incorporação de atividades de aprendizagem, nas quais os alunos utilizam tecnologias digitais para compreender e resolver problemas.",
+        question: "Incorporando atividades de aprendizagem, onde os alunos usam tecnologias digitais para entender e resolver problemas.",
         option: [
           {
             id:1,
