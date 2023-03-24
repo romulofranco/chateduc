@@ -52,6 +52,7 @@
               >
               </a>
             </div>
+
             <p class="text-success" v-if="submitted && time">
               Your time: {{ formattedTime }}
             </p>
@@ -80,8 +81,6 @@ import {
   ChoiceOption,
   LanguageModel,
 } from "@ditdot-dev/vue-flow-form";
-// If using the npm package, use the following line instead of the ones above.
-// import FlowForm, { QuestionModel, QuestionType, ChoiceOption, LanguageModel } from '@ditdot-dev/vue-flow-form'
 import { areasList } from "../areas/areas";
 import { defineComponent, ref, onMounted } from "vue";
 
@@ -91,8 +90,52 @@ export default defineComponent({
     FlowForm,
   },
 
+  setup() {
+    const checkinTable = [
+      {
+        user_id: 1,
+        prof_expected: "",
+        prof_result: "",
+        grade: 0,
+        main_statement: "",
+        level_result_img: "",
+        checkin_areas: [
+          {
+            id_area: 0,
+            id_txt: "",
+            name: "",
+            cor: "",
+            subcor: "",
+            question: "",
+            answer: "",
+            grade_area: 0,
+            main_area: true,
+          },
+        ],
+      },
+    ];
+
+    const handleSubmit = async () => {
+      try {
+        if (isUpdate.value) {
+          await update(table, form.value);
+          notifySuccess("Categoria atualizada com sucesso");
+        } else {
+          await post(table, form.value);
+          notifySuccess("Categoria inserida com sucesso");
+        }
+
+        router.push({ name: "category" });
+      } catch (error) {
+        notifyError(error.message);
+      }
+    };
+  },
+
   data() {
     return {
+      checkinTable,
+      handleSubmit,
       areasList,
       submitted: false,
       completed: false,
@@ -101,11 +144,19 @@ export default defineComponent({
       time: 0,
       formattedTime: "",
 
-      language: new LanguageModel(),
+      language: new LanguageModel({
+        continue: "Continuar",
+        ok: "Próximo",
+        pressEnter: "Ou pressione Enter",
+        submitText: "Enviar",
+        // Your language definitions here (optional).
+        // You can leave out this prop if you want to use the default definitions.
+      }),
       // Create question list with QuestionModel instances
       questions: this.prepareQuestions(),
     };
   },
+
   methods: {
     prepareQuestions() {
       const questionPrepared = ref([]);
@@ -118,7 +169,6 @@ export default defineComponent({
         qModel.type = QuestionType.SectionBreak;
         qModel.required = true;
         questionPrepared.value.push(qModel);
-        console.log(area.name);
         area.subareas.forEach((a) => {
           let qModel = new QuestionModel();
           qModel.id = a.id;
@@ -131,7 +181,7 @@ export default defineComponent({
           qModel.helpText =
             "Escolha uma alternativa que melhor reflete a sua realidade considerando as competências digitais relacionadas à " +
             area.name;
-          console.log(a.name);
+
           a.options.forEach((op) => {
             let opChoice = new ChoiceOption();
             opChoice.label = op.label;
@@ -142,7 +192,7 @@ export default defineComponent({
           questionPrepared.value.push(qModel);
         });
       });
-      console.log(questionPrepared);
+
       return questionPrepared;
     },
     /* eslint-disable-next-line no-unused-vars */
@@ -186,7 +236,7 @@ export default defineComponent({
 
 <style>
 .f-key {
-  color: orange !important;
+  color: orangered !important;
 }
 .o-btn-action {
   background-color: orangered !important;
@@ -210,7 +260,11 @@ export default defineComponent({
   line-height: 25px !important;
 }
 
-.vff .fh2 span.f-tagline {
+.f-tagline {
+  color: black !important;
+  font-weight: 900 !important;
+}
+.vff .fh2 .f-tagline {
   font-size: 20px !important;
   font-weight: 500px !important;
   color: orangered !important;
@@ -226,7 +280,7 @@ export default defineComponent({
 
 .vff ul.f-radios li.f-selected,
 .vff ul.f-radios li:active {
-  background-color: rgb(231, 141, 80);
+  background-color: #f5cd99;
 }
 
 .f-label-wrap {
@@ -238,6 +292,9 @@ export default defineComponent({
   color: rgb(24, 23, 23) !important;
 }
 
+.f-enter-desc {
+  color: black !important;
+}
 .f-text {
   font-size: 18px !important;
 }
@@ -258,6 +315,10 @@ export default defineComponent({
 }
 .f-progress-bar-inner {
   background-color: orange !important;
+}
+
+.o-btn-action {
+  color: white !important;
 }
 
 /* Import Vue Flow Form base CSS */

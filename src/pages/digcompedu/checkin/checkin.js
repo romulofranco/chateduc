@@ -30,7 +30,6 @@ const checkinList = [
                 subcor: "blue-3",
                 nota: 18
             },
-
         ]
     },
     {
