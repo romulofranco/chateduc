@@ -90,8 +90,26 @@ export default defineComponent({
     FlowForm,
   },
 
-  setup() {
-    const checkinTable = [
+  setup() {},
+
+  data() {
+    const handleSubmit = async () => {
+      try {
+        if (isUpdate.value) {
+          await update(table, form.value);
+          notifySuccess("Categoria atualizada com sucesso");
+        } else {
+          await post(table, form.value);
+          notifySuccess("Categoria inserida com sucesso");
+        }
+
+        router.push({ name: "category" });
+      } catch (error) {
+        notifyError(error.message);
+      }
+    };
+
+    const checkinTable = ref([
       {
         user_id: 1,
         prof_expected: "",
@@ -113,26 +131,8 @@ export default defineComponent({
           },
         ],
       },
-    ];
+    ]);
 
-    const handleSubmit = async () => {
-      try {
-        if (isUpdate.value) {
-          await update(table, form.value);
-          notifySuccess("Categoria atualizada com sucesso");
-        } else {
-          await post(table, form.value);
-          notifySuccess("Categoria inserida com sucesso");
-        }
-
-        router.push({ name: "category" });
-      } catch (error) {
-        notifyError(error.message);
-      }
-    };
-  },
-
-  data() {
     return {
       checkinTable,
       handleSubmit,
