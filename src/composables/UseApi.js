@@ -38,14 +38,14 @@ export default function useApi() {
     }
   };
 
-  const postCheckin = async (table, form, checkinArea) => {
+  const postSelect = async (table, form, checkinArea) => {
     try {
       const { data, error } = await supabase
         .from(table)
-        .insert([{ ...form, user_id: user.value.id }]).single();
+        .insert([{ ...form, user_id: user.value.id }]).select();
 
       checkinArea.forEach((check) => {
-        check.checkin_id = data.id;
+        check.checkin_id = data[0].id;
         check.user_id = user.value.id;
       });
 
@@ -53,10 +53,7 @@ export default function useApi() {
         .from("checkin_areas")
         .insert(checkinArea);
 
-      if (e) {
-        alert(e.message);
-        return null;
-      }
+      alert("AQUI: " + data[0].id);
 
       if (error) {
         alert(error.message);
@@ -65,7 +62,7 @@ export default function useApi() {
       }
 
       console.log("created a new checkin");
-      return data.id;
+      return data;
     } catch (err) {
       alert("Error");
       console.error("Unknown problem inserting to db", err);
@@ -92,7 +89,7 @@ export default function useApi() {
     list,
     getById,
     post,
-    postCheckin,
+    postSelect,
     update,
     remove
   };

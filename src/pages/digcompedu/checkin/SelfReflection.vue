@@ -69,7 +69,7 @@ import {
   LanguageModel
 } from "@ditdot-dev/vue-flow-form";
 import { areasList } from "../areas/areas";
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import useApi from "src/composables/UseApi";
 import useNotify from "src/composables/UseNotify";
@@ -88,17 +88,17 @@ export default defineComponent({
     const subtable = "checkin_areas";
     const router = useRouter();
     const route = useRoute();
-    const { postCheckin, post } = useApi();
+    const { postSelect, post, getById, update } = useApi();
     const { notifyError, notifySuccess } = useNotify();
     const checkinTable = ref([]);
 
 
     const saveCheckin = (localTable, form, checkinArea) => {
       try {
-        let { data, error } = postCheckin(localTable, form, checkinArea);
+        let { data, error } = postSelect(localTable, form, checkinArea);
         return data;
-      } catch (error) {
-        notifyError(error.message);
+      } catch (errorX) {
+        alert(errorX.message);
       }
     };
 
@@ -140,6 +140,33 @@ export default defineComponent({
   },
 
   methods: {
+    prepareCheckinTable() {
+      const checkin = [
+        {
+          prof_expected: "",
+          prof_after: "",
+          prof_result: "",
+          grade: 0,
+          main_statement: "",
+          level_result_img: "",
+          id_level: 0,
+          checkin_areas: [
+            {
+              id_area: 0,
+              id_txt: "",
+              name: "",
+              cor: "",
+              subcor: "",
+              question: "",
+              answer: "",
+              grade_area: 0,
+              main_area: true
+            }
+          ]
+        }
+      ];
+      return checkin;
+    },
 
     prepareFirstFinalQuestion(starting) {
       let qModel = new QuestionModel();
@@ -331,10 +358,16 @@ export default defineComponent({
 
       let checkinArea = this.calculateScore();
       this.fillCheckinTable();
+
+      //let checkinId = this.saveCheckin(this.table, this.checkinTable);
       let checkinId = this.saveCheckin(this.table, this.checkinTable, checkinArea);
-      this.$refs.flowform.submitted = true;
-      this.submitted = true;
-      router.push({ name: "form-self", params: { id: checkinId } });
+
+
+      // this.checkinTable.checkin_areas = checkinArea;
+      console.log(this.checkinTable);
+      // this.$refs.flowform.submitted = true;
+      // this.submitted = true;
+      //this.saveCheckin();
     },
 
 
