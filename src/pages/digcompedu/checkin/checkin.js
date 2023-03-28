@@ -5,7 +5,7 @@ const checkinList = [
         id: "1",
         checkin_date: "2022-04-23T18:25:43",
         img_url: "levels/a2.png",
-        prof_expected: "A1 Recém-chegado",
+        prof_expected: "A1 Iniciante",
         prof_result: "A2 Explorador",
         grade: "24/192",
         main_statement: "Utilizar pouco as tecnologias digitais para a comunicação",

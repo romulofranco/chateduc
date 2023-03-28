@@ -1,11 +1,11 @@
 const levelList = [
     {
         id: "1",
-        name: "Recém-chegado",
+        name: "Iniciante",
         icon: "",
         cor: "",
         img_url: "levels/a1.png",
-        description: "Os recém-chegados estão conscientes do potencial das tecnologias digitais para melhorar a prática pedagógica e profissional. No entanto, têm tido muito pouco contacto com as tecnologias digitais e utilizam-nas principalmente para a preparação das aulas, a administração ou a comunicação organizacional. Os recém-chegados precisam de orientação e incentivo para expandir o seu repertório e aplicar a sua competência digital existente no domínio pedagógico.",
+        description: "Os Iniciantes estão conscientes do potencial das tecnologias digitais para melhorar a prática pedagógica e profissional. No entanto, têm tido muito pouco contacto com as tecnologias digitais e utilizam-nas principalmente para a preparação das aulas, a administração ou a comunicação organizacional. Os recém-chegados precisam de orientação e incentivo para expandir o seu repertório e aplicar a sua competência digital existente no domínio pedagógico.",
         subdesc: "Aqueles que tiveram muito pouco contato com ferramentas digitais e precisam de orientação para expandir seu repertório.",
         sigla: "A1",
         areas: [
@@ -41,7 +41,7 @@ const levelList = [
                 main_statement: "Fazer pouco uso da Internet para atualizar os conhecimentos",
                 proficient_statement: "Eu só raramente, se de todo, uso a internet para atualizar meus conhecimentos ou habilidades."
             }, {
-                id: "2.1",
+                id: "1.5",
                 name: "Selecionar recursos digitais",
                 cor: "area2",
                 icon: "mdi-reflect-vertical",
@@ -142,7 +142,7 @@ const levelList = [
     },
     {
         id: "4",
-        name: "Especialista ",
+        name: "Especialista",
         icon: "",
         img_url: "levels/b2.png",
         cor: "",
@@ -192,7 +192,7 @@ const levelList = [
         ]
     }, {
         id: "6",
-        name: "Pioneiro ",
+        name: "Pioneiro",
         icon: "",
         img_url: "levels/c2.png",
         cor: "",

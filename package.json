@@ -14,7 +14,7 @@
     "@ditdot-dev/vue-flow-form": "^2.3.1",
     "@icon-park/vue-next": "^1.4.2",
     "@quasar/extras": "^1.0.0",
-    "@supabase/supabase-js": "^1.35.2",
+    "@supabase/supabase-js": "2.12.1",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "crypto-js": "^4.1.1",

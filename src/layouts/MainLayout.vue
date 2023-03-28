@@ -97,10 +97,10 @@ const mainMenuLinkList = [
     routeName: "me",
   },
   {
-    title: "Whatsapp",
+    title: "Youtube",
     caption: "",
     icon: "mdi-home",
-    routeName: "whatsapp",
+    routeName: "youtube",
   },
   {
     title: "ChatGPT",

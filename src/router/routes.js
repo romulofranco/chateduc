@@ -51,9 +51,9 @@ const routes = [
                 component: () => import ("pages/bot/Chat.vue")
             },
             {
-                path: "whatsapp",
-                name: "whatsapp",
-                component: () => import ("pages/category/Whatsapp.vue")
+                path: "youtube",
+                name: "youtube",
+                component: () => import ("pages/digcompedu/youtube.vue")
             },
             {
                 path: "maisum",
