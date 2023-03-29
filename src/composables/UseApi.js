@@ -53,7 +53,7 @@ export default function useApi() {
         .from("checkin_areas")
         .insert(checkinArea);
 
-      alert("AQUI: " + data[0].id);
+      //alert("AQUI: " + data[0].id);
 
       if (error) {
         alert(error.message);
@@ -61,7 +61,7 @@ export default function useApi() {
         return null;
       }
 
-      console.log("created a new checkin");
+      console.log("created a new checkin " + data[0].id);
       return data;
     } catch (err) {
       alert("Error");

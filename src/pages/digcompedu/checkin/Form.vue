@@ -3,7 +3,7 @@
     <q-form padding @submit.prevent="handleSubmit">
       <q-card class="shadow-2 col-12">
         <q-card-section>
-          <p class="col-12 text-h5 text-left">Adicionar categoria</p>
+          <p class="col-12 text-h5 text-left">Autoreflexão individual - Detalhes</p>
           <q-separator color="primary" />
         </q-card-section>
 

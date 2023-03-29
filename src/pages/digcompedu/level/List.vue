@@ -10,7 +10,7 @@
         <q-card-section>
           <q-img
             src="areas/digcompedu_level.jpg"
-            fit="cover"
+            fit="none"
             style="height: 100%; width: 100%"
           />
         </q-card-section>
@@ -89,7 +89,7 @@
               </q-card-section>
               <br />
               <q-item-section class="text-left">
-                <q-item-label class="text-h6"
+                <q-item-label class="text-h6" inset
                   >Domínio de uso, aplicação prática ou conhecimento de tecnologias
                   digitais por cada área</q-item-label
                 >

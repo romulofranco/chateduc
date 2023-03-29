@@ -85,38 +85,31 @@ export default defineComponent({
 
   data() {
     const table = "checkin";
-    const subtable = "checkin_areas";
     const router = useRouter();
     const route = useRoute();
-    const { postSelect, post, getById, update } = useApi();
+    const { postSelect } = useApi();
     const { notifyError, notifySuccess } = useNotify();
     const checkinTable = ref([]);
 
 
-    const saveCheckin = (localTable, form, checkinArea) => {
+    const saveCheckin = async (form, checkinArea) => {
       try {
-        let { data, error } = postSelect(localTable, form, checkinArea);
+        let data = await postSelect(table, form, checkinArea);
+        notifySuccess("Autorreflexão realizada com sucesso");
+
+        let checkinId = data[0].id;
+
+        router.push({ name: 'digcompedu-checkin-form', params: { id: checkinId } })
         return data;
-      } catch (errorX) {
-        alert(errorX.message);
+      } catch (error) {
+        notifyError(error.message)
       }
     };
 
-    const saveCheckinArea = async (data) => {
-      try {
-        alert("saveCheckinArea: " + data.checkin_id + " subtable " + this.subtable);
-        await post(this.subtable, data);
-        notifySuccess("Avaliação inserida com sucesso");
-      } catch (error) {
-        alert(error.message);
-      }
-    };
 
     return {
       table,
-      subtable,
       saveCheckin,
-      saveCheckinArea,
       areasList,
       submitted: false,
       completed: false,
@@ -140,33 +133,6 @@ export default defineComponent({
   },
 
   methods: {
-    prepareCheckinTable() {
-      const checkin = [
-        {
-          prof_expected: "",
-          prof_after: "",
-          prof_result: "",
-          grade: 0,
-          main_statement: "",
-          level_result_img: "",
-          id_level: 0,
-          checkin_areas: [
-            {
-              id_area: 0,
-              id_txt: "",
-              name: "",
-              cor: "",
-              subcor: "",
-              question: "",
-              answer: "",
-              grade_area: 0,
-              main_area: true
-            }
-          ]
-        }
-      ];
-      return checkin;
-    },
 
     prepareFirstFinalQuestion(starting) {
       let qModel = new QuestionModel();
@@ -325,22 +291,28 @@ export default defineComponent({
       let levelResult = this.scoreTotal;
       if (levelResult < 33) {
         this.checkinTable.prof_result = "A1 - Iniciante";
+        this.checkinTable.level_result_img = "a1";
         this.checkinTable.id_level = 1;
       } else if (levelResult > 32 && levelResult < 65) {
         this.checkinTable.prof_result = "A2 - Explorador";
         this.checkinTable.id_level = 2;
+        this.checkinTable.level_result_img = "a2";
       } else if (levelResult > 64 && levelResult < 97) {
         this.checkinTable.prof_result = "B1 - Integrador";
         this.checkinTable.id_level = 3;
+        this.checkinTable.level_result_img = "b1";
       } else if (levelResult > 96 && levelResult < 129) {
         this.checkinTable.prof_result = "B2 - Especialista";
         this.checkinTable.id_level = 4;
+        this.checkinTable.level_result_img = "b2";
       } else if (levelResult > 128 && levelResult < 161) {
         this.checkinTable.prof_result = "C1 - Líder";
         this.checkinTable.id_level = 5;
+        this.checkinTable.level_result_img = "c1";
       } else if (levelResult > 160 && levelResult < 193) {
         this.checkinTable.prof_result = "C2 - Pioneiro";
         this.checkinTable.id_level = 6;
+        this.checkinTable.level_result_img = "c2";
       }
 
       this.checkinTable.prof_expected = this.questions[0].options[
@@ -360,14 +332,17 @@ export default defineComponent({
       this.fillCheckinTable();
 
       //let checkinId = this.saveCheckin(this.table, this.checkinTable);
-      let checkinId = this.saveCheckin(this.table, this.checkinTable, checkinArea);
-
+      let checkinId = this.saveCheckin(this.checkinTable, checkinArea).then(function(d) {
+        alert(d);
+      });
 
       // this.checkinTable.checkin_areas = checkinArea;
       console.log(this.checkinTable);
+
       // this.$refs.flowform.submitted = true;
       // this.submitted = true;
-      //this.saveCheckin();
+
+      alert(checkinId);
     },
 
 

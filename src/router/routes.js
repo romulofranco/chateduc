@@ -95,7 +95,11 @@ const routes = [
                 path: "digcompedu-checkin",
                 name: "digcompedu-checkin",
                 component: () => import ("pages/digcompedu/checkin/SelfReflection.vue")
-            },
+            }, {
+            path: "digcompedu-checkin-form/:id?",
+            name: "digcompedu-checkin-form",
+            component: () => import ("pages/digcompedu/checkin/Form.vue")
+          },
         ],
         meta: {
             requiresAuth: true
