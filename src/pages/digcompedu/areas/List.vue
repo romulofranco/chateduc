@@ -39,12 +39,12 @@
       </q-card>
 
       <div v-for="area in this.areasList" :key="area.id" class="full-width">
-        <q-card class="full-width" flat>
+        <q-card class="full-width" >
           <q-expansion-item
             expand-separator
             group="accordeon-group-1"
             :header-class="area.cor"
-            class="text-bold text-subtitle1 text-weight-medium shadow-1"
+            class="text-bold text-subtitle1 text-weight-medium shadow-2"
             :color="area.cor"
             :label="area.name"
           >

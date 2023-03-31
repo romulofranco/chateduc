@@ -38,6 +38,12 @@ export default function useApi() {
     }
   };
 
+  const getRadarChartData = async (checkinID) => {
+    const { data, error } = await supabase.rpc('get_chart', {'checkinid': checkinID});
+    if (error) throw error;
+    return data;
+  };
+
   const postSelect = async (table, form, checkinArea) => {
     try {
       const { data, error } = await supabase
@@ -53,15 +59,12 @@ export default function useApi() {
         .from("checkin_areas")
         .insert(checkinArea);
 
-      //alert("AQUI: " + data[0].id);
-
       if (error) {
         alert(error.message);
         console.error("There was an error inserting", error);
         return null;
       }
 
-      console.log("created a new checkin " + data[0].id);
       return data;
     } catch (err) {
       alert("Error");
@@ -91,6 +94,7 @@ export default function useApi() {
     post,
     postSelect,
     update,
-    remove
+    remove,
+    getRadarChartData
   };
 }

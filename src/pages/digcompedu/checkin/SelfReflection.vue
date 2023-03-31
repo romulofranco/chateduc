@@ -99,10 +99,10 @@ export default defineComponent({
 
         let checkinId = data[0].id;
 
-        router.push({ name: 'digcompedu-checkin-form', params: { id: checkinId } })
+        router.push({ name: "digcompedu-checkin-form", params: { id: checkinId } });
         return data;
       } catch (error) {
-        notifyError(error.message)
+        notifyError(error.message);
       }
     };
 
@@ -231,6 +231,7 @@ export default defineComponent({
     calculateScore() {
       let idxArea = 0;
       let score = 0;
+      let numQuestions = 0;
 
       let mainArea = {
         id_txt: this.questions[1].id,
@@ -248,6 +249,7 @@ export default defineComponent({
 
           score = score + question.answer;
           this.scoreTotal = this.scoreTotal + question.answer;
+          numQuestions++;
 
           let areaCheckin = {
             id_txt: question.id,
@@ -257,13 +259,27 @@ export default defineComponent({
             answer: answer,
             main_area: false,
             grade_area: question.answer,
-            id_level: question.answer
+            id_level: question.answer,
+            num_questions: 1,
+            level_txt: (question.answer == 1 ? "A1" :
+              (question.answer == 2 ? "A2" :
+                (question.answer == 3 ? "B1" :
+                  (question.answer == 4 ? "B2" :
+                    (question.answer == 5 ? "C1" : (question.answer == 6 ? "C2" : "A1"))))))
           };
           checkin.push(areaCheckin);
         } else {
           if (question.type === QuestionType.SectionBreak) {
             mainArea.grade_area = score;
+            mainArea.num_questions = numQuestions;
+            mainArea.id_level = Math.round(score / numQuestions);
+            mainArea.level_txt = (mainArea.id_level  == 1 ? "A1" :
+              (mainArea.id_level  == 2 ? "A2" :
+                (mainArea.id_level == 3 ? "B1" :
+                  (mainArea.id_level  == 4 ? "B2" :
+                    (mainArea.id_level  == 5 ? "C1" : (mainArea.id_level  == 6 ? "C2" : "A1"))))));
             score = 0;
+            numQuestions = 0;
             checkin.push(mainArea);
 
             idxArea++;
@@ -282,6 +298,13 @@ export default defineComponent({
       });
 
       mainArea.grade_area = score;
+      mainArea.num_questions = numQuestions;
+      mainArea.id_level = Math.round(score / numQuestions);
+      mainArea.level_txt = (mainArea.id_level  == 1 ? "A1" :
+        (mainArea.id_level  == 2 ? "A2" :
+          (mainArea.id_level == 3 ? "B1" :
+            (mainArea.id_level  == 4 ? "B2" :
+              (mainArea.id_level  == 5 ? "C1" : (mainArea.id_level  == 6 ? "C2" : "A1"))))));
       checkin.push(mainArea);
 
       return checkin;
@@ -315,11 +338,14 @@ export default defineComponent({
         this.checkinTable.level_result_img = "c2";
       }
 
+      console.log(this.questions[0]);
+      console.log(this.questions[this.questions.length - 1]);
+
       this.checkinTable.prof_expected = this.questions[0].options[
-        this.questions[0].answer
+      this.questions[0].answer - 1
         ].label;
       this.checkinTable.prof_after = this.questions[this.questions.length - 1].options[
-        this.questions[this.questions.length - 1].answer
+      this.questions[this.questions.length - 1].answer - 1
         ].label;
       this.checkinTable.grade = levelResult;
     },
@@ -331,18 +357,12 @@ export default defineComponent({
       let checkinArea = this.calculateScore();
       this.fillCheckinTable();
 
-      //let checkinId = this.saveCheckin(this.table, this.checkinTable);
       let checkinId = this.saveCheckin(this.checkinTable, checkinArea).then(function(d) {
-        alert(d);
+        console.log(d);
       });
 
-      // this.checkinTable.checkin_areas = checkinArea;
-      console.log(this.checkinTable);
-
-      // this.$refs.flowform.submitted = true;
-      // this.submitted = true;
-
-      alert(checkinId);
+      this.$refs.flowform.submitted = true;
+      this.submitted = true;
     },
 
 
