@@ -39,7 +39,17 @@ export default function useApi() {
   };
 
   const getRadarChartData = async (checkinID) => {
-    const { data, error } = await supabase.rpc('get_chart', {'checkinid': checkinID});
+    console.log("ID: " + checkinID);
+    const { data, error } = await supabase.rpc("get_chart", { "checkinid": checkinID });
+    if (error) throw error;
+    return data;
+  };
+
+  const getBarChartData = async (table, checkinID) => {
+    const {
+      data,
+      error
+    } = await supabase.from(table).select("id, id_level, level_txt, cor, grade_area, name, num_questions").eq("checkin_id", checkinID).eq("main_area", true);
     if (error) throw error;
     return data;
   };
@@ -95,6 +105,7 @@ export default function useApi() {
     postSelect,
     update,
     remove,
-    getRadarChartData
+    getRadarChartData,
+    getBarChartData
   };
 }
