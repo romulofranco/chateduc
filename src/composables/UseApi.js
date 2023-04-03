@@ -11,6 +11,12 @@ export default function useApi() {
     return data;
   };
 
+  const listSort = async (table) => {
+    const { data, error } = await supabase.from(table).select("*").order("id", { ascending: false });
+    if (error) throw error;
+    return data;
+  };
+
   const getById = async (table, id) => {
     const { data, error } = await supabase.from(table).select("*").eq("id", id);
     if (error) throw error;
@@ -109,6 +115,7 @@ export default function useApi() {
 
   return {
     list,
+    listSort,
     getById,
     post,
     postSelect,

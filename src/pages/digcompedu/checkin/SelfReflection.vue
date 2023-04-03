@@ -122,7 +122,8 @@ export default defineComponent({
         continue: "Continuar",
         ok: "Próximo",
         pressEnter: "Ou pressione Enter",
-        submitText: "Enviar"
+        submitText: "Enviar",
+        percentCompleted: ":percent% realizado"
         // Your language definitions here (optional).
         // You can leave out this prop if you want to use the default definitions.
       }),

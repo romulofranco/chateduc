@@ -9,8 +9,13 @@
       >
 
         <template v-slot:header>
-          <q-item-section avatar>
-            <q-img :src="'levels/' + checkinItem.level_result_img + '.png'" />
+          <q-item-section avatar style="height:40px; width: 40px">
+            <q-img :src="'levels/' + checkinItem.level_result_img + '.png'" >
+              <div class="floating transparent">
+                <q-badge filled top color="teal">{{ checkinItem.level_result_img.toUpperCase() }}</q-badge>
+              </div>
+            </q-img>
+
           </q-item-section>
           <q-item-section>
             {{ title }}
@@ -64,7 +69,7 @@
                   readonly
                 />
                 <div class="col text-right">
-                  <q-btn v-if="btnDetail" label="Detalhar"  color="primary"
+                  <q-btn v-if="btnDetail" label="Detalhar" color="primary"
                          @click="handleDetail(checkinItem)" />
                 </div>
               </div>
@@ -88,7 +93,7 @@
                       :class="'bg-' + area.cor1"
                       readonly
                     >
-                      <q-badge color="black" class="text-body1" floating>
+                      <q-badge color="black" class="text-body1 text-white" style="color: white;height: 32px;width: 32px" floating>
                         {{ area.level_txt }}
                       </q-badge>
                       {{ area.data + "%" }}

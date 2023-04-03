@@ -74,7 +74,7 @@ export default defineComponent({
     Resumo
   },
   data: function() {
-    const { list } = useApi();
+    const { listSort } = useApi();
     const checkinList = ref([]);
     const { notifyError, notifySuccess } = useNotify();
 
@@ -84,7 +84,7 @@ export default defineComponent({
 
     const handleCheckinList = async () => {
       try {
-        checkinList.value = await list("checkin");
+        checkinList.value = await listSort("checkin");
         checkinList.value.forEach((check) => {
           check.dataRealizacao = formatDate(check.created_at);
           check.total_pontos = check.grade + "/192";
