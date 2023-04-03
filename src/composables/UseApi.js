@@ -54,6 +54,15 @@ export default function useApi() {
     return data;
   };
 
+  const getCheckinAreas = async (table, checkinID) => {
+    const {
+      data,
+      error
+    } = await supabase.from(table).select("*").eq("checkin_id", checkinID).order("id_txt", { ascending: true });
+    if (error) throw error;
+    return data;
+  };
+
   const postSelect = async (table, form, checkinArea) => {
     try {
       const { data, error } = await supabase
@@ -106,6 +115,7 @@ export default function useApi() {
     update,
     remove,
     getRadarChartData,
-    getBarChartData
+    getBarChartData,
+    getCheckinAreas
   };
 }
