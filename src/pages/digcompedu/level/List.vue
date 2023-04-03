@@ -8,12 +8,12 @@
           <q-btn icon="close" flat round dense v-close-popup />
         </q-card-section>
         <q-card-section>
-          <q-img
-            src="areas/digcompedu_level.jpg"
-            fit="none"
-            style="height: 100%; width: 100%"
-          />
+
+          <q-img src="areas/digcompedu_level.jpg" @click="abreDlg = true">
+          </q-img>
+
         </q-card-section>
+
         <q-card-section inset="2">
           <div class="absolute-top text-center">
             <div class="text-body1">Modelo de progressão DigCompEdu</div>
@@ -35,6 +35,7 @@
       <br />
       <q-card class="full-width" flat>
         <q-card-sectio class="text-body">
+
           <div>
             <p>
               DigCompEdu distingue seis etapas ou níveis ao longo dos quais a competência
@@ -42,21 +43,22 @@
               fornecido um descritor de função que reflete o foco particular da utilização
               da tecnologia digital típica da fase de competência. Esses descritores de
               papel também se relacionam com os pontos fortes e os papéis relativos de um
-              educador dentro de uma comunidade profissional.
+              educador dentro de uma comunidade profissional. Na imagem pode ser conferido o Modelo de progressão
+              DigCompEdu.
             </p>
           </div>
         </q-card-sectio>
 
         <q-card-section>
-          <q-img
-            src="areas/digcompedu_level.jpg"
-            style="max-height: 650px; max-width: 450px"
-            @click="abreDlg = true"
-          >
-            <div class="absolute-bottom text-center">
-              <div class="text-caption">Modelo de progressão DigCompEdu</div>
-            </div></q-img
-          >
+          <q-responsive :ratio="16/9">
+            <q-img fit="scale-down"
+                   src="areas/digcompedu_level.jpg"
+                   @click="abreDlg = true"
+            >
+
+            </q-img
+            >
+          </q-responsive>
         </q-card-section>
       </q-card>
 
@@ -79,7 +81,7 @@
 
                 <q-item-section class="text-left">
                   <q-item-label class="text-h6">{{ level.name }}</q-item-label>
-                  <q-item-label caption> {{ level.subdesc }} </q-item-label>
+                  <q-item-label caption> {{ level.subdesc }}</q-item-label>
                 </q-item-section>
               </q-item>
 
@@ -90,8 +92,9 @@
               <br />
               <q-item-section class="text-left">
                 <q-item-label class="text-h6" inset
-                  >Domínio de uso, aplicação prática ou conhecimento de tecnologias
-                  digitais por cada área</q-item-label
+                >Domínio de uso, aplicação prática ou conhecimento de tecnologias
+                  digitais por cada área
+                </q-item-label
                 >
               </q-item-section>
               <q-separator class="bg-level full-width" />
@@ -112,25 +115,29 @@
 
                     <q-item-section>
                       <q-item-label class="text-bold text-h6">{{
-                        area.name
-                      }}</q-item-label>
+                          area.name
+                        }}
+                      </q-item-label>
                     </q-item-section>
                   </q-item>
 
                   <q-card-section>
                     <q-item-label class="text-bold text-subtitle"
-                      >Principal característica
+                    >Principal característica
                     </q-item-label>
 
                     <q-item-label class="text-italic" :inset-level="2">
-                      {{ area.main_statement }}</q-item-label
+                      {{ area.main_statement }}
+                    </q-item-label
                     >
                     <br />
                     <q-item-label class="text-bold text-subtitle"
-                      >Declaração de proficiência</q-item-label
+                    >Declaração de proficiência
+                    </q-item-label
                     >
                     <q-item-label class="text-italic">
-                      {{ area.proficient_statement }}</q-item-label
+                      {{ area.proficient_statement }}
+                    </q-item-label
                     >
                   </q-card-section>
                 </q-card>
@@ -154,9 +161,9 @@ export default {
   setup() {
     return {
       abreDlg: ref(false),
-      levelList,
+      levelList
     };
-  },
+  }
 };
 </script>
 
@@ -180,6 +187,7 @@ export default {
 .area5 {
   background-color: #9a56d1;
 }
+
 .area6 {
   background-color: #d3375a;
 }
@@ -203,6 +211,7 @@ export default {
 .bg-area5 {
   background-color: #9a56d1;
 }
+
 .bg-area6 {
   background-color: #d3375a;
 }

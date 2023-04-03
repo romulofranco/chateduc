@@ -97,15 +97,9 @@ const mainMenuLinkList = [
     routeName: "me",
   },
   {
-    title: "Youtube",
+    title: "Assistente",
     caption: "",
-    icon: "mdi-home",
-    routeName: "youtube",
-  },
-  {
-    title: "ChatGPT",
-    caption: "",
-    icon: "mdi-home",
+    icon: "mdi-chat-processing",
     routeName: "chatbot",
   },
   {
@@ -118,6 +112,12 @@ const mainMenuLinkList = [
     title: "Prompt",
     caption: "",
     icon: "mdi-frequently-asked-questions",
+    routeName: "prompt",
+  },
+  {
+    title: "Sobre",
+    caption: "",
+    icon: "mdi-information-outline",
     routeName: "prompt",
   },
 ];
