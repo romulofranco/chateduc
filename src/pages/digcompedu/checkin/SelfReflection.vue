@@ -85,38 +85,31 @@ export default defineComponent({
 
   data() {
     const table = "checkin";
-    const subtable = "checkin_areas";
     const router = useRouter();
     const route = useRoute();
-    const { postSelect, post, getById, update } = useApi();
+    const { postSelect } = useApi();
     const { notifyError, notifySuccess } = useNotify();
     const checkinTable = ref([]);
 
 
-    const saveCheckin = (localTable, form, checkinArea) => {
+    const saveCheckin = async (form, checkinArea) => {
       try {
-        let { data, error } = postSelect(localTable, form, checkinArea);
+        let data = await postSelect(table, form, checkinArea);
+        notifySuccess("Autorreflexão realizada com sucesso");
+
+        let checkinId = data[0].id;
+
+        router.push({ name: "digcompedu-checkin-form", params: { id: checkinId } });
         return data;
-      } catch (errorX) {
-        alert(errorX.message);
+      } catch (error) {
+        notifyError(error.message);
       }
     };
 
-    const saveCheckinArea = async (data) => {
-      try {
-        alert("saveCheckinArea: " + data.checkin_id + " subtable " + this.subtable);
-        await post(this.subtable, data);
-        notifySuccess("Avaliação inserida com sucesso");
-      } catch (error) {
-        alert(error.message);
-      }
-    };
 
     return {
       table,
-      subtable,
       saveCheckin,
-      saveCheckinArea,
       areasList,
       submitted: false,
       completed: false,
@@ -129,7 +122,8 @@ export default defineComponent({
         continue: "Continuar",
         ok: "Próximo",
         pressEnter: "Ou pressione Enter",
-        submitText: "Enviar"
+        submitText: "Enviar",
+        percentCompleted: ":percent% realizado"
         // Your language definitions here (optional).
         // You can leave out this prop if you want to use the default definitions.
       }),
@@ -140,33 +134,6 @@ export default defineComponent({
   },
 
   methods: {
-    prepareCheckinTable() {
-      const checkin = [
-        {
-          prof_expected: "",
-          prof_after: "",
-          prof_result: "",
-          grade: 0,
-          main_statement: "",
-          level_result_img: "",
-          id_level: 0,
-          checkin_areas: [
-            {
-              id_area: 0,
-              id_txt: "",
-              name: "",
-              cor: "",
-              subcor: "",
-              question: "",
-              answer: "",
-              grade_area: 0,
-              main_area: true
-            }
-          ]
-        }
-      ];
-      return checkin;
-    },
 
     prepareFirstFinalQuestion(starting) {
       let qModel = new QuestionModel();
@@ -265,6 +232,7 @@ export default defineComponent({
     calculateScore() {
       let idxArea = 0;
       let score = 0;
+      let numQuestions = 0;
 
       let mainArea = {
         id_txt: this.questions[1].id,
@@ -282,6 +250,7 @@ export default defineComponent({
 
           score = score + question.answer;
           this.scoreTotal = this.scoreTotal + question.answer;
+          numQuestions++;
 
           let areaCheckin = {
             id_txt: question.id,
@@ -291,13 +260,27 @@ export default defineComponent({
             answer: answer,
             main_area: false,
             grade_area: question.answer,
-            id_level: question.answer
+            id_level: question.answer,
+            num_questions: 1,
+            level_txt: (question.answer == 1 ? "A1" :
+              (question.answer == 2 ? "A2" :
+                (question.answer == 3 ? "B1" :
+                  (question.answer == 4 ? "B2" :
+                    (question.answer == 5 ? "C1" : (question.answer == 6 ? "C2" : "A1"))))))
           };
           checkin.push(areaCheckin);
         } else {
           if (question.type === QuestionType.SectionBreak) {
             mainArea.grade_area = score;
+            mainArea.num_questions = numQuestions;
+            mainArea.id_level = Math.round(score / numQuestions);
+            mainArea.level_txt = (mainArea.id_level  == 1 ? "A1" :
+              (mainArea.id_level  == 2 ? "A2" :
+                (mainArea.id_level == 3 ? "B1" :
+                  (mainArea.id_level  == 4 ? "B2" :
+                    (mainArea.id_level  == 5 ? "C1" : (mainArea.id_level  == 6 ? "C2" : "A1"))))));
             score = 0;
+            numQuestions = 0;
             checkin.push(mainArea);
 
             idxArea++;
@@ -316,6 +299,13 @@ export default defineComponent({
       });
 
       mainArea.grade_area = score;
+      mainArea.num_questions = numQuestions;
+      mainArea.id_level = Math.round(score / numQuestions);
+      mainArea.level_txt = (mainArea.id_level  == 1 ? "A1" :
+        (mainArea.id_level  == 2 ? "A2" :
+          (mainArea.id_level == 3 ? "B1" :
+            (mainArea.id_level  == 4 ? "B2" :
+              (mainArea.id_level  == 5 ? "C1" : (mainArea.id_level  == 6 ? "C2" : "A1"))))));
       checkin.push(mainArea);
 
       return checkin;
@@ -325,29 +315,38 @@ export default defineComponent({
       let levelResult = this.scoreTotal;
       if (levelResult < 33) {
         this.checkinTable.prof_result = "A1 - Iniciante";
+        this.checkinTable.level_result_img = "a1";
         this.checkinTable.id_level = 1;
       } else if (levelResult > 32 && levelResult < 65) {
         this.checkinTable.prof_result = "A2 - Explorador";
         this.checkinTable.id_level = 2;
+        this.checkinTable.level_result_img = "a2";
       } else if (levelResult > 64 && levelResult < 97) {
         this.checkinTable.prof_result = "B1 - Integrador";
         this.checkinTable.id_level = 3;
+        this.checkinTable.level_result_img = "b1";
       } else if (levelResult > 96 && levelResult < 129) {
         this.checkinTable.prof_result = "B2 - Especialista";
         this.checkinTable.id_level = 4;
+        this.checkinTable.level_result_img = "b2";
       } else if (levelResult > 128 && levelResult < 161) {
         this.checkinTable.prof_result = "C1 - Líder";
         this.checkinTable.id_level = 5;
+        this.checkinTable.level_result_img = "c1";
       } else if (levelResult > 160 && levelResult < 193) {
         this.checkinTable.prof_result = "C2 - Pioneiro";
         this.checkinTable.id_level = 6;
+        this.checkinTable.level_result_img = "c2";
       }
 
+      console.log(this.questions[0]);
+      console.log(this.questions[this.questions.length - 1]);
+
       this.checkinTable.prof_expected = this.questions[0].options[
-        this.questions[0].answer
+      this.questions[0].answer - 1
         ].label;
       this.checkinTable.prof_after = this.questions[this.questions.length - 1].options[
-        this.questions[this.questions.length - 1].answer
+      this.questions[this.questions.length - 1].answer - 1
         ].label;
       this.checkinTable.grade = levelResult;
     },
@@ -359,15 +358,12 @@ export default defineComponent({
       let checkinArea = this.calculateScore();
       this.fillCheckinTable();
 
-      //let checkinId = this.saveCheckin(this.table, this.checkinTable);
-      let checkinId = this.saveCheckin(this.table, this.checkinTable, checkinArea);
+      let checkinId = this.saveCheckin(this.checkinTable, checkinArea).then(function(d) {
+        console.log(d);
+      });
 
-
-      // this.checkinTable.checkin_areas = checkinArea;
-      console.log(this.checkinTable);
-      // this.$refs.flowform.submitted = true;
-      // this.submitted = true;
-      //this.saveCheckin();
+      this.$refs.flowform.submitted = true;
+      this.submitted = true;
     },
 
 

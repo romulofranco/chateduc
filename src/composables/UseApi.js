@@ -11,6 +11,12 @@ export default function useApi() {
     return data;
   };
 
+  const listSort = async (table) => {
+    const { data, error } = await supabase.from(table).select("*").order("id", { ascending: false });
+    if (error) throw error;
+    return data;
+  };
+
   const getById = async (table, id) => {
     const { data, error } = await supabase.from(table).select("*").eq("id", id);
     if (error) throw error;
@@ -38,6 +44,31 @@ export default function useApi() {
     }
   };
 
+  const getRadarChartData = async (checkinID) => {
+    console.log("ID: " + checkinID);
+    const { data, error } = await supabase.rpc("get_chart", { "checkinid": checkinID });
+    if (error) throw error;
+    return data;
+  };
+
+  const getBarChartData = async (table, checkinID) => {
+    const {
+      data,
+      error
+    } = await supabase.from(table).select("id, id_level, level_txt, cor, grade_area, name, num_questions").eq("checkin_id", checkinID).eq("main_area", true);
+    if (error) throw error;
+    return data;
+  };
+
+  const getCheckinAreas = async (table, checkinID) => {
+    const {
+      data,
+      error
+    } = await supabase.from(table).select("*").eq("checkin_id", checkinID).order("id_txt", { ascending: true });
+    if (error) throw error;
+    return data;
+  };
+
   const postSelect = async (table, form, checkinArea) => {
     try {
       const { data, error } = await supabase
@@ -53,15 +84,12 @@ export default function useApi() {
         .from("checkin_areas")
         .insert(checkinArea);
 
-      alert("AQUI: " + data[0].id);
-
       if (error) {
         alert(error.message);
         console.error("There was an error inserting", error);
         return null;
       }
 
-      console.log("created a new checkin");
       return data;
     } catch (err) {
       alert("Error");
@@ -87,10 +115,14 @@ export default function useApi() {
 
   return {
     list,
+    listSort,
     getById,
     post,
     postSelect,
     update,
-    remove
+    remove,
+    getRadarChartData,
+    getBarChartData,
+    getCheckinAreas
   };
 }

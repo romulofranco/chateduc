@@ -1,20 +1,24 @@
 <template>
   <q-page padding>
     <q-dialog v-model="abreDlg" :maximized="true" @click="abreDlg = false">
-      <q-card flat>
-        <q-card-section>
-          <q-img src="areas/digcompedu2.jpg" fit="contain" @click="abreDlg = true">
-          </q-img>
-        </q-card-section>
-        <q-card-section>
-          <div class="text-right">
-            <div class="text-caption">
-              Fonte: Lucas, M., & Moreira, A. (2018). DigCompEdu: quadro europeu de
-              competência digital para educadores. Aveiro: UA
+      <q-responsive :ratio="16/9">
+        <q-card flat>
+          <q-card-section>
+
+            <q-img src="areas/digcompedu2.jpg" @click="abreDlg = true">
+            </q-img>
+
+          </q-card-section>
+          <q-card-section>
+            <div class="text-right">
+              <div class="text-caption">
+                Fonte: Lucas, M., & Moreira, A. (2018). DigCompEdu: quadro europeu de
+                competência digital para educadores. Aveiro: UA
+              </div>
             </div>
-          </div>
-        </q-card-section>
-      </q-card>
+          </q-card-section>
+        </q-card>
+      </q-responsive>
     </q-dialog>
 
     <div class="row q-pa-md">
@@ -25,8 +29,10 @@
       <br />
       <q-card class="full-width" flat>
         <q-card-section>
-          <q-img src="areas/digcompedu2.jpg" fit="contain" @click="abreDlg = true">
-          </q-img>
+          <q-responsive :ratio="16/9">
+            <q-img src="areas/digcompedu2.jpg" fit="contain" @click="abreDlg = true">
+            </q-img>
+          </q-responsive>
         </q-card-section>
         <q-card-section>
           <div class="text-right">
@@ -39,12 +45,12 @@
       </q-card>
 
       <div v-for="area in this.areasList" :key="area.id" class="full-width">
-        <q-card class="full-width" flat>
+        <q-card class="full-width">
           <q-expansion-item
             expand-separator
             group="accordeon-group-1"
             :header-class="area.cor"
-            class="text-bold text-subtitle1 text-weight-medium shadow-1"
+            class="text-bold text-subtitle1 text-weight-medium shadow-2"
             :color="area.cor"
             :label="area.name"
           >
@@ -75,8 +81,9 @@
 
                     <q-item-section>
                       <q-item-label class="text-bold text-h6">{{
-                        subarea.name
-                      }}</q-item-label>
+                          subarea.name
+                        }}
+                      </q-item-label>
                     </q-item-section>
                   </q-item>
 
@@ -104,9 +111,9 @@ export default {
   setup() {
     return {
       abreDlg: ref(false),
-      areasList,
+      areasList
     };
-  },
+  }
 };
 </script>
 
@@ -130,6 +137,7 @@ export default {
 .area5 {
   background-color: #9a56d1;
 }
+
 .area6 {
   background-color: #d3375a;
 }
@@ -153,6 +161,7 @@ export default {
 .bg-area5 {
   background-color: #9a56d1;
 }
+
 .bg-area6 {
   background-color: #d3375a;
 }
