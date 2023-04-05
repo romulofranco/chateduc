@@ -61,7 +61,7 @@ module.exports = configure(function(ctx) {
 
       devtool: "source-map",
 
-      transpile: true,
+      // transpile: true,
       // publicPath: '/',
 
       // Add dependencies for transpiling with Babel (Array of string/regex)
@@ -81,11 +81,11 @@ module.exports = configure(function(ctx) {
       // https://v2.quasar.dev/quasar-cli-webpack/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
 
-      extendWebpack(cfg) {
-        cfg.experiments = {
-          asyncWebAssembly: true
-        };
-      },
+      // extendWebpack(cfg) {
+      //   cfg.experiments = {
+      //     asyncWebAssembly: true
+      //   };
+      // },
 
       chainWebpack(chain) {
         chain.plugin("eslint-webpack-plugin").use(ESLintPlugin, [{
@@ -245,7 +245,7 @@ module.exports = configure(function(ctx) {
 
       builder: { // https://www.electron.build/configuration/configuration
 
-        appId: "estoque-quasar-supabase"
+        appId: "chateduc"
       },
 
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
