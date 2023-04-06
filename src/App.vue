@@ -4,8 +4,16 @@
 
 <script>
 import { defineComponent } from "vue";
+import VueApexCharts from "vue3-apexcharts";
+
+
 export default defineComponent({
   name: "App",
+  setuo() {
+    const app = createApp(App);
+    app.use(VueApexCharts);
+    return { app };
+  }
 });
 </script>
 
