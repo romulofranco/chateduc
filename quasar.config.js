@@ -11,9 +11,12 @@
 const ESLintPlugin = require("eslint-webpack-plugin");
 const { configure } = require("quasar/wrappers");
 const envparser = require("./config/envparser");
+// const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = configure(function(ctx) {
   return {
+
+
     // https://v2.quasar.dev/quasar-cli-webpack/supporting-ts
     supportTS: false,
 
@@ -82,16 +85,25 @@ module.exports = configure(function(ctx) {
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
 
       // extendWebpack(cfg) {
+      //   cfg.resolve.fallback = { crypto: false };
+      // },
+      // extendWebpack(cfg) {
+      //   cfg.plugins.push(new NodePolyfillPlugin({
+      //     includeAliases: ['crypto']
+      //   }));
+      // },
+
+      // extendWebpack(cfg) {
       //   cfg.experiments = {
       //     asyncWebAssembly: true
       //   };
       // },
 
+
       chainWebpack(chain) {
         chain.plugin("eslint-webpack-plugin").use(ESLintPlugin, [{
           extensions: ["js", "vue"]
         }]);
-
       }
 
 

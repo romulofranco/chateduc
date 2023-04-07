@@ -48,7 +48,7 @@ const routes = [
       {
         path: "chatbot",
         name: "chatbot",
-        component: () => import ("pages/bot/ChatPage.vue")
+        component: () => import ("pages/bot/ChatBotV1.vue")
       },
       {
         path: "sobre",

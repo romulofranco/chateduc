@@ -53,6 +53,8 @@ import useAuthUser from "src/composables/UserAuthUser";
 // import { BingChat } from "bing-chat";
 // import dotenv from 'dotenv-safe';
 // dotenv.config()
+
+
 export default {
   name: "ChatPage",
   setup() {
@@ -62,6 +64,8 @@ export default {
 
     const chats = ref([]);
     const RefChat = ref(null);
+
+    // const bot = new ChatBot("1qDxYCiGmEnOeA3B6cbGozZddnpUP6Z_S-ehu9pCpfj43OeEyPFANFmH4uWuUif_K-tGxMRLXRAsDRyy-TJ00PoXH_O_4NRx-TJP-j3G4qgOCojphBKA_2UNNqGd5IZ5KqPmgjuClrrAF8so47I_sA-TW6lV1jrHUR7mF-zoXpADyvwHFJcZ9GaKViCahuyeLAlLQBQtYAdmqQBTAHizbdRw7aNKn3CwbHGfiX7B_No4");
 
     // const api = new BingChat({
     //   cookie: process.env.BING_COOKIE
@@ -96,7 +100,7 @@ export default {
           wait: false
         };
         chats.value.push(objetoMensaje);
-        sendMessageChatGPT(message.value);
+        sendMessageBot(message.value);
         message.value = "";
         inputFocus.value.focus();
       } catch (error) {
@@ -104,24 +108,8 @@ export default {
       }
     };
 
-    const sendMessageChatGPT = async (msg) => {
-      let x = 1;
-      const res = await api.sendMessage(msg, {
-        onProgress: (partialResponse) => {
-          const objetoMensaje = {
-            user: "Edu",
-            texto: partialResponse.text,
-            fecha: Math.floor(Date.now() / 1000),
-            uid: "Edu", //userID
-            wait: true
-          };
-          if (x == 1) {
-            chats.value.push(objetoMensaje);
-            x++;
-          }
-        }
-      });
-
+    const sendMessageBot = async (msg) => {
+      const res = await bot.ask(msg);
       const objetoMensaje = {
         user: "Edu",
         texto: res.text,
@@ -132,6 +120,7 @@ export default {
       chats.value.push(objetoMensaje);
 
     };
+
 
     return {
       enviarMensaje,
