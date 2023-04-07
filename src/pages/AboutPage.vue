@@ -21,7 +21,7 @@
 import { defineComponent, ref } from "vue";
 import userAuthUser from "../composables/UserAuthUser";
 export default defineComponent({
-  name: "IndexPage",
+  name: "AboutPage",
   setup() {
     const { user } = userAuthUser();
     return {
