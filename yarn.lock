@@ -2453,6 +2453,11 @@
   "resolved" "https://registry.npmjs.org/commander/-/commander-8.3.0.tgz"
   "version" "8.3.0"
 
+"commander@^9.3.0":
+  "integrity" "sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ=="
+  "resolved" "https://registry.npmjs.org/commander/-/commander-9.5.0.tgz"
+  "version" "9.5.0"
+
 "commondir@^1.0.1":
   "integrity" "sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg=="
   "resolved" "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz"
@@ -4526,6 +4531,13 @@
     "cli-cursor" "^3.1.0"
     "slice-ansi" "^4.0.0"
     "wrap-ansi" "^6.2.0"
+
+"lorem-ipsum@^2.0.8":
+  "integrity" "sha512-5RIwHuCb979RASgCJH0VKERn9cQo/+NcAi2BMe9ddj+gp7hujl6BI+qdOG4nVsLDpwWEJwTVYXNKP6BGgbcoGA=="
+  "resolved" "https://registry.npmjs.org/lorem-ipsum/-/lorem-ipsum-2.0.8.tgz"
+  "version" "2.0.8"
+  dependencies:
+    "commander" "^9.3.0"
 
 "lower-case@^1.1.1":
   "integrity" "sha1-miyr0bno4K6ZOkv31YdcOcQujqw="

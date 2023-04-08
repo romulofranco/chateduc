@@ -9,7 +9,7 @@
       >
 
         <div v-if="chat.wait">
-          <q-spinner-comment
+          <q-spinner-dots
             color="secondary"
             size="2em"
           />
@@ -54,7 +54,7 @@ import useAuthUser from "src/composables/UserAuthUser";
 // import dotenv from 'dotenv-safe';
 // dotenv.config()
 
-
+import ChatBot from "sydney-ai";
 export default {
   name: "ChatPage",
   setup() {
@@ -65,7 +65,7 @@ export default {
     const chats = ref([]);
     const RefChat = ref(null);
 
-    // const bot = new ChatBot("1qDxYCiGmEnOeA3B6cbGozZddnpUP6Z_S-ehu9pCpfj43OeEyPFANFmH4uWuUif_K-tGxMRLXRAsDRyy-TJ00PoXH_O_4NRx-TJP-j3G4qgOCojphBKA_2UNNqGd5IZ5KqPmgjuClrrAF8so47I_sA-TW6lV1jrHUR7mF-zoXpADyvwHFJcZ9GaKViCahuyeLAlLQBQtYAdmqQBTAHizbdRw7aNKn3CwbHGfiX7B_No4");
+    const bot = new ChatBot("1qDxYCiGmEnOeA3B6cbGozZddnpUP6Z_S-ehu9pCpfj43OeEyPFANFmH4uWuUif_K-tGxMRLXRAsDRyy-TJ00PoXH_O_4NRx-TJP-j3G4qgOCojphBKA_2UNNqGd5IZ5KqPmgjuClrrAF8so47I_sA-TW6lV1jrHUR7mF-zoXpADyvwHFJcZ9GaKViCahuyeLAlLQBQtYAdmqQBTAHizbdRw7aNKn3CwbHGfiX7B_No4");
 
     // const api = new BingChat({
     //   cookie: process.env.BING_COOKIE

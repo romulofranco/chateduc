@@ -8,27 +8,21 @@
       <br />
 
       <div class="flex-1 mx-2 mt-20 mb-2" ref="chatListDom">
-        <div
-          class="group flex flex-col px-4 py-3 hover:bg-slate-100 rounded-lg"
-          v-for="item of messageList.filter((v) => v.role !== 'system')" :key="item.id">
 
-          <q-list>
-            <q-item>
-              <div class="font-bold">{{ roleAlias[item.role] }}：</div>
-              <Copy class="invisible group-hover:visible" :content="item.content" />
-
-              <q-item-label>
-                 <pre
-                   class="text-sm text-slate-600 whitespace-pre-wrap leading-relaxed"
-                   v-if="item.content"
-                 >{{ item.content.replace(/^\n\n/, "") }}</pre>
-                <LoadingSnip v-else />
-              </q-item-label>
-
-
-            </q-item>
-          </q-list>
-
+        <div class="group flex flex-col px-4 py-3 hover:bg-slate-100 rounded-lg"
+             v-for="item of messageList.filter((v) => v.role !== 'system')" :key="item.content">
+          <div class="flex justify-between items-center mb-2">
+            <div class="font-bold">{{ roleAlias[item.role] }}：</div>
+            <Copy class="invisible group-hover:visible" :content="item.content" />
+          </div>
+          <div>
+          <pre
+            class="text-sm text-slate-600 whitespace-pre-wrap leading-relaxed"
+            v-if="item.content"
+          >{{ item.content.replace(/^\n\n/, "") }}</pre
+          >
+            <LoadingSnip v-else />
+          </div>
         </div>
       </div>
 
@@ -62,7 +56,7 @@ export default {
   name: "Chat",
   components: { LoadingSnip, Copy },
   setup() {
-    let apiKey = "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";
+    let apiKey = "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";
     let isConfig = ref(true);
     let isTalking = ref(false);
     let messageContent = ref("");
@@ -103,16 +97,19 @@ export default {
         clearMessageContent();
         messageList.value.push({ role: "assistant", content: "" });
 
-        // const { body, status } = await sendMessageChatGPT(messageList.value, getAPIKey());
+        // const { body, status } = await sendMessageChatGPT(messageList.value, apiKey);
         // if (body) {
         //   const reader = body.getReader();
         //   await readStream(reader, status);
         // }
-        appendLastMessageContent("Testes .... askçldj jk çlasdkjf asdlkhja lsdalsçdjka slçdjaçldjaçsl djasçldjasçdj apqwue rpqodnmaop ihqw-e9r ");
+        // let content = "Romulo Franco";
+        // appendLastMessageContent(content)
+        // appendLastMessageContent(content)
       } catch (error) {
         appendLastMessageContent(error);
       } finally {
-        isTalking.value = false;
+        // setTimeout(isTalking.value = false, 2000);
+        isTalking = false;
       }
     };
 

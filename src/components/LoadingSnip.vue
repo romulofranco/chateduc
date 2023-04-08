@@ -10,6 +10,9 @@
       <div></div>
       <div></div>
       <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </div>
 </template>
@@ -24,11 +27,11 @@
 .loading {
   display: block;
   font-size: 0;
-  color: #000;
+  color: #f36600;
 }
 
 .loading.la-dark {
-  color: #333;
+  color: #f36600;
 }
 
 .loading > div {
@@ -39,8 +42,8 @@
 }
 
 .loading {
-  width: 17px;
-  height: 17px;
+  width: 25px;
+  height: 5px;
 }
 
 .loading > div {

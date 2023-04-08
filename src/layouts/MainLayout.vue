@@ -1,4 +1,5 @@
 <template>
+  <body style="overflow: hidden;">
   <q-layout view="lHh Lpr lff" class="shadow-2 rounded-borders bg-white">
     <q-header elevated>
       <q-toolbar>
@@ -76,6 +77,7 @@
       <router-view />
     </q-page-container>
   </q-layout>
+  </body>
 </template>
 
 <script>

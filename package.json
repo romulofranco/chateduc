@@ -21,6 +21,7 @@
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.3",
     "jshint": "^2.13.4",
+    "lorem-ipsum": "^2.0.8",
     "moment": "^2.29.4",
     "quasar": "^2.6.1",
     "save-dev": "^0.0.1-security",

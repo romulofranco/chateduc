@@ -115,7 +115,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted, computed } from "vue";
+import { defineComponent, ref, onMounted } from "vue";
 import useApi from "src/composables/UseApi";
 import useNotify from "src/composables/UseNotify";
 import { useRouter } from "vue-router";

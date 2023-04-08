@@ -20,14 +20,14 @@ export default defineComponent({
       theme: "outline"
     });
     const btnTips = {
-      copy: "Copiar texto",
+      copy: "",
       loading: "",
       success: "Copiado！",
       error: "Copia falhou！"
     };
     const btnStatus = ref("copy");
 
-    const copyToClipboard = (content = porps) => {
+    const copyToClipboard = (content = this.content) => {
       btnStatus.value = "loading";
       navigator.clipboard
         .writeText(content)
@@ -38,7 +38,6 @@ export default defineComponent({
 
     return {
       copyToClipboard,
-      porps: this.content,
       btnTips,
       btnConfig,
       btnStatus

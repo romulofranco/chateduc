@@ -123,7 +123,7 @@ module.exports = configure(function(ctx) {
       config: {
         brand: {
           primary: "#fc630a",
-          secondary: "#ebcb7a",
+          secondary: "#FC630ABA",
           accent: "#ff4800",
 
           dark: "#1d1d1d",
