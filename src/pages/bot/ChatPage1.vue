@@ -3,9 +3,7 @@
     <div class="col q-ma-md" style="margin-right: 5px">
       <div class="column full-height">
         <q-scroll-area class="col q-pa-sm" :visible="false">
-          <div ref="chatListDom"
-               v-for="item of messageList.filter((v) => v.role !== 'system')" :key="item.content"
-          >
+          <div ref="chatListDom" v-for="item of messageList.filter((v) => v.role !== 'system')" :key="item.content" >
 
             <q-chat-message :name="roleAlias[item.role]" class="text-body2"
                             :sent="item.role !== 'user'"
@@ -88,7 +86,6 @@
 <script>
 import { ref, watch, nextTick, onMounted } from "vue";
 import useAuthUser from "src/composables/UserAuthUser";
-import Copy from "components/Copy.vue";
 import LoadingSnip from "components/LoadingSnip.vue";
 import useChatGPT from "src/composables/UseChatGPT";
 import cryptoJS from "crypto-js";
@@ -113,7 +110,7 @@ export default {
       },
       {
         role: "assistant",
-        content: `Olá, sou um modelo de linguagem AI, como posso te ajudar?`
+        content: `Olá, sou um modelo de Inteligência Artificial de linguagem generativa, talvez eu possa te auxiliar, me faça uma pergunta?`
       }
     ]);
     const inputFocus = ref(null);
@@ -146,8 +143,8 @@ export default {
         //   await readStream(reader, status);
         // }
         let contentX = lorem.generateSentences(5);
-        setTimeout(() => appendLastMessageContent(contentX + contentX), 500);
-        setTimeout(() => (isTalking.value = false), 500);
+        setTimeout(() => appendLastMessageContent(contentX + contentX), 1500);
+        setTimeout(() => (isTalking.value = false), 1500);
 
         //
         // appendLastMessageContent(content);
@@ -250,7 +247,7 @@ export default {
       sendChatMessage,
       clickConfig,
       sendOrSave,
-      drawerRight: ref(true),
+      drawerRight: ref(false),
       inputFocus,
       avatarUser: "https://cdn.quasar.dev/img/avatar1.jpg",
       avatarChatGPT: "https://cdn.quasar.dev/img/avatar2.jpg"

@@ -1,5 +1,5 @@
 <template>
-  <q-page class="bg-green-1 row justify-center items-center">
+  <q-page class="bg-orange-2 row justify-center items-center">
     <q-form class="square-card row justify-center" @submit.prevent="handlerLogin" ref="myform">
       <q-card class="q-pa-sm shadow-2">
         <q-card-section>
