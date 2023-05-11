@@ -1,5 +1,5 @@
 <template>
-  <q-page class="bg-green-1 row justify-center items-center">
+  <q-page class="row justify-center items-center">
     <q-form class="square-card row justify-center" @submit.prevent="handlerForgotReset">
       <q-card square class="q-pa-sm shadow-1">
         <q-card-section>

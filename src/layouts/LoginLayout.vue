@@ -1,6 +1,6 @@
 <template>
-  <body style="overflow: hidden;">
-  <q-layout view="lHh Lpr lff" class="shadow-2 rounded-borders">
+  <body>
+  <q-layout view="lHh Lpr lff">
     <div class="test1" style="background-image: url('teachers8.png'); ">
       <q-header elevated reveal class="bg-transparent">
         <q-toolbar class="bg-secondary">
@@ -11,35 +11,33 @@
             <span class="text-h4">Chat</span><span class="text-bold">Educ</span>
           </q-toolbar-title>
           <q-space />
-          <div>
-            <q-btn to="login" icon="login" flat class="text-white align-left" size="20px" />
-            <q-btn icon="menu" flat class="text-white align-left" @click="toggleLeftDrawer" size="20px" />
+          <q-btn to="login" icon="login" flat class="text-white align-left" size="20px" />
+          <q-btn icon="menu" flat class="text-white align-left" @click="toggleLeftDrawer" size="20px" />
 
-          </div>
+
         </q-toolbar>
       </q-header>
 
 
       <q-drawer
-        mini-to-overlay
-        behavior="mobile"
+        :width="290"
+        :breakpoint="500"
+        :mini="miniState"
+        @mouseover="miniState = false"
+        @mouseout="miniState = true"
         side="right"
+        no-swipe-backdrop
         v-model="drawerOpen"
-        show-if-above
+        overlay
+        mini-to-overlay
         elevated
         borderless
-        class="shadow-2"
         style="background-image: url('menu.png');"
       >
-        <q-scroll-area
-          style="
-          height: calc(100% - 150px);
-          margin-top: 130px;
-          border-right: 1px solid #ddd;"
-        >
-          <q-list padding>
+        <q-scroll-area class="fit" :horizontal-thumb-style="{ opacity: 0 }">
+          <q-list padding style="margin-top:50px; ">
             <EssentialLink
-              v-for="link in essentialLinks"
+              v-for=" link in essentialLinks"
               :key="link.title"
               v-bind="link"
               class="text-white text-weight-light text-h5"
@@ -81,7 +79,7 @@ const landingPageMenuLinkList = [
     title: "Funcionalidades",
     caption: "",
     icon: "apps",
-    routeName: "me"
+    routeName: "features"
   },
   {
     title: "Contato",
@@ -111,6 +109,7 @@ export default defineComponent({
     return {
       drawerOpen: drawerOpen,
       essentialLinks: landingPageMenuLinkList,
+      miniState: ref(true),
       toggleLeftDrawer() {
         drawerOpen.value = !drawerOpen.value;
       }
@@ -126,10 +125,10 @@ export default defineComponent({
 </script>
 <style scoped>
 .test1 {
-  background-size: 95% 110%;
-  background-repeat: repeat-x;
-  background-attachment: fixed;
-  animation: gradient 50s alternate backwards;
+  background-size: initial;
+  background-repeat: repeat;
+  background-position: center;
+  animation: gradient 30s alternate backwards;
   height: 100vh;
 }
 

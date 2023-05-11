@@ -1,14 +1,14 @@
 <template>
   <q-page>
-
     <div class="absolute-full flex flex-center ">
-      <Typewriter class="bg-secondary text-white text-weight-light text-h2  text-center justify-center"
+      <Typewriter class="bg-secondary rounded-borders text-weight-light text-h2  text-center justify-center"
+                  style="padding-left: 10px;padding-right: 10px; margin-left: 10px;margin-right: 10px;margin-top: 150px;"
                   title=" O que é ser um Professor"
                   :words="adjs"></Typewriter>
       <br />
 
     </div>
-    <div class="absolute-full flex flex-center " style="margin-top: 120px">
+    <div class="absolute-full flex flex-center " style="margin-top: 260px">
       <q-btn class="bg-primary text-body1 text-white text-weight-medium">Saiba mais</q-btn>
     </div>
 
@@ -26,32 +26,11 @@ export default defineComponent({
   name: "IndexPage",
   data() {
     return {
-      adjs: ["Inovador? ", "Criativo? ", "Líder? ", "Pioneiro? "],
-      features: [
-        {
-          title: "Promover competências digitais",
-          icon: "teachers.jpg",
-          text:
-            "O DigCompEdu é uma matriz de competências digitais utilizada para mapear áreas e niveis de competências digitais aplicado aos profissionais da Educação."
-        },
-        {
-          title: "Autorreflexão",
-          icon: "teachers2.jpg",
-          text:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cupiditate ex earum soluta accusantium id corrupti sit deserunt dolorem ut, eius, numquam illo perferendis, reiciendis tempore quis at libero laudantium?"
-        },
-        {
-          title: "Fast",
-          icon: "fas fa-rocket",
-          text:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cupiditate ex earum soluta accusantium id corrupti sit deserunt dolorem ut, eius, numquam illo perferendis, reiciendis tempore quis at libero laudantium?"
-        }
-      ]
+      adjs: ["Inovador? ", "Criativo? ", "Líder? ", "Pioneiro? "]
     };
   },
   components: {
     Typewriter
-
   }
 });
 

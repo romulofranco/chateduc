@@ -15,6 +15,11 @@ const routes = [
       },
       {
         path: "",
+        name: "features",
+        component: () => import ("pages/home/FeaturesPage.vue")
+      },
+      {
+        path: "",
         name: "loginDefault",
         component: () => import ("pages/login/LoginPage.vue")
       },
