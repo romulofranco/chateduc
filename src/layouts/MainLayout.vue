@@ -4,9 +4,7 @@
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title> ChatEduc </q-toolbar-title>
-
+        <q-toolbar-title> ChatEduc</q-toolbar-title>
         <q-btn-dropdown flat color="white" icon="person">
           <q-list>
             <q-item clickable v-close-popup @click="handlerLogout">
@@ -47,7 +45,7 @@
         "
       >
         <q-list padding>
-          <q-item-label header class="text-h6 text-bold"> Menu </q-item-label>
+          <q-item-label header class="text-h6 text-bold"> Menu</q-item-label>
           <EssentialLink
             v-for="link in essentialLinks"
             :key="link.title"
@@ -75,6 +73,11 @@
 
     <q-page-container>
       <router-view />
+
+      <!-- place QPageScroller at end of page -->
+      <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
+        <q-btn fab icon="keyboard_arrow_up" color="accent" />
+      </q-page-scroller>
     </q-page-container>
   </q-layout>
   </body>
@@ -83,7 +86,6 @@
 <script>
 import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
-import { useQuasar } from "quasar";
 
 import EssentialLink from "components/EssentialLink.vue";
 import DigiCompEduLink from "components/DigiCompEduLink.vue";
@@ -96,32 +98,32 @@ const mainMenuLinkList = [
     title: "Dashboard",
     caption: "",
     icon: "mdi-home",
-    routeName: "me",
+    routeName: "me"
   },
   {
     title: "Assistente",
     caption: "",
     icon: "mdi-chat-processing",
-    routeName: "chatbot",
+    routeName: "chatbot"
   },
   {
     title: "Categorias",
     caption: "",
     icon: "mdi-shape-outline",
-    routeName: "category",
+    routeName: "category"
   },
   {
     title: "Prompt",
     caption: "",
     icon: "mdi-frequently-asked-questions",
-    routeName: "prompt",
+    routeName: "prompt"
   },
   {
     title: "Sobre",
     caption: "",
     icon: "mdi-information-outline",
-    routeName: "prompt",
-  },
+    routeName: "prompt"
+  }
 ];
 
 const digiCompEduLinkList = [
@@ -129,26 +131,26 @@ const digiCompEduLinkList = [
     title: "Introdução",
     caption: "",
     icon: "mdi-information",
-    routeName: "digcompedu-intro",
+    routeName: "digcompedu-intro"
   },
   {
     title: "Áreas",
     caption: "",
     icon: "mdi-home",
-    routeName: "area-list",
+    routeName: "area-list"
   },
   {
     title: "Níveis de Competência",
     caption: "",
     icon: "mdi-shape-outline",
-    routeName: "level-list",
+    routeName: "level-list"
   },
   {
     title: "Autorreflexão individual",
     caption: "",
     icon: "mdi-frequently-asked-questions",
-    routeName: "digcompedu-checkin-list",
-  },
+    routeName: "digcompedu-checkin-list"
+  }
 ];
 
 export default defineComponent({
@@ -156,7 +158,7 @@ export default defineComponent({
 
   components: {
     EssentialLink,
-    DigiCompEduLink,
+    DigiCompEduLink
   },
 
   setup() {
@@ -169,14 +171,14 @@ export default defineComponent({
     const handlerLogout = async () => {
       dialogShow({
         tittle: "Sair",
-        message: "Deseja realmente sair da aplicação?",
+        message: "Deseja realmente sair da aplicação?"
       })
         .onOk(async () => {
           try {
             await logout();
             notifySuccess("Bye bye! 😁");
             router.replace({
-              name: "login",
+              name: "login"
             });
           } catch (error) {
             notifyError(error.message);
@@ -197,8 +199,8 @@ export default defineComponent({
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
-      handlerLogout,
+      handlerLogout
     };
-  },
+  }
 });
 </script>

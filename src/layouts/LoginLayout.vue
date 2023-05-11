@@ -1,72 +1,124 @@
 <template>
-  <q-layout view="lHh Lpr lff">
-    <q-header class="bg-transparent">
-      <q-toolbar class="row bg-secondary">
-        <q-avatar>
-          <q-icon name="school" size="2.1em" class="text-white  " />
-        </q-avatar>
-        <q-toolbar-title class="text-white text-h4 text-bold" shrink>
-          <span class="text-h4">Chat</span><span class="text-bold">Educ</span>
-        </q-toolbar-title>
-        <q-space />
-        <div>
-          <q-btn href="#home" flat class="text-white q-mr-sm">
-            Home
-          </q-btn>
+  <body style="overflow: hidden;">
+  <q-layout view="lHh Lpr lff" class="shadow-2 rounded-borders">
+    <div class="test1" style="background-image: url('teachers8.png'); ">
+      <q-header elevated reveal class="bg-transparent">
+        <q-toolbar class="bg-secondary">
+          <q-avatar>
+            <q-icon name="school" size="2.1em" class="text-white  " />
+          </q-avatar>
+          <q-toolbar-title class="text-white text-h4 text-bold" shrink>
+            <span class="text-h4">Chat</span><span class="text-bold">Educ</span>
+          </q-toolbar-title>
+          <q-space />
+          <div>
+            <q-btn to="login" icon="login" flat class="text-white align-left" size="20px" />
+            <q-btn icon="menu" flat class="text-white align-left" @click="toggleLeftDrawer" size="20px" />
 
-          <q-btn href="#about" flat class="text-white q-mr-sm">
-            Sobre
-          </q-btn>
+          </div>
+        </q-toolbar>
+      </q-header>
 
-          <q-btn href="#contato" flat class="text-white q-mr-sm">
-            Contato
-          </q-btn>
-          <q-btn class="text-white q-mr-sm" flat @click="
-            this.$router.push({
-              name: 'login',
-            })">
-            Entrar
-          </q-btn>
-        </div>
-      </q-toolbar>
-    </q-header>
 
-    <q-page-container>
-      <router-view />
+      <q-drawer
+        mini-to-overlay
+        behavior="mobile"
+        side="right"
+        v-model="drawerOpen"
+        show-if-above
+        elevated
+        borderless
+        class="shadow-2"
+        style="background-image: url('menu.png');"
+      >
+        <q-scroll-area
+          style="
+          height: calc(100% - 150px);
+          margin-top: 130px;
+          border-right: 1px solid #ddd;"
+        >
+          <q-list padding>
+            <EssentialLink
+              v-for="link in essentialLinks"
+              :key="link.title"
+              v-bind="link"
+              class="text-white text-weight-light text-h5"
+            />
+          </q-list>
+        </q-scroll-area>
+      </q-drawer>
 
-      <!-- place QPageScroller at end of page -->
-      <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
-        <q-btn fab icon="keyboard_arrow_up" color="accent" />
-      </q-page-scroller>
-    </q-page-container>
+      <q-page-container>
+        <router-view />
+      </q-page-container>
 
-    <Footer />
+
+      <Footer class="bg-secondary" />
+    </div>
   </q-layout>
+  </body>
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import Footer from "../components/Footer";
+import EssentialLink from "components/EssentialLink.vue";
+
+const landingPageMenuLinkList = [
+  {
+    title: "Home",
+    caption: "",
+    icon: "home",
+    routeName: "home"
+  },
+  {
+    title: "Sobre a plataforma",
+    caption: "",
+    icon: "web_stories",
+    routeName: "about"
+  },
+  {
+    title: "Funcionalidades",
+    caption: "",
+    icon: "apps",
+    routeName: "me"
+  },
+  {
+    title: "Contato",
+    caption: "",
+    icon: "contact_page",
+    routeName: "prompt"
+  },
+  {
+    title: "Entrar",
+    caption: "",
+    icon: "login",
+    routeName: "login"
+  },
+  {
+    title: "Registrar",
+    caption: "",
+    icon: "how_to_reg",
+    routeName: "register"
+  }
+
+];
 
 export default defineComponent({
   name: "LoginLayout",
   setup() {
-    return {};
-  },
-  data() {
+    const drawerOpen = ref(false);
     return {
-      leftDrawerOpen: false
+      drawerOpen: drawerOpen,
+      essentialLinks: landingPageMenuLinkList,
+      toggleLeftDrawer() {
+        drawerOpen.value = !drawerOpen.value;
+      }
     };
   },
-  methods: {
-    scrollMeTo(refName) {
-      var element = this.$refs[refName];
-      var top = element.offsetTop;
 
-      window.scrollTo(0, top);
-    }
-  },
   components: {
+    EssentialLink,
     Footer
   }
 
@@ -74,9 +126,10 @@ export default defineComponent({
 </script>
 <style scoped>
 .test1 {
-  background: linear-gradient(-45deg, #ee7752, #e7a83c, #441d64, #a4c6ee);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background-size: 95% 110%;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  animation: gradient 50s alternate backwards;
   height: 100vh;
 }
 

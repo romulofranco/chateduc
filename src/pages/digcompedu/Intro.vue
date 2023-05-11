@@ -1,5 +1,5 @@
 <template>
-  <q-page class="row no-wrap" s>
+  <q-page class="row no-wrap">
     <div class="col q-ma-md">
       <div class="full-height">
         <div>

@@ -1,3 +1,3 @@
 <template>
-  <q-footer class="q-pa-md"> Powered by  &copy; Rômulo Franco {{ new Date().getFullYear() }} </q-footer>
+  <q-footer reveal elevated class="q-pa-md"> Powered by  &copy; Rômulo Franco {{ new Date().getFullYear() }} </q-footer>
 </template>

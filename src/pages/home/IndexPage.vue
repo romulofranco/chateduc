@@ -1,33 +1,26 @@
 <template>
   <q-page>
-    <a id="home"></a>
-    <div class="row ">
-      <q-parallax src="teachers8.png" :height="1100" class="justify-xs-around">
-        <Typewriter class="bg-secondary text-white text-h4 text-center justify-center" title=" O que é ser um Professor"
-                    :words="adjs"></Typewriter>
-        <q-btn href="#func" class=" q-mt-md text-h6" color="primary">Saiba mais</q-btn>
-      </q-parallax>
+
+    <div class="absolute-full flex flex-center ">
+      <Typewriter class="bg-secondary text-white text-weight-light text-h2  text-center justify-center"
+                  title=" O que é ser um Professor"
+                  :words="adjs"></Typewriter>
+      <br />
+
+    </div>
+    <div class="absolute-full flex flex-center " style="margin-top: 120px">
+      <q-btn class="bg-primary text-body1 text-white text-weight-medium">Saiba mais</q-btn>
     </div>
 
-    <a id="func"></a>
-    <br />
-    <br />
-    <Features :data="features" />
-    <br />
-    <br />
-    <Section ref="aboutX" img="sobre.jpg" />
-
-    <br />
-    <Section ref="contato" img="sobre.jpg" />
   </q-page>
 </template>
 
 <script>
 import { defineComponent, ref } from "vue";
-import Typewriter from "../components/Typewriter";
-import Section from "../components/Section";
-import Features from "../components/Features";
-import Newsletter from "../components/Newsletter";
+import Typewriter from "components/Typewriter.vue";
+import Section from "components/Section.vue";
+import Features from "components/Features.vue";
+import Newsletter from "components/Newsletter.vue";
 
 export default defineComponent({
   name: "IndexPage",
@@ -57,10 +50,19 @@ export default defineComponent({
     };
   },
   components: {
-    Typewriter,
-    Section,
-    Features
+    Typewriter
+
   }
 });
 
 </script>
+<style scoped>
+.center {
+
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+</style>
