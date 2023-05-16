@@ -109,7 +109,7 @@ const routes = [
       }, {
         path: "digcompedu-checkin-form/:id?",
         name: "digcompedu-checkin-form",
-        component: () => import ("pages/digcompedu/checkin/Form.vue")
+        component: () => import ("pages/digcompedu/checkin/SelfReflectionDetail.vue")
       }
     ],
     meta: {

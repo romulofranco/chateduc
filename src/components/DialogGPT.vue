@@ -1,120 +1,90 @@
 <template>
-  <q-page class="row no-wrap">
+  <q-layout view="Lhh lpR fff" container class="bg-white text-dark" style="max-width: 500px; max-height: 650px">
+    <q-page-container>
+      <q-header class="bg-primary">
+        <q-toolbar>
+          <q-toolbar-title class="text-h6 text-weight-light">Obtendo sugestões do ChatEduc</q-toolbar-title>
+          <q-btn flat v-close-popup round dense icon="close" />
+        </q-toolbar>
+      </q-header>
 
-    <div class="col q-ma-md" style="margin-right: 5px">
-      <div class="column full-height">
-        <q-scroll-area class="col q-pa-sm" :visible="false">
-          <div ref="chatListDom" v-for="item of messageList.filter((v) => v.role !== 'system')" :key="item.content">
+      <q-page padding class="row">
+        <div class="col q-ma-md">
+          <div class="column full-height">
+            <q-scroll-area class="col q-pa-sm" :visible="false" style="margin-left: -25px;margin-right: -35px">
+              <div ref="chatListDom"
+                   v-for="item of messageList.filter((v) => v.role !== 'system')" :key="item.content">
 
-            <q-chat-message :name="roleAlias[item.role]" class="text-body2"
-                            :sent="item.role !== 'user'"
-                            :avatar="item.role === 'user' ? avatarUser : avatarChatGPT"
-                            :bg-color="item.role === 'user' ? 'orange-5' : 'yellow-13'"
-                            :text-color="item.role === 'user' ? 'black' : 'black'">
+                <q-chat-message :name="roleAlias[item.role]" class="text-body2"
+                                :sent="item.role !== 'user'"
+                                :avatar="item.role === 'user' ? avatarUser : avatarChatGPT"
+                                :bg-color="item.role === 'user' ? 'orange-5' : 'yellow-13'"
+                                :text-color="item.role === 'user' ? 'black' : 'black'">
 
-              <div v-if="item.content">
-                {{ item.content.replace(/^\n\n/, "") }}
+                  <div v-if="item.content">
+                    {{ item.content.replace(/^\n\n/, "") }}
+                  </div>
+                  <LoadingSnip v-else />
+                </q-chat-message>
               </div>
-              <LoadingSnip v-else />
-            </q-chat-message>
+            </q-scroll-area>
           </div>
-        </q-scroll-area>
-      </div>
-    </div>
+        </div>
 
-    <q-drawer
-      side="right"
-      v-model="drawerRight"
-      overlay
-      :width="320"
-      :breakpoint="300"
-      :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-amber-1 bordered shadow-1'"
-    >
-      <q-scroll-area class="fit">
-        <q-item-section class="bg-secondary ">
-          <br />
-          <q-item-label round class="col text-subtitle1 text-bold text-center " style="margin-bottom: 10px">Últimas
-            Conversas
-          </q-item-label>
-          <q-separator color="secondary" class="full-width shadow-1" />
-        </q-item-section>
-        <q-list>
-          <q-item clickable>
-            <q-item-section avatar>
-              <q-icon name="home" />
-            </q-item-section>
-            <q-item-section class="text-left justify-left">
-              Conversa 1
-            </q-item-section>
-          </q-item>
-          <q-separator />
-          <q-item>
-            <q-item-label>
-              Conversa 2
-            </q-item-label>
-          </q-item>
+      </q-page>
 
-        </q-list>
+      <q-footer class="bg-black text-white">
+        <q-toolbar class="bg-primary text-white row">
+          <q-btn round flat icon="menu" class="q-mr-sm" @click="drawerRight = !drawerRight" />
+          <q-input
+            v-model="messageContent"
+            class="col-grow q-mr-sm"
+            bg-color="white"
+            :placeholder="isTalking ? 'Educ está digitando...' : 'Digite sua mensagem...'"
+            :disable="isTalking"
+            dense
+            outlined
+            rounded
+            autofocus
+            ref="inputFocus"
+            @keydown.enter="isTalking || sendOrSave()"
+          />
+          <q-btn round flat icon="send" type="submit" :disabled="isTalking" @click="sendOrSave()">
 
-      </q-scroll-area>
-    </q-drawer>
-
-  </q-page>
-
-  <q-footer class="fixed">
-    <q-toolbar class="bg-primary text-white row">
-      <q-btn round flat icon="menu" class="q-mr-sm" @click="drawerRight = !drawerRight" />
-      <q-input
-        v-model="messageContent"
-        class="col-grow q-mr-sm"
-        bg-color="white"
-        :placeholder="isTalking ? 'Educ está digitando...' : 'Digite sua mensagem...'"
-        :disable="isTalking"
-        dense
-        outlined
-        rounded
-        autofocus
-        ref="inputFocus"
-        @keydown.enter="isTalking || sendOrSave()"
-      />
-      <q-btn round flat icon="send" type="submit" :disabled="isTalking" @click="sendOrSave()">
-
-      </q-btn>
-    </q-toolbar>
-  </q-footer>
+          </q-btn>
+        </q-toolbar>
+      </q-footer>
+    </q-page-container>
+  </q-layout>
 
 </template>
 
 <script>
-import { ref, watch, nextTick, onMounted } from "vue";
+import { defineComponent, ref, watch, nextTick, onMounted } from "vue";
 import useAuthUser from "src/composables/UserAuthUser";
-import LoadingSnip from "components/LoadingSnip.vue";
 import useChatGPT from "src/composables/UseChatGPT";
 import cryptoJS from "crypto-js";
 import { LoremIpsum } from "lorem-ipsum";
+import LoadingSnip from "components/LoadingSnip.vue";
 
-export default {
-  name: "ChatPage1",
+export default defineComponent({
+  name: "DialogChatGPT",
+
+  props: ["model_dlg_gpt", "question"],
+
   components: { LoadingSnip },
-  setup() {
+
+  data: function() {
     let apiKey = "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";
     let isConfig = ref(true);
     let isTalking = ref(false);
     let messageContent = ref("");
+    // let abreDlg = this.modelDlgGPT;
     const chatListDom = ref();
     const decoder = new TextDecoder("utf-8");
     const roleAlias = { user: "Você", assistant: "Educ", system: "System" };
     const { sendMessageChatGPT } = useChatGPT();
-    const messageList = ref([
-      {
-        role: "system",
-        content: "ChatGPT，OpenAI"
-      },
-      {
-        role: "assistant",
-        content: `Olá, sou um modelo de Inteligência Artificial de linguagem generativa, talvez eu possa te auxiliar, me faça uma pergunta?`
-      }
-    ]);
+    const messageList = ref([]);
     const inputFocus = ref(null);
     const { user } = useAuthUser();
 
@@ -153,7 +123,7 @@ export default {
       } catch (error) {
         appendLastMessageContent(error);
       } finally {
-        // isTalking.value = false;
+        isTalking.value = false;
       }
     };
 
@@ -237,6 +207,14 @@ export default {
       if (getAPIKey()) {
         switchConfigStatus();
       }
+
+      clearMessageContent();
+
+      if (this.question.length > 0) {
+        messageContent.value = this.question;
+        sendChatMessage();
+      }
+
     });
 
     return {
@@ -251,13 +229,13 @@ export default {
       sendOrSave,
       drawerRight: ref(false),
       inputFocus,
-      abreDlg: ref(true),
+      abreDlg: this.model_dlg_gpt.value,
       avatarUser: "https://cdn.quasar.dev/img/avatar1.jpg",
       avatarChatGPT: "https://uploads.laborx.com/avatars/thumb_resized_100x100_4TtosT2qJm9_JHIoAU59OdZ3RxOFL9ZM.png"
     };
 
   }
-};
+});
 </script>
 <style scoped>
 

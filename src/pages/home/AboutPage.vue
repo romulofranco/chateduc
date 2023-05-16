@@ -1,8 +1,9 @@
 <template>
   <q-page padding style="padding-top: 65px;">
 
-    <q-dialog v-model="abreDlgArea" :maximized="true" @click="abreDlgArea = false" auto-close>
-      <q-responsive :ratio="16/9">
+    <q-dialog v-model="abreDlgArea" @click="abreDlgArea = false" auto-close>
+
+      <div class="no-margin col-12">
         <q-card flat>
           <q-card-section class="row items-center q-pb-none">
             <div class="text-h6">Diagrama de Áreas do DigCompEdu</div>
@@ -21,32 +22,8 @@
             </div>
           </q-card-section>
         </q-card>
-      </q-responsive>
-    </q-dialog>
+      </div>
 
-    <q-dialog v-model="abreDlgVideo" :maximized="true" @click="abreDlgVideo = false" auto-close>
-      <q-responsive :ratio="16/9">
-        <q-card flat>
-          <q-card-section class="row items-center q-pb-none">
-            <div class="text-h6">Video explicativo do DigCompEdu</div>
-            <q-space />
-            <q-btn icon="close" flat round dense v-close-popup />
-          </q-card-section>
-          <q-card-section>
-            <q-video loading="lazy" :ratio="16/9"
-                     src="https://audiovisual.ec.europa.eu/embed/index.html?ref=I-201854&lg=PT/EN&subtitles=1&cc=PT"
-            />
-          </q-card-section>
-          <q-card-section>
-            <div class="text-right">
-              <div class="text-caption">
-                Fonte: Lucas, M., & Moreira, A. (2018). DigCompEdu: quadro europeu de
-                competência digital para educadores. Aveiro: UA
-              </div>
-            </div>
-          </q-card-section>
-        </q-card>
-      </q-responsive>
     </q-dialog>
 
     <div class="justify-center items-center  ">
@@ -133,7 +110,8 @@
           </q-scroll-area>
         </q-card-section>
         <q-card-actions align="center">
-          <q-btn class="bg-primary text-white" style="margin-bottom: 10px" @click="abreDlgVideo = true">DigCompEdu
+          <q-btn class="bg-primary text-white" style="margin-bottom: 10px" type="a" target="_blank"
+                 href="https://youtu.be/cIDOrZuJzVU">DigCompEdu
             video
           </q-btn>
           <q-btn class="bg-primary text-white" style="margin-bottom: 10px" @click="abreDlgArea = true">Diagrama de Áreas

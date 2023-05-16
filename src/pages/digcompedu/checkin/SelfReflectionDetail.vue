@@ -1,4 +1,7 @@
 <template>
+  <q-dialog v-model="abreDlgGPT"  :maximized="true">
+    <DialogGPT :model_dlg_gpt="abreDlgGPT" :question="questionGPT" />
+  </q-dialog>
   <q-page padding>
     <div class="full-width">
       <div class="q-pa-md">
@@ -15,6 +18,7 @@
             />
           </div>
         </div>
+
 
         <q-separator color="primary" class="full-width" />
         <br />
@@ -95,7 +99,8 @@
                   <div style="border: 1px" class="shadow-3"
                        v-if="!subarea.main_area && subarea.id_txt.substring(0,1) == area.id_txt.substring(0,1)">
 
-                    <q-item clickable flat v-ripple :class="'bar-' + subarea.cor">
+                    <q-item clickable flat v-ripple :class="'bar-' + subarea.cor"
+                            @click="toggleAbreDlgGPT(subarea.question)">
                       <q-item-section side top>
 
                         <q-item-label caption>
@@ -139,10 +144,12 @@ import useApi from "src/composables/UseApi";
 import useNotify from "src/composables/UseNotify";
 import VueApexCharts from "vue3-apexcharts";
 import moment from "moment";
+import DialogGPT from "components/DialogGPT.vue";
 
 export default defineComponent({
   name: "PageFormCheckinDetails",
   components: {
+    DialogGPT,
     Resumo,
     apexchart: VueApexCharts
   },
@@ -158,6 +165,8 @@ export default defineComponent({
     const listAreas = ref([]);
     const checkinItem = ref([]);
     const checkinID = computed(() => route.params.id);
+    const abreDlgGPT = ref(false);
+    const questionGPT = ref("");
 
     onMounted(() => {
       console.log("CheckinForm: " + checkinID.value);
@@ -193,7 +202,7 @@ export default defineComponent({
         checkin.dataRealizacao = formatDate(checkin.created_at);
         checkin.total_pontos = checkin.grade + "/192";
         this.checkinItem = checkin;
-        console.log(this.checkinItem.value);
+        //console.log(this.checkinItem.value);
 
         return checkin;
       } catch (error) {
@@ -217,6 +226,13 @@ export default defineComponent({
 
 
     return {
+      abreDlgGPT,
+      questionGPT,
+      toggleAbreDlgGPT(q) {
+        console.log("Oi " + abreDlgGPT.value + " Question: " + q);
+        abreDlgGPT.value = !abreDlgGPT.value;
+        questionGPT.value = q;
+      },
       checkinID,
       checkinItem,
       route,
