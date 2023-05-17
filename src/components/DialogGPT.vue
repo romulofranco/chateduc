@@ -1,20 +1,19 @@
 <template>
-  <q-layout view="Lhh lpR fff" container class="bg-white text-dark" style="max-width: 500px; max-height: 650px;">
+  <q-layout view="Lhh lpR fff" container class="bg-white text-dark shadow-2 rounded-borders"
+            style="max-width: 500px; max-height: 650px;">
     <q-page-container>
-      <q-header class="bg-primary">
+      <q-header class="bg-primary" elevated>
         <q-toolbar>
           <q-toolbar-title class="text-h6 text-weight-light">Obtendo sugestões do ChatEduc</q-toolbar-title>
           <q-btn flat v-close-popup round dense icon="close" />
         </q-toolbar>
       </q-header>
 
-      <q-page padding class="row" style="overflow: hidden">
-
+      <q-page class="row" style="overflow: hidden">
         <div class="col q-ma-md">
-          <div class="column full-height" style="margin-left: -5px;margin-right: -5px; margin-top: -5px;margin-bottom: 0">
+          <div class="column full-height" style="margin-right: -10px">
             <div class="col scroll overflow-auto" ref="chatListDom"
-                 style="max-height: 495px; margin-left: -25px;margin-right: -30px; margin-top: -25px;">
-              <!--            <div class="col" style="max-height: 450px; margin: -10px -10px -10px -10px ;overflow: auto" ref="chatListDom">-->
+                 style="max-height: 515px; ">
               <div class="col full-width"
                    v-for="item of messageList.filter((v) => v.role !== 'system')" :key="item.content">
 
@@ -39,7 +38,7 @@
 
       </q-page>
 
-      <q-footer class="bg-black text-white">
+      <q-footer class="bg-black text-white" elevated>
         <q-toolbar class="bg-primary text-white row">
           <q-btn round flat icon="menu" class="q-mr-sm" @click="drawerRight = !drawerRight" />
           <q-input
@@ -280,7 +279,7 @@ export default defineComponent({
 
 /* width */
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 2px;
 }
 
 /* Track */
