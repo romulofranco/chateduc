@@ -12,7 +12,7 @@
       <q-page class="row" style="overflow: hidden">
         <div class="col q-ma-md">
           <div class="column full-height" style="margin-right: -10px">
-            <div class="col scroll overflow-auto" ref="chatListDom"
+            <div class="col scroll overflow-auto full-height full-width" ref="chatListDom"
                  style="max-height: 515px; ">
               <div class="col full-width"
                    v-for="item of messageList.filter((v) => v.role !== 'system')" :key="item.content">
@@ -87,8 +87,6 @@ export default defineComponent({
     let isConfig = ref(true);
     let isTalking = ref(false);
     let messageContent = ref("");
-    let position = 1000;
-    // let abreDlg = this.modelDlgGPT;
     const chatListDom = ref(null);
     const decoder = new TextDecoder("utf-8");
     const roleAlias = { user: "Você", assistant: "Educ", system: "System" };
@@ -178,17 +176,11 @@ export default defineComponent({
 
 
     const scrollToBottom = () => {
-
+      setVerticalScrollPosition(getScrollTarget(this.$refs.chatListDom), getScrollHeight(this.$refs.chatListDom), 0);
     };
 
     watch(messageList.value, () => {
-      // chatListDom.value.setScrollPosition("vertical", chatListDom.value.scrollHeight);
-      ///this.$refs.c.scrollTo(0, this.$refs.chatListDom.scrollHeight);
-      setVerticalScrollPosition(getScrollTarget(this.$refs.chatListDom), getScrollHeight(this.$refs.chatListDom), 0);
-      // position = getVerticalScrollPosition(scrollContainer.getScrollTarget());
-      // setVerticalScrollPosition(scrollContainer, position, 300);
-      // scrollContainer.setScrollPosition("vertical", 0, position);
-      // scrollContainer.verticalScrollBar().setValue(10000)
+      moveDown();
     });
 
     const moveDown = async () => {
@@ -233,7 +225,7 @@ export default defineComponent({
 
       if (this.question.length > 0) {
         messageContent.value = this.question;
-        sendChatMessage();
+        setTimeout(() => sendChatMessage(), 1000);
       }
 
     });
