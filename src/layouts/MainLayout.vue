@@ -1,5 +1,5 @@
 <template>
-  <body>  <!--style="overflow: hidden;" -->
+  <body style="overflow: hidden;">
   <q-layout view="lHh Lpr lff" class="shadow-2 rounded-borders bg-white">
     <q-header elevated>
       <q-toolbar>

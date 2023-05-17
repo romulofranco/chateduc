@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="Lhh lpR fff" container class="bg-white text-dark" style="max-width: 500px; max-height: 650px">
+  <q-layout view="Lhh lpR fff" container class="bg-white text-dark" style="max-width: 500px; max-height: 650px;">
     <q-page-container>
       <q-header class="bg-primary">
         <q-toolbar>
@@ -8,11 +8,14 @@
         </q-toolbar>
       </q-header>
 
-      <q-page padding class="row">
+      <q-page padding class="row" style="overflow: hidden">
+
         <div class="col q-ma-md">
-          <div class="column full-height">
-            <q-scroll-area class="col q-pa-sm" :visible="false" style="margin-left: -25px;margin-right: -35px">
-              <div ref="chatListDom"
+          <div class="column full-height" style="margin-left: -5px;margin-right: -5px; margin-top: -5px;margin-bottom: 0">
+            <div class="col scroll overflow-auto" ref="chatListDom"
+                 style="max-height: 495px; margin-left: -25px;margin-right: -30px; margin-top: -25px;">
+              <!--            <div class="col" style="max-height: 450px; margin: -10px -10px -10px -10px ;overflow: auto" ref="chatListDom">-->
+              <div class="col full-width"
                    v-for="item of messageList.filter((v) => v.role !== 'system')" :key="item.content">
 
                 <q-chat-message :name="roleAlias[item.role]" class="text-body2"
@@ -26,10 +29,13 @@
                   </div>
                   <LoadingSnip v-else />
                 </q-chat-message>
+
               </div>
-            </q-scroll-area>
+
+            </div>
           </div>
         </div>
+
 
       </q-page>
 
@@ -66,6 +72,9 @@ import useChatGPT from "src/composables/UseChatGPT";
 import cryptoJS from "crypto-js";
 import { LoremIpsum } from "lorem-ipsum";
 import LoadingSnip from "components/LoadingSnip.vue";
+import { scroll } from "quasar";
+
+const { getScrollHeight, getScrollTarget, setVerticalScrollPosition } = scroll;
 
 export default defineComponent({
   name: "DialogChatGPT",
@@ -79,8 +88,9 @@ export default defineComponent({
     let isConfig = ref(true);
     let isTalking = ref(false);
     let messageContent = ref("");
+    let position = 1000;
     // let abreDlg = this.modelDlgGPT;
-    const chatListDom = ref();
+    const chatListDom = ref(null);
     const decoder = new TextDecoder("utf-8");
     const roleAlias = { user: "Você", assistant: "Educ", system: "System" };
     const { sendMessageChatGPT } = useChatGPT();
@@ -117,7 +127,7 @@ export default defineComponent({
         let contentX = lorem.generateSentences(15);
         setTimeout(() => appendLastMessageContent(contentX + contentX), 1500);
         setTimeout(() => (isTalking.value = false), 1500);
-
+        setTimeout(() => setVerticalScrollPosition(getScrollTarget(this.$refs.chatListDom), getScrollHeight(this.$refs.chatListDom), 0), 1800);
         //
         // appendLastMessageContent(content);
       } catch (error) {
@@ -127,8 +137,10 @@ export default defineComponent({
       }
     };
 
-    const appendLastMessageContent = (content) =>
+    const appendLastMessageContent = (content) => {
       (messageList.value[messageList.value.length - 1].content += content);
+      //scrollToBottom();
+    };
 
     const sendOrSave = () => {
       if (!messageContent.value.length) return;
@@ -165,15 +177,25 @@ export default defineComponent({
 
     const clearMessageContent = () => (messageContent.value = "");
 
+
     const scrollToBottom = () => {
-      if (!chatListDom.value) return;
-      scrollTo(0, chatListDom.value.scrollHeight);
+
     };
 
     watch(messageList.value, () => {
-      // eslint-disable-next-line vue/valid-next-tick
-      return nextTick(() => scrollToBottom());
+      // chatListDom.value.setScrollPosition("vertical", chatListDom.value.scrollHeight);
+      ///this.$refs.c.scrollTo(0, this.$refs.chatListDom.scrollHeight);
+      setVerticalScrollPosition(getScrollTarget(this.$refs.chatListDom), getScrollHeight(this.$refs.chatListDom), 0);
+      // position = getVerticalScrollPosition(scrollContainer.getScrollTarget());
+      // setVerticalScrollPosition(scrollContainer, position, 300);
+      // scrollContainer.setScrollPosition("vertical", 0, position);
+      // scrollContainer.verticalScrollBar().setValue(10000)
     });
+
+    const moveDown = async () => {
+      await nextTick();
+      scrollToBottom();
+    };
 
     const clickConfig = () => {
       if (!isConfig.value) {
@@ -254,6 +276,26 @@ export default defineComponent({
   width: 90%;
   z-index: 500;
   max-height: 70%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e77531;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ea8537;
 }
 
 </style>

@@ -119,6 +119,7 @@
                       <q-item-label side top>
                         <q-badge inset="4" style="height: 25px;width:35px;font-size:18px" :color="subarea.cor"
                                  class="text-white text-bold" :label="subarea.level_txt" />
+                      <q-btn flat dense>Obter sugestões</q-btn>
                       </q-item-label>
                     </q-item>
 
