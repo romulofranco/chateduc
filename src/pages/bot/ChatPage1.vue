@@ -97,7 +97,7 @@ export default {
   name: "ChatPage1",
   components: { LoadingSnip },
   setup() {
-    let apiKey = "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";
+    let apiKey = "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";
     let isConfig = ref(true);
     let isTalking = ref(false);
     let messageContent = ref("");
@@ -139,14 +139,14 @@ export default {
         clearMessageContent();
         messageList.value.push({ role: "assistant", content: "" });
 
-        // const { body, status } = await sendMessageChatGPT(messageList.value, apiKey);
-        // if (body) {
-        //   const reader = body.getReader();
-        //   await readStream(reader, status);
-        // }
-        let contentX = lorem.generateSentences(15);
-        setTimeout(() => appendLastMessageContent(contentX + contentX), 1500);
-        setTimeout(() => (isTalking.value = false), 1500);
+        const { body, status } = await sendMessageChatGPT(messageList.value, apiKey);
+        if (body) {
+          const reader = body.getReader();
+          await readStream(reader, status);
+        }
+        // let contentX = lorem.generateSentences(15);
+        // setTimeout(() => appendLastMessageContent(contentX + contentX), 1500);
+        // setTimeout(() => (isTalking.value = false), 1500);
 
         //
         // appendLastMessageContent(content);

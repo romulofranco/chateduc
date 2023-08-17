@@ -70,8 +70,7 @@
                   :max="6"
                   thumb-size="15px"
                   track-size="30px"
-                  :inner-min="1"
-                  :inner-max="6"
+                  step="1"
                   :label-value="area.level_txt"
                   markers
                 >
@@ -224,13 +223,10 @@ export default defineComponent({
         return moment(String(value)).format("DD/MM/YYYY HH:mm");
       }
     };
-
-
     return {
       abreDlgGPT,
       questionGPT,
       toggleAbreDlgGPT(q) {
-        console.log("Oi " + abreDlgGPT.value + " Question: " + q);
         abreDlgGPT.value = !abreDlgGPT.value;
         questionGPT.value = q;
       },

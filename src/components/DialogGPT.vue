@@ -83,7 +83,7 @@ export default defineComponent({
   components: { LoadingSnip },
 
   data: function() {
-    let apiKey = "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";
+    let apiKey = "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";
     let isConfig = ref(true);
     let isTalking = ref(false);
     let messageContent = ref("");
@@ -94,7 +94,6 @@ export default defineComponent({
     const messageList = ref([]);
     const inputFocus = ref(null);
     const { user } = useAuthUser();
-
 
     const lorem = new LoremIpsum({
       sentencesPerParagraph: {
@@ -116,15 +115,15 @@ export default defineComponent({
         clearMessageContent();
         messageList.value.push({ role: "assistant", content: "" });
 
-        // const { body, status } = await sendMessageChatGPT(messageList.value, apiKey);
-        // if (body) {
-        //   const reader = body.getReader();
-        //   await readStream(reader, status);
-        // }
-        let contentX = lorem.generateSentences(15);
-        setTimeout(() => appendLastMessageContent(contentX + contentX), 1500);
-        setTimeout(() => (isTalking.value = false), 1500);
-        setTimeout(() => setVerticalScrollPosition(getScrollTarget(this.$refs.chatListDom), getScrollHeight(this.$refs.chatListDom), 0), 1800);
+        const { body, status } = await sendMessageChatGPT(messageList.value, apiKey);
+        if (body) {
+          const reader = body.getReader();
+          await readStream(reader, status);
+        }
+        // let contentX = lorem.generateSentences(15);
+        // setTimeout(() => appendLastMessageContent(contentX + contentX), 1500);
+        // setTimeout(() => (isTalking.value = false), 1500);
+        // setTimeout(() => setVerticalScrollPosition(getScrollTarget(this.$refs.chatListDom), getScrollHeight(this.$refs.chatListDom), 0), 1800);
         //
         // appendLastMessageContent(content);
       } catch (error) {
@@ -243,8 +242,8 @@ export default defineComponent({
       drawerRight: ref(false),
       inputFocus,
       abreDlg: this.model_dlg_gpt.value,
-      avatarUser: "https://cdn.quasar.dev/img/avatar1.jpg",
-      avatarChatGPT: "https://uploads.laborx.com/avatars/thumb_resized_100x100_4TtosT2qJm9_JHIoAU59OdZ3RxOFL9ZM.png"
+      avatarUser: "https://cdn.quasar.dev/img/boy-avatar.png",
+      avatarChatGPT: "chatgpt1.png"
     };
 
   }
