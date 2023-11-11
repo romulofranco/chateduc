@@ -1,5 +1,6 @@
 import { ref } from "vue";
 import useSupabase from "src/boot/supabase";
+import useApi from "src/composables/UseApi";
 
 /**
  * O usuário é definido fora da função useAuthUser para que
@@ -11,7 +12,7 @@ export default function useAuthUser() {
 
   const { supabase } = useSupabase();
 
-  /**
+  /**\
   * Login with email and password
   */
   const login = async ({ email, password }) => {
@@ -71,6 +72,29 @@ export default function useAuthUser() {
     return user;
   };
 
+  const registerContact = async(form) => {
+    const table = "contact_comments"
+    try {
+      const { data, error } = await supabase
+        .from(table)
+        .insert([{ ...form, user_id: user.value.id }]);
+
+      if (error) {
+        alert(error.message);
+        console.error("There was an error inserting", error);
+        return null;
+      }
+
+      console.log("created a new comment by contact");
+      return data;
+    } catch (err) {
+      alert("Error");
+      console.error("Unknown problem inserting to db", err);
+      return null;
+    }
+
+  }
+
   /**
   * Update user email, password, or meta data
   */
@@ -101,6 +125,7 @@ export default function useAuthUser() {
     register,
     update,
     sendPasswordResetEmail,
-    resetPassword
+    resetPassword,
+    registerContact
   };
 }

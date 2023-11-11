@@ -15,6 +15,11 @@ const routes = [
       },
       {
         path: "",
+        name: "contact",
+        component: () => import ("pages/home/ContactPage.vue")
+      },
+      {
+        path: "",
         name: "features",
         component: () => import ("pages/home/FeaturesPage.vue")
       },
@@ -37,7 +42,12 @@ const routes = [
         path: "email-confirmation",
         name: "email-confirmation",
         component: () => import ("pages/login/EmailConfirmationPage.vue")
-      }, {
+      },
+      {
+        path: "comment-confirmation",
+        name: "comment-confirmation",
+        component: () => import ("pages/login/CommentConfirmationPage.vue")
+      },{
         path: "forgot-password",
         name: "forgot-password",
         component: () => import ("pages/login/ForgotPasswordPage.vue")

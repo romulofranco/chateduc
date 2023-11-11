@@ -85,7 +85,7 @@ const landingPageMenuLinkList = [
     title: "Contato",
     caption: "",
     icon: "contact_page",
-    routeName: "prompt"
+    routeName: "contact"
   },
   {
     title: "Entrar",
