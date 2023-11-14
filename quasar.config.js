@@ -58,7 +58,8 @@ module.exports = configure(function(ctx) {
       // Suas variáveis de ambiente podem ser settadas aqui, via processe e setadas na UI do netlify, para serem injetadas no build do deploy. (deploy/prod mode)
       env: {
         SUPABASE_URL: process.env.SUPABASE_URL,
-        SUPABASE_KEY: process.env.SUPABASE_KEY
+        SUPABASE_KEY: process.env.SUPABASE_KEY,
+        CHATGPT_KEY: process.env.VUE_APP_ENV_CHATGPT_KEY
       },
 
 

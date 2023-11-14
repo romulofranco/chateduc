@@ -97,7 +97,7 @@ export default {
   name: "ChatPage1",
   components: { LoadingSnip },
   setup() {
-    let apiKey = "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";
+    let apiKey = process.env.CHATGPT_KEY;
     let isConfig = ref(true);
     let isTalking = ref(false);
     let messageContent = ref("");
@@ -153,7 +153,7 @@ export default {
       } catch (error) {
         appendLastMessageContent(error);
       } finally {
-        // isTalking.value = false;
+         isTalking.value = false;
       }
     };
 

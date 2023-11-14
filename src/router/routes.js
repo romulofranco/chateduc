@@ -120,6 +120,10 @@ const routes = [
         path: "digcompedu-checkin-form/:id?",
         name: "digcompedu-checkin-form",
         component: () => import ("pages/digcompedu/checkin/SelfReflectionDetail.vue")
+      }, {
+        path: "recomendation",
+        name: "recomendation",
+        component: () => import ("pages/recomendation/RecomendationPage.vue")
       }
     ],
     meta: {

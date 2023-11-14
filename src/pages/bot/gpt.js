@@ -9,7 +9,7 @@ export default async function chat(messageList, apiKey) {
                 Authorization: `Bearer ${apiKey}`
             },
             body: JSON.stringify(
-                {model: "gpt-3.5-turbo", stream: true, messages: messageList}
+                {model: "gpt-3.5-turbo-16k-0613", stream: true, messages: messageList}
             )
         });
         return result;

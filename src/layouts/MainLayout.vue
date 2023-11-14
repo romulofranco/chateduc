@@ -5,7 +5,10 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
         <q-toolbar-title> ChatEduc</q-toolbar-title>
-        <q-btn-dropdown flat color="white" icon="person">
+        <q-btn flat round  color="white" icon="notifications">
+          <q-badge floating color="black">5</q-badge>
+        </q-btn>
+        <q-btn-dropdown round flat color="white" icon="person">
           <q-list>
             <q-item clickable v-close-popup @click="handlerLogout">
               <q-item-section>
@@ -27,20 +30,30 @@
       <q-img
         class="absolute-top"
         src="https://as2.ftcdn.net/v2/jpg/03/16/92/61/1000_F_316926143_cVdnI6bJPbhlo1yZVTJk0R0sjBx4vVnO.jpg"
-        style="height: 150px"
+        style="height: 100px; "
       >
-        <div class="absolute-bottom bg-transparent">
-          <q-avatar size="56px" class="q-mb-sm">
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-          </q-avatar>
-          <div class="text-weight-bold text-white text-bold text-h6">Rômulo Franco</div>
-          <div class="text-white text-bold text-h7">@romulo_franco</div>
+        <div class="row bg-transparent"  >
+          <q-item clickable v-ripple >
+            <q-item-section avatar>
+              <q-avatar size="56px" class="q-mb-sm">
+                <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+              </q-avatar>
+            </q-item-section>
+
+            <q-item-section>
+            <div class="text-weight-bold text-white text-bold text-h6">Rômulo Franco</div>
+            <div>
+              <div class="text-weight-bold text-white text-bold text-subtitle1">@romulo_franco</div>
+            </div>
+            </q-item-section>
+          </q-item>
+
         </div>
       </q-img>
       <q-scroll-area
         style="
           height: calc(100% - 150px);
-          margin-top: 150px;
+          margin-top: 100px;
           border-right: 1px solid #ddd;
         "
       >
@@ -101,19 +114,25 @@ const mainMenuLinkList = [
     routeName: "me"
   },
   {
+    title: "Recomendações",
+    caption: "",
+    icon: "mdi-post-outline",
+    routeName: "recomendation"
+  },
+  {
     title: "Assistente",
     caption: "",
     icon: "mdi-chat-processing",
     routeName: "chatbot"
   },
   {
-    title: "Categorias",
+    title: "Autoavaliação",
     caption: "",
-    icon: "mdi-shape-outline",
-    routeName: "category"
+    icon: "mdi-frequently-asked-questions",
+    routeName: "digcompedu-checkin-list"
   },
   {
-    title: "Prompt",
+    title: "Prompts",
     caption: "",
     icon: "mdi-frequently-asked-questions",
     routeName: "prompt"
@@ -145,12 +164,7 @@ const digiCompEduLinkList = [
     icon: "mdi-shape-outline",
     routeName: "level-list"
   },
-  {
-    title: "Autorreflexão individual",
-    caption: "",
-    icon: "mdi-frequently-asked-questions",
-    routeName: "digcompedu-checkin-list"
-  }
+
 ];
 
 export default defineComponent({

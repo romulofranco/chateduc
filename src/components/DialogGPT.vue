@@ -83,7 +83,7 @@ export default defineComponent({
   components: { LoadingSnip },
 
   data: function() {
-    let apiKey = "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";
+    let apiKey = process.env.CHATGPT_KEY;
     let isConfig = ref(true);
     let isTalking = ref(false);
     let messageContent = ref("");
