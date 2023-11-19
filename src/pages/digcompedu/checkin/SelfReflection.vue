@@ -2,7 +2,7 @@
   <q-page padding class="bg-white">
     <div class="row q-pa-md">
       <div>
-        <p class="col-12 text-h5 text-left">Autoreflexão individual</p>
+        <p class="col-12 text-h5 text-left">Autoavaliação individual</p>
       </div>
       <q-separator color="primary" class="full-width" />
 
@@ -95,7 +95,7 @@ export default defineComponent({
     const saveCheckin = async (form, checkinArea) => {
       try {
         let data = await postSelect(table, form, checkinArea);
-        notifySuccess("Autorreflexão realizada com sucesso");
+        notifySuccess("Autoavaliação realizada com sucesso");
 
         let checkinId = data[0].id;
 
@@ -150,7 +150,7 @@ export default defineComponent({
         "?";
       qModel.helpText =
         "Diante desta definição, qual provavelmente seria seu " +
-        (starting ? "atual" : "") +
+        (starting ? "atual " : "") +
         "nível de competência?";
 
       qModel.options.push(this.prepareLevelSelect("A1 - Iniciante", 1));

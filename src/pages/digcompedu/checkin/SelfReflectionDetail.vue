@@ -7,7 +7,7 @@
       <div class="q-pa-md">
         <div class="row">
           <div class="col">
-            <p class="text-h5 text-left">Detalhamento</p>
+            <p class="text-h5 text-left">Detalhamento do resultado da Autoavaliação</p>
           </div>
           <div class="col text-right">
             <q-btn

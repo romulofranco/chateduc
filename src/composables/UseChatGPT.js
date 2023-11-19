@@ -8,10 +8,9 @@ export default function useChatGPT() {
           Authorization: `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-          model: "gpt-3.5-turbo-1106",
+          model: "gpt-3.5-turbo",
           stream: true,
           messages: messageList,
-          temperature: 0.7
         })
       });
     } catch (error) {

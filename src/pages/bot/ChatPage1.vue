@@ -15,7 +15,7 @@
               <div v-if="item.content">
                 {{ item.content.replace(/^\n\n/, "") }}
               </div>
-              <LoadingSnip v-else />
+              <LoadingSnip v-else/>
             </q-chat-message>
           </div>
         </q-scroll-area>
@@ -23,35 +23,44 @@
     </div>
 
     <q-drawer
-      side="right"
-      v-model="drawerRight"
-      overlay
-      :width="320"
-      :breakpoint="300"
-      :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-amber-1 bordered shadow-1'"
+        side="right"
+        v-model="drawerRight"
+        overlay
+        :width="320"
+        :breakpoint="300"
+        :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-amber-1 bordered shadow-1'"
     >
       <q-scroll-area class="fit">
         <q-item-section class="bg-secondary ">
-          <br />
+          <br/>
           <q-item-label round class="col text-subtitle1 text-bold text-center " style="margin-bottom: 10px">Últimas
             Conversas
           </q-item-label>
-          <q-separator color="secondary" class="full-width shadow-1" />
+          <q-separator color="secondary" class="full-width shadow-1"/>
         </q-item-section>
-        <q-list>
-          <q-item clickable>
+        <q-list class="text-caption">
+          <q-item clickable >
             <q-item-section avatar>
-              <q-icon name="home" />
+              <q-icon name="apps"/>
             </q-item-section>
             <q-item-section class="text-left justify-left">
-              Conversa 1
+              Definição DigCompEdu
+            </q-item-section>
+            <q-item-section class="text-left justify-left ">
+              20/11/2023 08:23
             </q-item-section>
           </q-item>
-          <q-separator />
-          <q-item>
-            <q-item-label>
-              Conversa 2
-            </q-item-label>
+          <q-separator/>
+          <q-item clickable>
+            <q-item-section avatar>
+              <q-icon name="apps"/>
+            </q-item-section>
+            <q-item-section class="text-left justify-left">
+              Aperfeiçoar nivel A1 para B2 Área 1
+            </q-item-section>
+            <q-item-section class="text-left justify-left">
+              23/11/2023 08:23
+            </q-item-section>
           </q-item>
 
         </q-list>
@@ -63,19 +72,19 @@
 
   <q-footer class="fixed">
     <q-toolbar class="bg-primary text-white row">
-      <q-btn round flat icon="menu" class="q-mr-sm" @click="drawerRight = !drawerRight" />
+      <q-btn round flat icon="menu" class="q-mr-sm" @click="drawerRight = !drawerRight"/>
       <q-input
-        v-model="messageContent"
-        class="col-grow q-mr-sm"
-        bg-color="white"
-        :placeholder="isTalking ? 'Educ está digitando...' : 'Digite sua mensagem...'"
-        :disable="isTalking"
-        dense
-        outlined
-        rounded
-        autofocus
-        ref="inputFocus"
-        @keydown.enter="isTalking || sendOrSave()"
+          v-model="messageContent"
+          class="col-grow q-mr-sm"
+          bg-color="white"
+          :placeholder="isTalking ? 'Educ está digitando...' : 'Digite sua mensagem...'"
+          :disable="isTalking"
+          dense
+          outlined
+          rounded
+          autofocus
+          ref="inputFocus"
+          @keydown.enter="isTalking || sendOrSave()"
       />
       <q-btn round flat icon="send" type="submit" :disabled="isTalking" @click="sendOrSave()">
 
@@ -86,16 +95,16 @@
 </template>
 
 <script>
-import { ref, watch, nextTick, onMounted } from "vue";
+import {ref, watch, nextTick, onMounted} from "vue";
 import useAuthUser from "src/composables/UserAuthUser";
 import LoadingSnip from "components/LoadingSnip.vue";
 import useChatGPT from "src/composables/UseChatGPT";
 import cryptoJS from "crypto-js";
-import { LoremIpsum } from "lorem-ipsum";
+import {LoremIpsum} from "lorem-ipsum";
 
 export default {
   name: "ChatPage1",
-  components: { LoadingSnip },
+  components: {LoadingSnip},
   setup() {
     let apiKey = process.env.CHATGPT_KEY;
     let isConfig = ref(true);
@@ -103,8 +112,8 @@ export default {
     let messageContent = ref("");
     const chatListDom = ref();
     const decoder = new TextDecoder("utf-8");
-    const roleAlias = { user: "Você", assistant: "Educ", system: "System" };
-    const { sendMessageChatGPT } = useChatGPT();
+    const roleAlias = {user: "Você", assistant: "Educ", system: "System"};
+    const {sendMessageChatGPT} = useChatGPT();
     const messageList = ref([
       {
         role: "system",
@@ -116,7 +125,7 @@ export default {
       }
     ]);
     const inputFocus = ref(null);
-    const { user } = useAuthUser();
+    const {user} = useAuthUser();
 
 
     const lorem = new LoremIpsum({
@@ -135,11 +144,10 @@ export default {
     const sendChatMessage = async (content = messageContent.value) => {
       try {
         isTalking.value = true;
-        messageList.value.push({ role: "user", content });
+        messageList.value.push({role: "user", content});
         clearMessageContent();
-        messageList.value.push({ role: "assistant", content: "" });
-
-        const { body, status } = await sendMessageChatGPT(messageList.value, apiKey);
+        messageList.value.push({role: "assistant", content: ""});
+        const {body, status} = await sendMessageChatGPT(messageList.value, apiKey);
         if (body) {
           const reader = body.getReader();
           await readStream(reader, status);
@@ -153,12 +161,12 @@ export default {
       } catch (error) {
         appendLastMessageContent(error);
       } finally {
-         isTalking.value = false;
+        isTalking.value = false;
       }
     };
 
     const appendLastMessageContent = (content) =>
-      (messageList.value[messageList.value.length - 1].content += content);
+        (messageList.value[messageList.value.length - 1].content += content);
 
     const sendOrSave = () => {
       if (!messageContent.value.length) return;
@@ -216,7 +224,7 @@ export default {
 
     const readStream = async (reader, status) => {
       const regex = /({.*?]})/g;
-      const { done, value } = await reader.read();
+      const {done, value} = await reader.read();
       if (done) {
         reader.closed;
         return;
@@ -225,9 +233,8 @@ export default {
       const dataList = status === 200 ? decodeText.match(regex) : [decodeText];
       dataList?.forEach((v) => {
         const json = JSON.parse(v);
-        console.log(json);
         const content =
-          status === 200 ? json.choices[0].delta.content ?? "" : json.error.message;
+            status === 200 ? json.choices[0].delta.content ?? "" : json.error.message;
         appendLastMessageContent(content);
       });
       await readStream(reader, status);
