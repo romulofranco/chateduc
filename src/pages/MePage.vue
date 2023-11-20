@@ -106,7 +106,7 @@
     </q-card>
 
     <Resumo ref="resumoCheckin" :detail="false" :label="checkinItem.dataRealizacao"
-            :checkin_id="89"
+            :checkin_id="92"
             :checkin_item="checkinItem" :key="checkinItem.id" />
 
   </q-page>
@@ -285,7 +285,7 @@ export default defineComponent({
     const seriesBar = ref([]);
     const listAreas = ref([]);
     const checkinItem = ref([]);
-    const checkinID = computed(() => 89);
+    const checkinID = computed(() => 92);
     const abreDlgGPT = ref(false);
     const questionGPT = ref("");
 
@@ -399,6 +399,10 @@ export default defineComponent({
       sales_data,
       sales_column,
       sales_options:{
+        legend: {
+          data: ["A1", "A2", "A3", "A4", "A5", "A6"],
+          icon: "line"
+        },
         tooltip: {
           trigger: "axis",
           axisPointer: {
@@ -427,40 +431,41 @@ export default defineComponent({
             }
           }
         ],
+
         series: [
           {
             name: "Engajamento Profissional",
-            type: "bar",
+            type: "line",
             data: [50, 51, 60, 58, 77, 79, 68, 80, 82, 90, 91, 95],
             color: "#ef6a0a"
           },
           {
             name: "Recursos Digitais",
-            type: "bar",
+            type: "line",
             data: [124, 100, 20, 120, 117, 70, 110, 90, 50, 90, 20, 50],
             color: "#04ab08"
           },
           {
             name: "Enisno e Aprendizagem",
-            type: "bar",
+            type: "line",
             data: [17, 2, 0, 29, 20, 10, 23, 0, 8, 20, 11, 30],
             color: "#0822c5"
           },
           {
             name: "Avaliação",
-            type: "bar",
+            type: "line",
             data: [20, 100, 80, 14, 90, 86, 100, 70, 120, 50, 30, 60],
             color: "#0bd2e3"
           },
           {
             name: "Capacitação dos Alunos",
-            type: "bar",
+            type: "line",
             data: [20, 100, 80, 14, 90, 86, 100, 70, 120, 50, 30, 60],
             color: "#7706c0"
           },
           {
             name: "Promoção de Competências",
-            type: "bar",
+            type: "line",
             data: [20, 100, 80, 14, 90, 86, 100, 70, 120, 50, 30, 60],
             color: "#e80618"
           }

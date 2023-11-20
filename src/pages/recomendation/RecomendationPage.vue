@@ -102,7 +102,7 @@ export default defineComponent({
     const { notifyError, notifySuccess } = useNotify();
     const listAreas = ref([]);
     const checkinItem = ref([]);
-    const checkinID = ref(89);
+    const checkinID = ref(92);
     const abreDlgGPT = ref(false);
     const questionGPT = ref("");
 

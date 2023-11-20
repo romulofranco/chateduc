@@ -16,74 +16,35 @@
           </q-card-section>
           <q-card-section class="text-justify text-body2">
             <q-separator />
-            <q-scroll-area class="col q-pa-sm" style="height: 450px" :visible="false">
+            <q-scroll-area class="col q-pa-sm text-justify" style="height: 450px" :visible="false">
               <div>
                 <br />
-                A ubiquidade das tecnologias digitais mudou profundamente quase todos os
-                aspetos das nossas vidas: a forma como comunicamos, como trabalhamos, como
-                aproveitamos o nosso tempo de lazer, como organizamos a nossa vida, e como
-                obtemos conhecimento e informação. Mudou a forma como pensamos e nos
-                comportamos. As crianças e os jovens estão a crescer num mundo onde as
-                tecnologias digitais são ubíquas. Não conhecem, nem conseguem reconhecer outra
-                forma de viver. Isto não significa, porém, que estejam naturalmente equipados
-                com as competências adequadas para usar tecnologias digitais de forma eficaz e
-                consciente.
+                <p>A onipresença das tecnologias digitais provocou uma transformação significativa em praticamente todos os aspectos de nossas vidas: a maneira como nos comunicamos, trabalhamos, desfrutamos do nosso tempo de lazer, organizamos nossa vida e adquirimos conhecimento e informação. Ela alterou nossa forma de pensar e agir. Crianças e jovens estão crescendo em um mundo onde as tecnologias digitais são ubíquas. Eles não conhecem e não conseguem reconhecer outra forma de viver. No entanto, isso não significa que estejam naturalmente equipados com as habilidades adequadas para usar as tecnologias digitais de maneira eficaz e consciente.</p>
                 <p>
-                  As políticas nacionais e europeias reconhecem a necessidade de equipar todos
-                  os cidadãos com as competências necessárias para usarem tecnologias digitais
-                  de forma crítica e criativa. O Quadro Europeu de Competência Digital para
-                  Cidadãos (DigComp) responde a esta necessidade, fornecendo uma estrutura que
-                  permite aos cidadãos europeus perceberem melhor o que significa ser
-                  digitalmente competente e avaliarem e desenvolverem mais a sua própria
-                  competência digital.
+                As políticas nacionais e internacionais reconhecem a necessidade de capacitar todos os cidadãos com as habilidades necessárias para usar as tecnologias digitais de maneira crítica e criativa. O Quadro de Competência Digital para Cidadãos (DigComp) atende a essa necessidade, oferecendo uma estrutura que permite aos cidadãos entender melhor o que significa ser digitalmente competente, além de avaliar e desenvolver sua própria competência digital.
                 </p>
-                Para aprendentes abrangidos pelo ensino obrigatório, existe uma série de
-                iniciativas, a nível europeu, nacional e local, que oferecem orientações e
-                conselhos que lhes possibilitam desenvolver a sua competência digital, muitas
-                vezes com um enfoque na cidadania digital. Na maioria dos estados membros, os
-                currículos foram ou estão a ser desenvolvidos de modo a garantir que a geração
-                jovem seja capaz de participar numa sociedade digital de forma criativa,
-                crítica e produtiva.
                 <p>
-                  Consequentemente, existe a nível internacional, europeu e nacional, um
-                  interesse considerável em equipar os educadores com as competências
-                  necessárias para explorar plenamente o potencial das tecnologias digitais
-                  para melhorar o ensino e a aprendizagem e preparar adequadamente os
-                  aprendentes para viver e trabalhar numa sociedade digital. Muitos estados
-                  membros já desenvolveram ou estão atualmente no processo de desenvolvimento
-                  e revisão de referenciais, ferramentas de autoavaliação e programas de
-                  formação para orientar a formação de educadores e o desenvolvimento
-                  profissional contínuo nesta área.
+                Para os estudantes no ensino obrigatório, há uma variedade de iniciativas em nível, nacional e internacional que fornecem orientações e conselhos, permitindo-lhes desenvolver sua competência digital, muitas vezes com foco na cidadania digital. Na maioria dos países que tem levado em debate sobre a importância do desenvolvimento da competência digital, os currículos foram ou estão sendo desenvolvidos para garantir que a geração jovem seja capaz de participar de forma criativa, crítica e produtiva em uma sociedade digital.
                 </p>
-                O Quadro DigCompEdu reflete sobre instrumentos existentes de competência
-                digital para educadores. O seu objetivo é sintetizá-los num modelo coerente
-                que permita a educadores, de todos os níveis de educação, avaliar e
-                desenvolver de forma abrangente a sua competência digital pedagógica. Não se
-                destina a comprometer esforços nacionais, regionais e locais para captar a
-                competência digital dos educadores. Pelo contrário, a diversidade das
-                abordagens em diferentes estados membros contribui para um debate produtivo e
-                é bem-vinda. O Quadro tem como objetivo oferecer uma base comum para este
-                debate, com uma linguagem e lógica comuns como ponto de partida para
-                desenvolver, comparar e discutir diferentes instrumentos para o
-                desenvolvimento da competência digital dos educadores, a nível nacional,
-                regional ou local. Assim, o valor acrescentado do Quadro DigCompEdu é que
-                disponibiliza: Q uma base segura que pode orientar políticas em diferentes
-                níveis; Q um modelo que permite às partes locais interessadas avançarem
-                rapidamente com o desenvolvimento de um instrumento concreto, adaptado às suas
-                necessidades, sem terem que desenvolver uma base conceptual para esse fim; Q
-                uma linguagem e uma lógica comuns que podem contribuir para a discussão e
-                partilha de boas práticas além-fronteiras; Q um ponto de referência para os
-                estados membros e outras partes interessadas validarem a completude e
-                abordagem das suas próprias ferramentas e referenciais. O Quadro DigCompEdu é
-                o resultado de uma série de discussões e deliberações com especialistas e
-                profissionais, com base numa revisão inicial da literatura e na síntese de
-                instrumentos existentes a nível local, nacional, europeu e internacional. O
-                objetivo destas discussões foi chegar a um consenso sobre as principais áreas
-                e elementos de competência digital dos educadores, para decidir sobre
-                elementos centrais e marginais e sobre a lógica de progressão na competência
-                digital em cada área. O modelo proposto poderia ter tomado uma forma e um
-                enfoque diferente. Não se destina a comprometer ou questionar a validade e a
-                relevância de modelos semelhantes que
+                <p>
+                Como resultado, há um interesse considerável em nível internacional e nacional em capacitar os educadores com as habilidades necessárias para explorar totalmente o potencial das tecnologias digitais para melhorar o ensino e a aprendizagem, preparando adequadamente os estudantes para viver e trabalhar em uma sociedade digital. Muitos países já desenvolveram ou estão atualmente no processo de desenvolver e revisar referenciais, ferramentas de autoavaliação e programas de formação para orientar a formação de educadores e o desenvolvimento profissional contínuo nesta área.
+                </p>
+                <p>
+                O Quadro DigCompEdu reflete sobre os instrumentos existentes de competência digital para educadores, com o objetivo de sintetizá-los em um modelo coerente que permita aos educadores de todos os níveis de educação avaliar e desenvolver abrangentemente sua competência digital pedagógica. Ele não visa comprometer os esforços nacionais, regionais e locais para captar a competência digital dos educadores; pelo contrário, a diversidade de abordagens em diferentes estados membros contribui para um debate produtivo e é bem-vinda. O Quadro busca oferecer uma base comum para esse debate, fornecendo uma linguagem e lógica comuns como ponto de partida para desenvolver, comparar e discutir diferentes instrumentos para o desenvolvimento da competência digital dos educadores em nível nacional, regional ou local.
+                </p>
+                <p>
+                Dessa forma, o valor acrescentado do Quadro DigCompEdu reside em fornecer:
+                </p>
+                <p>
+                <ul>
+                  <li>Uma base segura que pode orientar políticas em diferentes níveis;</li>
+                  <li>Um modelo que permite às partes interessadas locais avançarem rapidamente com o desenvolvimento de um instrumento concreto, adaptado às suas necessidades, sem a necessidade de desenvolver uma base conceitual para esse fim;</li>
+                  <li>Uma linguagem e uma lógica comuns que podem contribuir para a discussão e compartilhamento de boas práticas além das fronteiras;</li>
+                  <li>Um ponto de referência para os estados membros e outras partes interessadas validarem a completude e a abordagem de suas próprias ferramentas e referenciais.</li>
+                </ul>
+
+                </p>
+                O Quadro DigCompEdu é o resultado de discussões e deliberações com especialistas e profissionais, baseado em uma revisão inicial da literatura e na síntese de instrumentos existentes em níveis local, nacional e internacional. O objetivo dessas discussões foi chegar a um consenso sobre as principais áreas e elementos de competência digital dos educadores, decidir sobre elementos centrais e marginais, e sobre a lógica de progressão na competência digital em cada área. O modelo proposto poderia ter assumido uma forma e abordagem diferentes. Não se pretende comprometer os esforços empreendidos em âmbito nacional, regional e local para avaliar a competência digital dos educadores. Pelo contrário, a diversidade de abordagens observada nos diferentes estados membros é vista como uma contribuição valiosa para um debate produtivo e é recebida com apreço. O propósito do Quadro é fornecer uma base comum para esse debate, utilizando uma linguagem e lógica compartilhadas como ponto de partida para o desenvolvimento, comparação e discussão de diversos instrumentos voltados para o aprimoramento da competência digital dos educadores, tanto em nível nacional quanto regional ou local."
               </div>
             </q-scroll-area>
             <!-- </q-scroll-area> -->
