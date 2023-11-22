@@ -91,7 +91,7 @@ const routes = [
       }, {
         path: "prompt",
         name: "prompt",
-        component: () => import ("pages/prompt/List.vue")
+        component: () => import ("pages/prompt/PromptPage.vue")
       }, {
         path: "form-prompt/:id?",
         name: "form-prompt",

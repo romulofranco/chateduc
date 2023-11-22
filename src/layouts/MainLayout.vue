@@ -141,7 +141,7 @@ const mainMenuLinkList = [
     title: "Sobre",
     caption: "",
     icon: "mdi-information-outline",
-    routeName: "prompt"
+    routeName: "sobre"
   }
 ];
 

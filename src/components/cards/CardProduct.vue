@@ -1,57 +1,83 @@
 <template>
-  <q-card class="no-shadow" bordered>
-    <q-img :src="data.img" height="220px">
-      <q-chip v-if="data.chip" :class="data.chip_class" :color="data.chip_color" :label="data.chip"></q-chip>
-    </q-img>
+    <q-dialog v-model="abreDlgGPT" :maximized="true">
+        <DialogGPT :model_dlg_gpt="abreDlgGPT" :question="questionGPT"/>
+    </q-dialog>
 
-    <q-card-section>
-      <q-btn
-        fab
-        color="teal-7"
-        icon="fas fa-cart-plus" padding="sm"
-        class="absolute"
-        style="top: 0; right: 12px; transform: translateY(-50%);"
-      />
-    </q-card-section>
+    <q-card bordered>
+        <q-card-section :class="data.header_color" style="padding: 0px 0px 0px 0px">
+            <q-item>
+                <q-item-section>
+                    <q-item-label>
+                        <div class="text-h6 text-white">{{ data.title }}</div>
+                    </q-item-label>
+                    <q-item-label caption>
+                        <div class="text-subtitle2  text-white">{{ data.amount }}</div>
+                    </q-item-label>
+                </q-item-section>
 
-    <q-card-section>
-      <div class="text-h6">
-        {{ data.title }}
-      </div>
-      <div class="text-subtitle1 text-justify q-mt-sm">
-        {{ data.caption }}
-      </div>
-      <div>
-        <q-rating
-          v-model="data.rating"
-          max="5"
-          size="1.5em"
-          color="yellow"
-          icon="star_border"
-          icon-selected="star"
-          icon-half="star_half" readonly
-          no-dimming
-        />
-      </div>
-    </q-card-section>
-    <q-card-section>
-      <div class="col-12">
-        <span class="text-h6">{{ data.amount }}</span>
-        <span class="text-h6 float-right">
-          <q-btn label="See Details" rounded color="secondary" outline></q-btn>
-        </span>
-      </div>
-    </q-card-section>
-  </q-card>
+
+            </q-item>
+        </q-card-section>
+        <q-card-section>
+            <q-btn
+                    round
+                    bordered
+                    flat
+                    class="absolute" @click="toggleAbreDlgGPT(data.caption)"
+                    style="top: 0; right: 12px; transform: translateY(-40%);"
+            >
+                <q-avatar size="36px" class="q-mb-sm">
+                    <img src="https://uploads.laborx.com/avatars/thumb_resized_100x100_4TtosT2qJm9_JHIoAU59OdZ3RxOFL9ZM.png"/>
+                </q-avatar>
+            </q-btn>
+        </q-card-section>
+        <q-card-section>
+            <q-item style="padding: 0px 0px 0px 0px;top: -30px">
+                <q-item-section>
+                    {{ data.caption }}
+                </q-item-section>
+            </q-item>
+        </q-card-section>
+    </q-card>
+
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import {defineComponent, onMounted, ref} from 'vue'
+import DialogGPT from "components/DialogGPT.vue";
 
 export default defineComponent({
-  name: "CardProduct",
+    name: "CardProduct",
+    components: {DialogGPT},
+    props: ["data"],
+    data: function () {
+        const abreDlgGPT = ref(false);
+        const questionGPT = ref("");
 
-  props: ['data']
+        onMounted(() => {
+            this.ratingVal = this.data.rating;
+
+        });
+
+        function getChat() {
+
+        }
+
+        return {
+            abreDlgGPT,
+            questionGPT,
+            toggleAbreDlgGPT(q) {
+                abreDlgGPT.value = !abreDlgGPT.value;
+                questionGPT.value = q;
+            },
+            ratingVal: this.data.rating,
+            nivelProgresao: (this.data.rating === 1 ? "A1" : this.data.rating === 2 ? "A2" : this.data.rating === 3 ? "B1" : this.data.rating === 4 ? "B2" : this.data.rating === 5 ? "C1" : "C2"),
+            chatEducSentence: "",
+            getChat
+        }
+    },
+
+
 })
 </script>
 

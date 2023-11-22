@@ -207,7 +207,6 @@ export default defineComponent({
       const dataList = status === 200 ? decodeText.match(regex) : [decodeText];
       dataList?.forEach((v) => {
         const json = JSON.parse(v);
-        console.log(json);
         const content =
           status === 200 ? json.choices[0].delta.content ?? "" : json.error.message;
         appendLastMessageContent(content);
