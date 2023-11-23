@@ -10,12 +10,15 @@
                     <q-item-label>
                         <div class="text-h6 text-white">{{ data.title }}</div>
                     </q-item-label>
-                    <q-item-label caption>
-                        <div class="text-subtitle2  text-white">{{ data.amount }}</div>
+                    <q-item-label>
+                        <q-chip dense :class="data.header_color" text-color="white" icon="star">
+                            {{ data.amount }}
+                            <q-tooltip class="text-body1 text-black bg-yellow-7 text-wrap" style="max-width: 330px;">
+                                {{ data.main_statement }}
+                            </q-tooltip>
+                        </q-chip>
                     </q-item-label>
                 </q-item-section>
-
-
             </q-item>
         </q-card-section>
         <q-card-section>
@@ -29,15 +32,25 @@
                 <q-avatar size="36px" class="q-mb-sm">
                     <img src="https://uploads.laborx.com/avatars/thumb_resized_100x100_4TtosT2qJm9_JHIoAU59OdZ3RxOFL9ZM.png"/>
                 </q-avatar>
+                <q-tooltip class="bg-yellow-7 text-black text-body1 text-bold" :offset="[10, 10]">
+                    Pergunte-me!
+                </q-tooltip>
             </q-btn>
         </q-card-section>
+
         <q-card-section>
             <q-item style="padding: 0px 0px 0px 0px;top: -30px">
-                <q-item-section>
+                <q-item-section class="text-justify">
                     {{ data.caption }}
                 </q-item-section>
             </q-item>
         </q-card-section>
+
+        <q-card-actions class="q-px-md" style="margin-top: -40px" >
+            <q-btn flat round color="red"  icon="favorite"/>
+            <q-btn flat round color="blue-8" icon="bookmark"/>
+            <q-btn flat round color="brown" icon="share" class="text-right"/>
+        </q-card-actions>
     </q-card>
 
 </template>

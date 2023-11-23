@@ -135,7 +135,7 @@ export default defineComponent({
 
     const appendLastMessageContent = (content) => {
       (messageList.value[messageList.value.length - 1].content += content);
-      //scrollToBottom();
+      // scrollToBottom();
     };
 
     const sendOrSave = () => {
@@ -223,7 +223,7 @@ export default defineComponent({
 
       if (this.question.length > 0) {
         messageContent.value = this.question;
-        setTimeout(() => sendChatMessage(), 1000);
+        setTimeout(() => sendChatMessage(), 500);
       }
 
     });

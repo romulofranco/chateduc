@@ -134,7 +134,7 @@ const mainMenuLinkList = [
   {
     title: "Prompts",
     caption: "",
-    icon: "mdi-frequently-asked-questions",
+    icon: "mdi-head-question",
     routeName: "prompt"
   },
   {
