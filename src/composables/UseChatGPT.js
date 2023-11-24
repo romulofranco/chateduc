@@ -11,8 +11,7 @@ export default function useChatGPT() {
           model: "gpt-3.5-turbo-0613",
           stream: true,
           messages: messageList,
-          temperature: 0.2,
-          max_tokens: 1000,
+
         })
       });
     } catch (error) {

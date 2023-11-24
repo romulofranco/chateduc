@@ -58,6 +58,7 @@
 <script>
 import {defineComponent, onMounted, ref} from 'vue'
 import DialogGPT from "components/DialogGPT.vue";
+import Typewriter from "components/Typewriter.vue";
 
 export default defineComponent({
     name: "CardProduct",

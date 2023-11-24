@@ -281,15 +281,8 @@ export default defineComponent({
     name: "ProductCatalogues",
     components: {CardProduct: defineAsyncComponent(() => import('components/cards/CardProduct.vue'))},
     setup() {
-        const search = ref('');
-        const legendaDlg = ref(false);
         return {
-            search,
             data,
-            legendaDlg,
-            toggleLegendaDlg() {
-                legendaDlg.value = !legendaDlg.value;
-            },
         }
     }
 })
