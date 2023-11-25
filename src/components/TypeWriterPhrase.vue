@@ -61,8 +61,8 @@ export default {
                     opt.currentPhraseIndex = 0;
                 }
             }
-            const spedUp = Math.random() * (25 - 15) + 15;
-            const normalSpeed = Math.random() * (35 - 20) + 25;
+            const spedUp = Math.random() * (15 - 5) + 5;
+            const normalSpeed = Math.random() * (15 - 10) + 5;
             const time = opt.isDeleting ? spedUp : normalSpeed;
             setTimeout(loop, time);
         }
