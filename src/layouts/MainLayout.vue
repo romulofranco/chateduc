@@ -1,12 +1,14 @@
 <template>
+  <body style="overflow: hidden;">
   <q-layout view="lHh Lpr lff" class="shadow-2 rounded-borders bg-white">
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title> ChatEduc </q-toolbar-title>
-
-        <q-btn-dropdown flat color="white" icon="person">
+        <q-toolbar-title> ChatEduc</q-toolbar-title>
+        <q-btn flat round  color="white" icon="notifications">
+          <q-badge floating color="black">5</q-badge>
+        </q-btn>
+        <q-btn-dropdown round flat color="white" icon="person">
           <q-list>
             <q-item clickable v-close-popup @click="handlerLogout">
               <q-item-section>
@@ -28,25 +30,35 @@
       <q-img
         class="absolute-top"
         src="https://as2.ftcdn.net/v2/jpg/03/16/92/61/1000_F_316926143_cVdnI6bJPbhlo1yZVTJk0R0sjBx4vVnO.jpg"
-        style="height: 150px"
+        style="height: 100px; "
       >
-        <div class="absolute-bottom bg-transparent">
-          <q-avatar size="56px" class="q-mb-sm">
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-          </q-avatar>
-          <div class="text-weight-bold text-white text-bold text-h6">Rômulo Franco</div>
-          <div class="text-white text-bold text-h7">@romulo_franco</div>
+        <div class="row bg-transparent"  >
+          <q-item clickable v-ripple >
+            <q-item-section avatar>
+              <q-avatar size="56px" class="q-mb-sm">
+                <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+              </q-avatar>
+            </q-item-section>
+
+            <q-item-section>
+            <div class="text-weight-bold text-white text-bold text-h6">Rômulo Franco</div>
+            <div>
+              <div class="text-weight-bold text-white text-bold text-subtitle1">@romulo_franco</div>
+            </div>
+            </q-item-section>
+          </q-item>
+
         </div>
       </q-img>
       <q-scroll-area
         style="
           height: calc(100% - 150px);
-          margin-top: 150px;
+          margin-top: 100px;
           border-right: 1px solid #ddd;
         "
       >
         <q-list padding>
-          <q-item-label header class="text-h6 text-bold"> Menu </q-item-label>
+          <q-item-label header class="text-h6 text-bold"> Menu</q-item-label>
           <EssentialLink
             v-for="link in essentialLinks"
             :key="link.title"
@@ -74,14 +86,19 @@
 
     <q-page-container>
       <router-view />
+
+      <!-- place QPageScroller at end of page -->
+      <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
+        <q-btn fab icon="keyboard_arrow_up" color="accent" />
+      </q-page-scroller>
     </q-page-container>
   </q-layout>
+  </body>
 </template>
 
 <script>
 import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
-import { useQuasar } from "quasar";
 
 import EssentialLink from "components/EssentialLink.vue";
 import DigiCompEduLink from "components/DigiCompEduLink.vue";
@@ -94,32 +111,38 @@ const mainMenuLinkList = [
     title: "Dashboard",
     caption: "",
     icon: "mdi-home",
-    routeName: "me",
+    routeName: "me"
+  },
+  {
+    title: "Recomendações",
+    caption: "",
+    icon: "mdi-post-outline",
+    routeName: "recomendation"
   },
   {
     title: "Assistente",
     caption: "",
     icon: "mdi-chat-processing",
-    routeName: "chatbot",
+    routeName: "chatbot"
   },
   {
-    title: "Categorias",
-    caption: "",
-    icon: "mdi-shape-outline",
-    routeName: "category",
-  },
-  {
-    title: "Prompt",
+    title: "Autoavaliação",
     caption: "",
     icon: "mdi-frequently-asked-questions",
-    routeName: "prompt",
+    routeName: "digcompedu-checkin-list"
+  },
+  {
+    title: "Prompts",
+    caption: "",
+    icon: "mdi-head-question",
+    routeName: "prompt"
   },
   {
     title: "Sobre",
     caption: "",
     icon: "mdi-information-outline",
-    routeName: "prompt",
-  },
+    routeName: "sobre"
+  }
 ];
 
 const digiCompEduLinkList = [
@@ -127,26 +150,21 @@ const digiCompEduLinkList = [
     title: "Introdução",
     caption: "",
     icon: "mdi-information",
-    routeName: "digcompedu-intro",
+    routeName: "digcompedu-intro"
   },
   {
     title: "Áreas",
     caption: "",
     icon: "mdi-home",
-    routeName: "area-list",
+    routeName: "area-list"
   },
   {
     title: "Níveis de Competência",
     caption: "",
     icon: "mdi-shape-outline",
-    routeName: "level-list",
+    routeName: "level-list"
   },
-  {
-    title: "Autorreflexão individual",
-    caption: "",
-    icon: "mdi-frequently-asked-questions",
-    routeName: "digcompedu-checkin-list",
-  },
+
 ];
 
 export default defineComponent({
@@ -154,7 +172,7 @@ export default defineComponent({
 
   components: {
     EssentialLink,
-    DigiCompEduLink,
+    DigiCompEduLink
   },
 
   setup() {
@@ -167,14 +185,14 @@ export default defineComponent({
     const handlerLogout = async () => {
       dialogShow({
         tittle: "Sair",
-        message: "Deseja realmente sair da aplicação?",
+        message: "Deseja realmente sair da aplicação?"
       })
         .onOk(async () => {
           try {
             await logout();
             notifySuccess("Bye bye! 😁");
             router.replace({
-              name: "login",
+              name: "login"
             });
           } catch (error) {
             notifyError(error.message);
@@ -195,8 +213,8 @@ export default defineComponent({
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
-      handlerLogout,
+      handlerLogout
     };
-  },
+  }
 });
 </script>

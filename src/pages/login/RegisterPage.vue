@@ -1,9 +1,9 @@
 <template>
-  <q-page class="bg-green-1 row justify-center items-center">
+  <q-page class="row justify-center items-center">
     <q-form class="row justify-center" @submit.prevent="handlerRegister">
       <q-card square class="q-pa-sm shadow-1">
         <q-card-section>
-          <p class="login col-12 text-h6 text-left">Registro</p>
+          <p class="col-12 text-h6 text-left">Registro</p>
         </q-card-section>
 
         <q-card-section>

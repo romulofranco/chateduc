@@ -5,6 +5,26 @@ const routes = [
     children: [
       {
         path: "",
+        name: "home",
+        component: () => import ("pages/home/IndexPage.vue")
+      },
+      {
+        path: "",
+        name: "about",
+        component: () => import ("pages/home/AboutPage.vue")
+      },
+      {
+        path: "",
+        name: "contact",
+        component: () => import ("pages/home/ContactPage.vue")
+      },
+      {
+        path: "",
+        name: "features",
+        component: () => import ("pages/home/FeaturesPage.vue")
+      },
+      {
+        path: "",
         name: "loginDefault",
         component: () => import ("pages/login/LoginPage.vue")
       },
@@ -22,7 +42,12 @@ const routes = [
         path: "email-confirmation",
         name: "email-confirmation",
         component: () => import ("pages/login/EmailConfirmationPage.vue")
-      }, {
+      },
+      {
+        path: "comment-confirmation",
+        name: "comment-confirmation",
+        component: () => import ("pages/login/CommentConfirmationPage.vue")
+      },{
         path: "forgot-password",
         name: "forgot-password",
         component: () => import ("pages/login/ForgotPasswordPage.vue")
@@ -48,7 +73,7 @@ const routes = [
       {
         path: "chatbot",
         name: "chatbot",
-        component: () => import ("pages/bot/ChatPage.vue")
+        component: () => import ("pages/bot/ChatPage1.vue")
       },
       {
         path: "sobre",
@@ -66,7 +91,7 @@ const routes = [
       }, {
         path: "prompt",
         name: "prompt",
-        component: () => import ("pages/prompt/List.vue")
+        component: () => import ("pages/prompt/PromptPage.vue")
       }, {
         path: "form-prompt/:id?",
         name: "form-prompt",
@@ -94,7 +119,11 @@ const routes = [
       }, {
         path: "digcompedu-checkin-form/:id?",
         name: "digcompedu-checkin-form",
-        component: () => import ("pages/digcompedu/checkin/Form.vue")
+        component: () => import ("pages/digcompedu/checkin/SelfReflectionDetail.vue")
+      }, {
+        path: "recomendation",
+        name: "recomendation",
+        component: () => import ("pages/recomendation/RecomendationPage.vue")
       }
     ],
     meta: {

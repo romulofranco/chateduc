@@ -59,9 +59,7 @@ module.exports = {
 
   // add your custom rules here
   rules: {
-    "vue/multi-word-component-names": ["error", {
-      "ignores": ['Chat']
-    }],
+    "vue/multi-word-component-names": 0,
     "prefer-promise-reject-errors": "off",
 
     // allow debugger during development only

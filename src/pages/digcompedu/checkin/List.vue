@@ -4,7 +4,7 @@
       <div class="q-pa-md">
         <div class="row">
           <div class="col">
-            <p class="text-h5 text-left">Autoreflexão individual</p>
+            <p class="text-h5 text-left">Autoavaliação individual</p>
           </div>
           <div class="col text-right">
             <q-btn

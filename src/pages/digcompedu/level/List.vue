@@ -74,9 +74,9 @@
             <q-card class="justify-items text-center shadow-5">
               <q-item>
                 <q-item-section avatar>
-                  <q-avatar2>
+                  <q-avatar>
                     <img :src="level.img_url" />
-                  </q-avatar2>
+                  </q-avatar>
                 </q-item-section>
 
                 <q-item-section class="text-left">

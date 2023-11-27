@@ -10,7 +10,7 @@
 
         <template v-slot:header>
           <q-item-section avatar style="height:40px; width: 40px">
-            <q-img :src="'levels/' + checkinItem.level_result_img + '.png'" >
+            <q-img :src="'levels/' + checkinItem.level_result_img + '.png'">
               <div class="floating transparent">
                 <q-badge filled top color="teal">{{ checkinItem.level_result_img.toUpperCase() }}</q-badge>
               </div>
@@ -80,7 +80,10 @@
           <q-card-section>
             <p class="text-center text-bold text-subtitle">Notas por área</p>
             <q-separator />
-            <q-tabs swipeable>
+            <q-tabs  :breakpoint="1"  align="justify" animated   active-color="primary"
+                    indicator-color="primary"
+                    outside-arrows
+                    mobile-arrows>
               <div v-for="area in seriesBar" :key="area.id">
                 <q-tab :name="area.id" :label="area.name">
                   <div class="q-mt-md text-center text-black">
@@ -93,7 +96,8 @@
                       :class="'bg-' + area.cor1"
                       readonly
                     >
-                      <q-badge color="black" class="text-body1 text-white" style="color: white;height: 32px;width: 32px" floating>
+                      <q-badge color="black" class="text-body1 text-white" style="color: white;height: 32px;width: 32px"
+                               floating>
                         {{ area.level_txt }}
                       </q-badge>
                       {{ area.data + "%" }}
@@ -115,7 +119,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted, computed } from "vue";
+import { defineComponent, ref, onMounted } from "vue";
 import useApi from "src/composables/UseApi";
 import useNotify from "src/composables/UseNotify";
 import { useRouter } from "vue-router";
