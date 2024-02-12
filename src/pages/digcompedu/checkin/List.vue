@@ -4,7 +4,7 @@
       <div class="q-pa-md">
         <div class="row">
           <div class="col">
-            <p class="text-h5 text-left">Autoreflexão individual</p>
+            <p class="text-h5 text-left">Autoavaliação individual</p>
           </div>
           <div class="col text-right">
             <q-btn
@@ -31,204 +31,151 @@
               {{ this.mainDesc }}
             </p>
           </div>
+
+        </q-card-section>
+      </q-card>
+      <q-card flat>
+        <q-card-section>
+          <q-item-label class="text-h6">Últimas avaliações</q-item-label>
         </q-card-section>
       </q-card>
 
-      <p class="text-bold text-h6">Últimas avaliações</p>
-      <q-separator color="primary" class="full-width" />
+
       <div
         v-for="checkinItem in this.checkinList"
         :key="checkinItem.id"
         class="full-width"
       >
-        <q-card class="full-width" flat>
-          <q-expansion-item
-            expand-separator
-            group="accordeon-group-1"
-            header-class="bg-checkin"
-            icon="mdi-calendar-check"
-            class="text-bold text-subtitle1 text-weight-medium shadow-1"
-          >
-            <template v-slot:header>
-              <q-item-section avatar>
-                <q-img :src="checkinItem.img_url" />
-              </q-item-section>
 
-              <q-item-section>
-                {{ formatDate(checkinItem.checkin_date) }}
-              </q-item-section>
+        <Resumo ref="resumoCheckin" :detail="true" :label="checkinItem.dataRealizacao" :checkin_id="checkinItem.id"
+                :checkin_item="checkinItem" :key="checkinItem.id" />
 
-              <q-item-section class="desktop-only">
-                <q-item-label
-                  >{{ checkinItem.prof_result }}
-                  <q-badge
-                    label="Resultado"
-                    v-if="checkinItem.prof_result"
-                    color="green"
-                  />
-                </q-item-label>
-              </q-item-section>
-
-              <q-item-section class="desktop-only">
-                <q-item-label
-                  >{{ checkinItem.prof_expected }}
-                  <q-badge
-                    v-if="checkinItem.prof_expected"
-                    label="Esperado"
-                    color="orange"
-                  />
-                </q-item-label>
-              </q-item-section>
-
-              <q-item-section side>
-                <div class="row items-center">
-                  <q-icon name="star" color="red" size="18px" />
-                  <q-icon name="star" color="red" size="18px" />
-                </div>
-              </q-item-section>
-            </template>
-
-            <q-card flat>
-              <q-card-section>
-                <q-card-section>
-                  <q-card class="justify-items text-left shadow-5" flat>
-                    <q-card-section>
-                      <q-card-section>
-                        <q-card-section class="mobile-only">
-                          <q-item-label
-                            >{{ checkinItem.prof_result }}
-                            <q-badge
-                              label="Resultado"
-                              v-if="checkinItem.prof_result"
-                              color="green"
-                            />
-                          </q-item-label>
-                        </q-card-section>
-                        <q-card-section class="mobile-only">
-                          <q-item-label
-                            >{{ checkinItem.prof_expected }}
-                            <q-badge
-                              v-if="checkinItem.prof_expected"
-                              label="Esperado"
-                              color="orange"
-                            />
-                          </q-item-label>
-                        </q-card-section>
-                      </q-card-section>
-                    </q-card-section>
-                    <q-card-section>
-                      <q-card-section>
-                        <q-item-label class="text-bold text-subtitle"
-                          >Principal característica
-                        </q-item-label>
-
-                        <q-item-label class="text-italic" :inset-level="2">
-                          {{ checkinItem.main_statement }}</q-item-label
-                        >
-                      </q-card-section>
-                      <q-card-section>
-                        <q-item-label class="text-bold text-subtitle"
-                          >Declaração de proficiência</q-item-label
-                        >
-                        <q-item-label class="text-italic">
-                          {{ checkinItem.proficient_statement }}</q-item-label
-                        >
-                      </q-card-section>
-                    </q-card-section>
-                  </q-card>
-                </q-card-section>
-                <p class="text-center text-bold text-subtitle">Notas por área</p>
-                <q-separator />
-                <q-tabs v-model="tab" swipeable>
-                  <div v-for="area in checkinItem.areas" :key="area.id">
-                    <q-tab :name="area.id" :label="area.name" :class="'text-' + area.cor">
-                      <div class="q-mt-md text-center text-black">
-                        <q-knob
-                          :step="25"
-                          v-model="area.nota"
-                          show-value
-                          size="110px"
-                          :thickness="0.35"
-                          :color="area.cor"
-                          :track-color="area.subcor"
-                          :class="'text-' + area.cor"
-                          readonly
-                        />
-                      </div>
-                    </q-tab>
-                  </div>
-                </q-tabs>
-              </q-card-section>
-            </q-card>
-          </q-expansion-item>
-        </q-card>
       </div>
+
+      <q-page-sticky class="mobile-only" position="bottom-right" :offset="[20, 20]">
+        <q-btn fab icon="mdi-plus" color="accent" :to="{ name: 'form-category' }" />
+      </q-page-sticky>
     </div>
   </q-page>
 </template>
 
 <script>
-import { ref } from "vue";
-import { checkinList, imgUrl, mainDesc } from "./checkin";
+import Resumo from "src/pages/digcompedu/checkin/Resumo.vue";
+import { defineComponent, ref, onMounted } from "vue";
+import useApi from "src/composables/UseApi";
+import { imgUrl, mainDesc } from "./checkin";
 import moment from "moment";
+import useNotify from "src/composables/UseNotify";
 
-export default {
+
+export default defineComponent({
   name: "PageCheckinList",
-
-  data: function () {
-    return {};
+  components: {
+    Resumo
   },
+  data: function() {
+    const { listSort } = useApi();
+    const checkinList = ref([]);
+    const { notifyError, notifySuccess } = useNotify();
 
-  methods: {
-    formatDate(value) {
+    onMounted(() => {
+      handleCheckinList();
+    });
+
+    const handleCheckinList = async () => {
+      try {
+        checkinList.value = await listSort("checkin");
+        checkinList.value.forEach((check) => {
+          check.dataRealizacao = formatDate(check.created_at);
+          check.total_pontos = check.grade + "/192";
+        });
+      } catch (error) {
+        notifyError(error.message);
+      }
+    };
+
+    const formatDate = (value) => {
       if (value) {
         return moment(String(value)).format("DD/MM/YYYY HH:mm");
       }
-    },
-  },
+    };
 
-  setup() {
     return {
-      abreDlg: ref(false),
       checkinList,
+      abreDlg: ref(false),
       imgUrl,
       mainDesc,
-      tab: ref("1"),
+      tab: ref("1")
     };
   },
-};
-</script>
 
+  methods: {}
+
+});
+</script>
 <style>
+
+.text-area1 {
+  background: #f36600;
+  color: #f36600 !important;
+}
+
+.text-area2 {
+  background: #31942e;
+  color: #31942e !important;
+}
+
+.text-area3 {
+  background: #3f85c1;
+  color: #3f85c1 !important;
+}
+
+.text-area4 {
+  background: #1da2a3;
+  color: #1da2a3 !important;
+}
+
+.text-area5 {
+  background: #9a56d1;
+  color: #9a56d1 !important;
+}
+
+.text-area6 {
+  background: #d3375a;
+  color: #d3375a !important;
+}
+
 .area1 {
-  background-color: #ee8031;
+  background: #f36600;
 }
 
 .area2 {
-  background-color: #31942e;
+  background: #31942e;
 }
 
 .area3 {
-  background-color: #3f85c1;
+  background: #3f85c1;
 }
 
 .area4 {
-  background-color: #1da2a3;
+  background: #1da2a3;
 }
 
 .area5 {
-  background-color: #9a56d1;
-}
-.area6 {
-  background-color: #d3375a;
+  background: #9a56d1;
 }
 
+.area6 {
+  background: #d3375a;
+}
+
+
 .bg-area1 {
-  background-color: rgb(233, 164, 114);
+  background-color: #f36600;
 }
 
 .bg-area2 {
-  background-color: green;
+  background-color: #31942e;
 }
 
 .bg-area3 {
@@ -242,11 +189,38 @@ export default {
 .bg-area5 {
   background-color: #9a56d1;
 }
+
 .bg-area6 {
   background-color: #d3375a;
 }
 
-.bg-checkin {
-  background-color: antiquewhite;
+
+.bar-area1 {
+  background-color: #efa672;
+}
+
+.bar-area2 {
+  background-color: #bcecba;
+}
+
+.bar-area3 {
+  background-color: #a4caee;
+}
+
+.bar-area4 {
+  background-color: #a9efef;
+}
+
+.bar-area5 {
+  background-color: #cb9fef;
+}
+
+.bar-area6 {
+  background-color: #f6a0b1;
+}
+
+.bg-level {
+  background-color: #bce6e9;
 }
 </style>
+

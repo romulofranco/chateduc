@@ -12,27 +12,40 @@
   },
   "dependencies": {
     "@ditdot-dev/vue-flow-form": "^2.3.1",
+    "@icon-park/vue-next": "^1.4.2",
     "@quasar/extras": "^1.0.0",
-    "@supabase/supabase-js": "^1.35.2",
+    "@supabase/supabase-js": "2.12.1",
+    "apexcharts": "^3.37.2",
     "axios": "^0.21.1",
-    "core-js": "^3.6.5",
-    "dotenv": "^16.0.1",
+    "core-js": "^3.30.0",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.3",
+    "echarts": "^5.4.1",
     "jshint": "^2.13.4",
+    "lorem-ipsum": "^2.0.8",
+    "marked": "^9.0.0",
     "moment": "^2.29.4",
-    "quasar": "^2.6.0",
+    "quasar": "^2.6.1",
     "save-dev": "^0.0.1-security",
+    "uuid": "^9.0.0",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0"
+    "vue-echarts": "^6.5.4",
+    "vue-router": "^4.0.0",
+    "vue3-apexcharts": "^1.4.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
     "@quasar/app-webpack": "^3.0.0",
-    "electron": "^18.2.3",
+    "@types/node": "^18.15.11",
+    "autoprefixer": "^10.4.12",
+    "dotenv-safe": "^8.2.0",
+    "electron": "^20.3.9",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-vue": "^8.5.0",
     "eslint-webpack-plugin": "^3.1.1",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.2.7"
   },
   "browserslist": [
     "last 10 Chrome versions",
@@ -46,7 +59,7 @@
     "last 5 Opera versions"
   ],
   "engines": {
-    "node": ">= 12.22.1",
+    "node": ">= 12.18.1",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
   }
