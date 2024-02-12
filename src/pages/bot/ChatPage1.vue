@@ -12,8 +12,8 @@
                             :bg-color="item.role === 'user' ? 'orange-5' : 'yellow-13'"
                             :text-color="item.role === 'user' ? 'black' : 'black'">
 
-              <div v-if="item.content">
-                {{ item.content.replace(/^\n\n/, "") }}
+
+              <div v-if="item.content" v-html="marked(item.content)">
               </div>
               <LoadingSnip v-else/>
             </q-chat-message>
@@ -23,12 +23,12 @@
     </div>
 
     <q-drawer
-        side="right"
-        v-model="drawerRight"
-        overlay
-        :width="320"
-        :breakpoint="300"
-        :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-amber-1 bordered shadow-1'"
+      side="right"
+      v-model="drawerRight"
+      overlay
+      :width="320"
+      :breakpoint="300"
+      :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-amber-1 bordered shadow-1'"
     >
       <q-scroll-area class="fit">
         <q-item-section class="bg-secondary ">
@@ -39,7 +39,7 @@
           <q-separator color="secondary" class="full-width shadow-1"/>
         </q-item-section>
         <q-list class="text-caption">
-          <q-item clickable >
+          <q-item clickable>
             <q-item-section avatar>
               <q-icon name="apps"/>
             </q-item-section>
@@ -74,17 +74,17 @@
     <q-toolbar class="bg-primary text-white row">
       <q-btn round flat icon="menu" class="q-mr-sm" @click="drawerRight = !drawerRight"/>
       <q-input
-          v-model="messageContent"
-          class="col-grow q-mr-sm"
-          bg-color="white"
-          :placeholder="isTalking ? 'Educ está digitando...' : 'Digite sua mensagem...'"
-          :disable="isTalking"
-          dense
-          outlined
-          rounded
-          autofocus
-          ref="inputFocus"
-          @keydown.enter="isTalking || sendOrSave()"
+        v-model="messageContent"
+        class="col-grow q-mr-sm"
+        bg-color="white"
+        :placeholder="isTalking ? 'Educ está digitando...' : 'Digite sua mensagem...'"
+        :disable="isTalking"
+        dense
+        outlined
+        rounded
+        autofocus
+        ref="inputFocus"
+        @keydown.enter="isTalking || sendOrSave()"
       />
       <q-btn round flat icon="send" type="submit" :disabled="isTalking" @click="sendOrSave()">
 
@@ -101,9 +101,11 @@ import LoadingSnip from "components/LoadingSnip.vue";
 import useChatGPT from "src/composables/UseChatGPT";
 import cryptoJS from "crypto-js";
 import {LoremIpsum} from "lorem-ipsum";
+import {marked} from "marked";
 
 export default {
   name: "ChatPage1",
+  methods: {marked},
   components: {LoadingSnip},
   setup() {
     let apiKey = process.env.CHATGPT_KEY;
@@ -166,7 +168,7 @@ export default {
     };
 
     const appendLastMessageContent = (content) =>
-        (messageList.value[messageList.value.length - 1].content += content);
+      (messageList.value[messageList.value.length - 1].content += content);
 
     const sendOrSave = () => {
       if (!messageContent.value.length) return;
@@ -209,9 +211,13 @@ export default {
     };
 
     watch(messageList.value, () => {
-      // eslint-disable-next-line vue/valid-next-tick
-      return nextTick(() => scrollToBottom());
+      moveDown();
     });
+
+    const moveDown = async () => {
+      await nextTick();
+      scrollToBottom();
+    };
 
     const clickConfig = () => {
       if (!isConfig.value) {
@@ -234,8 +240,9 @@ export default {
       dataList?.forEach((v) => {
         const json = JSON.parse(v);
         const content =
-            status === 200 ? json.choices[0].delta.content ?? "" : json.error.message;
+          status === 200 ? json.choices[0].delta.content ?? "" : json.error.message;
         appendLastMessageContent(content);
+        scrollToBottom();
       });
       await readStream(reader, status);
     };

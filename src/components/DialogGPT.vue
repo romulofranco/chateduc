@@ -23,8 +23,7 @@
                                 :bg-color="item.role === 'user' ? 'orange-5' : 'yellow-13'"
                                 :text-color="item.role === 'user' ? 'black' : 'black'">
 
-                  <div v-if="item.content">
-                    {{ item.content.replace(/^\n\n/, "") }}
+                  <div v-if="item.content" v-html="marked(item.content)" >
                   </div>
                   <LoadingSnip v-else />
                 </q-chat-message>
@@ -72,11 +71,13 @@ import cryptoJS from "crypto-js";
 import { LoremIpsum } from "lorem-ipsum";
 import LoadingSnip from "components/LoadingSnip.vue";
 import { scroll } from "quasar";
+import {marked} from "marked";
 
 const { getScrollHeight, getScrollTarget, setVerticalScrollPosition } = scroll;
 
 export default defineComponent({
   name: "DialogChatGPT",
+  methods: {marked},
 
   props: ["model_dlg_gpt", "question"],
 
@@ -135,7 +136,7 @@ export default defineComponent({
 
     const appendLastMessageContent = (content) => {
       (messageList.value[messageList.value.length - 1].content += content);
-      // scrollToBottom();
+       scrollToBottom();
     };
 
     const sendOrSave = () => {
@@ -209,7 +210,7 @@ export default defineComponent({
         const json = JSON.parse(v);
         const content =
           status === 200 ? json.choices[0].delta.content ?? "" : json.error.message;
-        appendLastMessageContent(content);
+        appendLastMessageContent(content) ;
       });
       await readStream(reader, status);
     };
