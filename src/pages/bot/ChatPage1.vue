@@ -12,8 +12,7 @@
                             :bg-color="item.role === 'user' ? 'orange-5' : 'yellow-13'"
                             :text-color="item.role === 'user' ? 'black' : 'black'">
 
-
-              <div v-if="item.content" v-html="marked(item.content)">
+              <div v-if="item.content" v-html="marked(item.content.replace('##', '**'))" >
               </div>
               <LoadingSnip v-else/>
             </q-chat-message>

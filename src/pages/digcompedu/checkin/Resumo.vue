@@ -187,4 +187,31 @@ export default defineComponent({
   background-color: #f3d38c;
 }
 
+
+
+.bg-area1 {
+  background-color: #f36600;
+}
+
+.bg-area2 {
+  background-color: #31942e;
+}
+
+.bg-area3 {
+  background-color: #3f85c1;
+}
+
+.bg-area4 {
+  background-color: #1da2a3;
+}
+
+.bg-area5 {
+  background-color: #9a56d1;
+}
+
+.bg-area6 {
+  background-color: #d3375a;
+}
+
+
 </style>
