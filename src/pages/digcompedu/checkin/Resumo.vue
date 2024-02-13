@@ -187,31 +187,87 @@ export default defineComponent({
   background-color: #f3d38c;
 }
 
+ .text-area1 {
+   background: #f36600;
+   color: #f36600 !important;
+ }
 
-
-.bg-area1 {
-  background-color: #f36600;
+.text-area2 {
+  background: #31942e;
+  color: #31942e !important;
 }
 
-.bg-area2 {
-  background-color: #31942e;
+.text-area3 {
+  background: #3f85c1;
+  color: #3f85c1 !important;
 }
 
-.bg-area3 {
-  background-color: #3f85c1;
+.text-area4 {
+  background: #1da2a3;
+  color: #1da2a3 !important;
 }
 
-.bg-area4 {
-  background-color: #1da2a3;
+.text-area5 {
+  background: #9a56d1;
+  color: #9a56d1 !important;
 }
 
-.bg-area5 {
-  background-color: #9a56d1;
+.text-area6 {
+  background: #d3375a;
+  color: #d3375a !important;
 }
 
-.bg-area6 {
-  background-color: #d3375a;
+.area1 {
+  background: #f36600;
+}
+
+.area2 {
+  background: #31942e;
+}
+
+.area3 {
+  background: #3f85c1;
+}
+
+.area4 {
+  background: #1da2a3;
+}
+
+.area5 {
+  background: #9a56d1;
+}
+
+.area6 {
+  background: #d3375a;
 }
 
 
+.bar-area1 {
+  background-color: #efa672;
+}
+
+.bar-area2 {
+  background-color: #bcecba;
+}
+
+.bar-area3 {
+  background-color: #a4caee;
+}
+
+.bar-area4 {
+  background-color: #a9efef;
+}
+
+.bar-area5 {
+  background-color: #cb9fef;
+}
+
+.bar-area6 {
+  background-color: #f6a0b1;
+}
+
+.bg-level {
+  background-color: #bce6e9;
+}
 </style>
+
