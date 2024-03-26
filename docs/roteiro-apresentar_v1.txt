@@ -1,0 +1,210 @@
+Primeiros slides e Topicos
+
+	Vou começar, ali vcs perceberam que novamente eu troquei o titulo e chamei a plataforma de ChatEduc.
+	Bom, vamos la!	
+	Alguns tópicos que eu irei abordar durante a apresentação, falar sobre essa transformação tecnológica que está ocorrendo na sociedade, o panorama dessa transformação tecnológica na educação, e então vem os quadros de competência que são como apelos para a mudança a partir de inovações, e também esses quadros acabam por fomentar um perfil de um indivíduo na sociedade, um indivíduo inovador, e isso reflete também na educação, então passa a ter a necessidade da busca de um perfil de educador inovador baseado nesses quadros. Com esses elementos a gente já consegue traçar nosso objetivo de pesquisa, que é criar uma inovação na educação a partir de uma tecnologia mediadora usando a inteligência artificial, usando algumas interfaces como chatbots e machine learning.
+
+	A partir daí eu já tenho a relação de conceitos, eu consigo apresentar um objeto de pesquisa, eu já consigo ter esse objeto de pesquisa a partir desses conceitos. A matriz de competência, que é um dos elementos fundamentais para a gente, porque é ela que fornece o pano de fundo para executar a pesquisa, e essa matriz a gente vai usar o DigiComp Edu, que é uma matriz de competência da União Europeia. Apresenta os objetivos gerais específicos e uma potencial plataforma resultante, a metodologia de pesquisa, as etapas, um pouco do estado da arte, que são alguns trabalhos relacionados especificamente para chatbots.
+ 
+Introdução
+	Então estamos na era digital, na era das grandes transformações, transformações exponenciais, quarta revolução industrial ou sociedade do conhecimento, sociedade em rede, interconectada e por aí vai, são muitos nomes que se da a essa transformação que tem ocorrido na sociedade. Essa transformação pode ser vista de várias maneiras, a partir da ampliação do uso de tecnologias que poderá levar à redução do emprego.
+	
+	As transformações que ocorrem na sociedade, por que isso? Porque essas transformações acabam tendo uma nova forma de se relacionar com a educação, novas relações com o saber, surgem novos espaços, ambientes digitais, dispositivos que exploram as tecnologias, modos de comunicação e colaboração no trabalho. O indivíduo tem que lidar com uma gama de informação para poder construir e gerar conhecimento. Então passa a exigir uma busca da informação relevante, o uso de plataformas para executar essa busca, a submissão dos indivíduos, dos usuários, que somos nós, sob sistemas de inteligência artificial.
+
+	E é lógico que a inteligência artificial vai vir com vários aspectos, tanto para poder aprimorar esses ambientes de educação, quanto para poder gerar resultados a partir da inteligência artificial. A sociedade do conhecimento, essa é uma definição interessante, que é a proliferação de tecnologias digitais pautando a vida em sociedade em todos os aspectos, ou seja, o indivíduo para lidar com a vida dele, ele vai estar sempre associado com algum tipo de tecnologia. Transformação da sociedade de um modelo industrial para um modelo orientado pela tecnologia.
+
+	Então o mundo passa a exigir um novo perfil de indivíduo na sociedade. Surgem então os guidelines, que são documentos guias, contendo uma atriz de competência com o intuito justamente da promoção do indivíduo na sociedade a partir das competências, que são um conjunto de conhecimentos, habilidades e atitudes para o século XXI, baseadas na aprendizagem ao longo da vida definida pela Unesco lá atrás. Então competências gerais para o século XXI.
+
+Competências e Quadro da OECD
+	O que são, na verdade, essas competências? Aqui uma definição de competência, você tem o tripé da competência sendo a junção de conhecimento, habilidade e atitude. A junção dessas três categorias, características, vamos dizer assim, é a junção dos três que formam a competência. Então eu tenho o conhecimento, que é conhecer, conscientizar, saber o que e o porquê.
+
+	A habilidade, que é arriscar, experimentar, ter a técnica e capacidade, saber o como fazer. A atitude, praticar, utilizar, ter determinação e identidade, querer fazer, se sentir estimulado a fazer. E desse lado eu tenho um quadro, que é da OSD, que ela separa as competências socioemocionais e as competências cognitivas.
+
+	De um lado as socioemocionais é saber viver, saber viver em sociedade. Aqui tem algumas coisas interessantes, atingir objetivos, trabalhar em grupo, lidar com as emoções. Então até uma questão interior, você passa a ser educado perante esses quadros de competências.
+
+	Do outro lado tem as competências cognitivas, que no caso são competências que vão te levar a um aprimoramento dentro da sociedade para você até inclusive se manter dentro da sociedade, ter capacidade mental para adquirir conhecimentos, ideias e experiências. E esses quadros eles visam justamente trabalhar as competências no indivíduo desde a sua infância. Então está aí a necessidade de trabalhar as competências.
+
+	Esse é o que esses quadros almejam, a promoção do indivíduo através de competências. Então a necessidade de estimular competências no indivíduo. Aqui o panorama da transformação tecnológica na educação.
+
+Panorama da Educação
+	Essa imagem representa muito bem isso, a escola é como se a escola estivesse fora do circuito tecnológico. Enquanto na periferia tudo coloridinho, uma espécie de simbiose tecnológica, a educação, a escola parece resistir à aderência a essa simbiose tecnológica. E com isso a escola é como se ela estivesse parada no tempo, esperando ser adquirida por uma outra instituição, um outro departamento e que sob nova direção poderia fazer algo.
+
+Panorama da Educação Detalhe 
+
+	Talvez ela não saiba como fazer parte desse circuito tecnológico. E quais são os desafios que a gente tem? Tem vários desafios, obviamente, mas esses aqui são alguns dos desafios. A necessidade de adaptação da infraestrutura pedagógica nas instituições de ensino e da reformulação do perfil dos seus colaboradores, exigindo um perfil de colaborador com a instituição de ensino, um perfil inovador.
+
+	A mediação digital remodela certas atividades cognitivas, ou seja, o modo como eu executo a aprendizagem passa a ser diferente de como eu executava no ensino tradicional. Algumas atividades cognitivas fundamentais que envolvem a linguagem, a sensibilidade, o conhecimento e a imaginação inventiva. Então é a partir dessas questões que a gente vai fazer a reestruturação do ensino e a aprendizagem.
+
+	E isso basicamente é a inclusão de inovações tecnológicas para poder inclusive entender como esses processos funcionam. Fatores cruciais como a criatividade e inovação para a criação de valor e mudança social. O sistema educacional passa a ter que contar com o docente, ator principal, nesse processo.
+
+	Bom, na verdade, a gente tem que fazer uma reflexão aqui para entender. Se a gente quer manter as instituições de ensino, o professor, o docente, ele é o ator principal realmente nesse processo, porque ele é como se fosse o elo. É ele que faz a conexão entre a instituição e o ensino.
+
+	Então é o educador quem tem capacidade de pavimentar qualquer caminho de aderência tecnológica, de tecnologias, de inovações que podem ser apropriadas para a educação, na educação, e que o professor pode executar junto com o aluno. Então, o que é necessário? A busca do perfil do educador criativo e inovador. E quais são essas características de um educador criativo e inovador? Como estimular tais características na formação continuada do educador? Bom, é isso que a gente vai ver.
+
+Quadro da OECD para Educação
+	Aqui tem um quadro que já dá algumas pistas de como essas competências poderiam ser trabalhadas. Então, esse quadro é de 2009 e a gente já consegue tirar alguma informação relevante sobre quais características a gente precisa ter no professor educador inovador. Esse quadro, embora eu já tenha apresentado um anterior, esse aqui é específico para educação.
+
+	Então, tem categoria de informação, comunicação, impacto ético-social. Na informação, eu vou ter informação como fonte, informação como produto, comunicação efetiva na comunicação, colaboração e interação virtual enquanto impacto social, responsabilidade social, impacto social, responsabilidade e impacto social. Aqui na informação como fonte, eu vou estar sempre buscando um dado, um conjunto de dados, informação para poder construir, gerar resultado.
+
+	Esse resultado é informação como produto. Então, eu vou obter uma quantidade de informação para poder gerar, construir conhecimento. E a partir disso, eu vou utilizar a comunicação para compartilhar esses resultados, a colaboração, a interação.
+
+	Eu sempre vou estar usando essas características, essas competências aqui. Só que o importante desse quadro é a característica tecnológica transversal. Então, aqui ele passa a exigir algumas coisas que anteriormente talvez não existiria, como alfabetização informacional, alfabetização midiática.
+
+	Aqui a comunicação vai estar sempre sendo executada em plataformas tecnológicas digitais. Por exemplo, aqui eu posso citar como exemplo a própria construção do meu doutorado. Eu fui na biblioteca da faculdade de educação, peguei os dois livros, eles estão aqui.
+
+	Usei talvez um ou dois parágrafos do livro que eu havia lido, mas o principal foi buscar a informação, buscar o dado em fontes que tinham algum nível ali que possibilitasse eu pegar uma informação que fosse relevante, com critério. Então, é por isso que a informação, a alfabetização informacional é importante, assim como a alfabetização midiática. Ou seja, eu sei usar a plataforma, eu sei como buscar dados nessa base, eu sei usar as tecnologias em prol da busca dessa informação.
+
+	E, ao mesmo tempo, a criatividade, inovação, resolução de problemas, tomada de decisão. Então, esse quadro é importante porque, embora ele seja de 2009, justamente hoje, num momento de pandemia, que a gente está executando algumas características que estão associadas a ele e que essa característica transversal, a gente passa a depender muito mais dela. Por que a gente está aqui hoje, eu estou comunicando o resultado desse doutorado usando o Google Meet.
+
+	E a colaboração, e aqui vocês vão colaborar, no final, estipular as críticas a partir dessa ferramenta que a gente está usando. 
+	
+Quadros de Competências e Documentos Guias
+	Esses quadros de competência visam destacar, evidenciam, alguns aspectos que são como apelos. E esses apelos são justamente o item 1, é a mudança, uma mudança na força de trabalho, onde opera o modelo industrial para uma transformação das posições de trabalho orientado pela tecnologia em uma sociedade interconectada em rápida transformação.
+
+	Aí já entra vários aspectos, como, por exemplo, a aprendizagem ao longo da vida. Eu passo a ter que lidar com sempre uma reformulação e aprimoramento dos cursos que eu preciso fazer para poder estar a par dentro dessa sociedade interconectada. Então, a necessidade da otimização dos processos de ensino-aprendizagem, a inclusão de inovações tecnológicas para aprofundar e transformar a aprendizagem.
+
+	Aí, no caso, seria a conversão dos processos de ensino-aprendizagem apoiado por tecnologias mediadoras. Ou seja, a inclusão de inovações tecnológicas é justamente para transformar esses processos de maneira que eles possam ser mediados pela tecnologia. 3. Mudança nas expectativas por parte dos alunos que demandam um sistema educacional mais conectado e mais relevante para a vida do estudante.
+
+	E 4. Podemos enfatizar a necessidade do educador criativo e inovador para lidar com as mudanças do século XXI no sistema educacional. Então, a necessidade de construir esse perfil de educador inovador. Como ele vai fazer isso? 
+	
+	Então, como esses quadros representam o educador inovador? 
+
+Perfil do Educador Inovador	
+	Aqui tem uma imagem muito interessante, que é uma imagem que contempla uma síntese do trabalho do André, da tese de doutorado do André, e ele sintetiza muito bem quais são as competências do educador inovador.
+
+	Então, você vê que nesse quadro aqui, na borda dele, um docente inovador inserido num contexto de cultura de inovação, onde você tem políticas externas e institucionais que estão associadas a essa cultura de inovação. E daí você tem o tripé aqui dele, que ele define, a tripé das competências, onde você tem a inovação, com as suas subcategorias aqui, a competência digital, a mesma coisa, e a aprendizagem ao longo da vida. E essas competências acabam sendo comuns, é como se fizesse uma intersecção aqui entre elas, de maneira que uma habilidade ou uma subcompetência possa servir para as duas aqui.
+
+	Ou seja, se eu utilizar a ética e metodologias dentro da competência digital, eu também estaria inovando. E aqui você tem uma junção que contempla as três. 
+
+Perfil do Educador inovador - Sintese 
+	Ele sintetiza melhor, ele dá uma descrição mais sucinta sobre cada uma delas, em três principais tópicos. A criatividade e inovação, que é a capacidade de avançar, além do ensino conteudista tradicional, experimentando novas soluções, assumindo riscos, autonomia e constante aprendizado, aprendizagem ao longo da vida, que a gente viu anteriormente, domínio das tecnologias inserido na sociedade em rede e da informação, a plena execução de A e B, ou seja, a plena execução de criatividade, inovação e B, autonomia e constante aprendizado, só é possível através do domínio das ferramentas digitais.
+
+	Então o André aqui, ele deixa, ele dá um peso maior, porque de fato o domínio das tecnologias é fundamental para a gente poder inovar, ter autonomia. Eu sempre vou estar, querendo ou não, executando algum meio de ensino e aprendizagem, usando tela ou algum dispositivo tecnológico. 
+
+Traçando nosso objetivo
+	Bom, então agora a gente consegue traçar um pouco o nosso objetivo já.
+
+Traçando nosso objetivo - segundo apelo dos docs guias
+	Eu tenho a necessidade de criar e construir esse perfil do educador inovador e eu vou fazer isso através de competências, através desses quadros de competência. E de que maneira eu vou fazer? O segundo apelo, como eu havia dito, é a busca pela otimização dos processos de ensino e aprendizagem, inclusão de inovações tecnológicas. Então surge a necessidade de inovação.
+
+Traçando nosso objetivo - inserção de inovação
+	Então como podemos obter uma inovação na educação? Possibilite apoiar o educador na sua formação continuada, que considere esses quadros de competência. Uma das maneiras, então, é utilizar uma inovação tecnológica a partir de uma tecnologia mediadora através da inteligência artificial. Ou seja, construir uma plataforma de forma com que ela converta os processos de formação continuada do educador usando as competências.
+
+Traçando nosso objetivo - Tecnologia Mediadora utilizando a IA	
+	Então eu vou usar essa tecnologia mediadora aqui para poder pegar os processos necessários para fomentar essas competências no perfil do educador usando a inteligência, usando as interfaces, talvez é melhor dizer assim, usando as interfaces de inteligência artificial. Bom, então a gente acaba entrando na inteligência artificial na educação. 
+	
+Sobre a IA
+	Então a inteligência artificial na educação não é muito diferente da inteligência artificial que a gente tem visto aí.
+	
+	Com a evolução tecnológica digital, novas e sofisticadas técnicas são introduzidas em todos os aspectos da sociedade. Por quê? Porque hoje em dia com a massa de dados que a gente tem em torno da gente, seria um tanto difícil que algoritmos estáticos pudessem lidar com Big Data para entregar para a gente uma experiência ali dentro dessas plataformas tecnológicas, seja uma rede social, seja uma plataforma de vídeo como Netflix e YouTube, seria muito difícil através de um algoritmo estático. Muita informação relevante talvez se perderia.
+
+	Esse é o algoritmo da inteligência artificial, que é principalmente baseado em aprendizado de máquina ou machine learning, que eu vou falar logo em seguida, sobre o que é Machine Learning, ele busca através do rastreamento que a gente tem dentro dessas plataformas de maneira a propiciar uma centralização do conteúdo em torno de nós mesmos. O conteúdo que é interessante, que é relevante para nós, então vai ser centralizado, vai ser entregue para nós usando esses algoritmos de inteligência artificial, que fica o tempo todo mimetizando o meu comportamento dentro da rede. Na educação esse mesmo princípio é reutilizado, só que a informação de redes sociais passa a ser o conteúdo que o aluno, que o estudante precisa aprender.
+
+	E aí a gente já tem algumas vantagens importantes da inclusão de algoritmos de inteligência artificial na educação, porque ela vai permitir a personalização do ensino, tornando o ensino mais flexível, mais adaptativo, e que corresponda exatamente ao perfil, ao ritmo, à forma como cada um aprende. 
+	
+	Uma importante definição da IAA pela OECD é um sistema baseado em máquina que pode, para um determinado conjunto de objetivos definido pelo homem, fazer previsões, recomendações ou decisões que influenciam ambientes reais ou virtuais. Então as previsões, as predições, as recomendações que a máquina faz em ambientes, que ela traz para a gente, ela nos permite tomar decisões, e essas decisões vão influenciar diretamente nos ambientes, tanto o real quanto o virtual.
+
+	Então, o mais importante da IAA para nós, através do Machine Learning, que eu vou falar logo em seguida, é a questão das predições. O Machine Learning tem capacidade de fazer recomendação, e é esse algoritmo que é importante. Só é possível eu adaptar um conteúdo, no nosso caso é o professor, adaptar um conteúdo para ele desde que previamente eu tenha treinado um algoritmo de Machine Learning para fazer a predição do conteúdo que é importante para o professor.
+
+Definições Machine Learning
+
+	Bom, então aqui o que seria o Machine Learning? É uma maneira de você ensinar a máquina por meio de padrões e inferências. Aqui eu tenho essa imagem que dá para explicar para vocês como isso funciona. São dois momentos que você tem nesse algoritmo que são importantes assim que você implanta um sistema.
+
+	É o treinamento do Machine Learning baseado em modelos. Essa imagem representa o Machine Learning de um ambiente supervisionado. Supervisionado diz o seguinte, eu sei onde eu quero chegar.
+
+	Então, esse modelo é muito importante para o Machine Learning, porque é o modelo que representa qual tipo de aprendizado que eu quero obter da máquina. E o que eu quero desse aprendizado? Então, eu entro aqui com um conjunto de dados a ser usado para treino, esses dados são estruturados, e eu insiro um modelo do que eu quero. Desse monte de dados aqui, pelo menos alguma informação vai estar associada.
+
+	Eu falo para a máquina, na verdade, que o que eu estou treinando é exatamente isso aqui. Então, se eu entro com um conjunto de frutas aqui e falo para ela que é maçã, eu vou entrar só com maçã e falar, isso aqui é tudo maçã. Então, ele vai treinar, ele vai ver que essas imagens, eu poderia usar como exemplo imagem, vou entrar com uma série de imagens aqui e falar para ele, já cantar a bola para ele que isso aqui é uma imagem X. Então, ele vai treinar esse modelo, a partir daí o Machine Learning vai estar preparado.
+
+	Então, toda vez que eu entrar com uma imagem aqui, essa imagem vai passar por esse modelo e ele vai falar para mim, esse aqui, 99% é a imagem X. Então, esse mesmo dado, uma característica importante aqui, é que a saída dessa informação, se ela não tiver um percentual adequado, eu posso pegar esse dado, que pode ser um dado novo, sendo aqui, além dos dados que eu estou entrando, eu posso ter mais dados e usar essa saída para alimentar aqui, usando esses mesmos dados para entrar e falar que 80%, 60% é isso aqui. E esse algoritmo vai ser sempre retroalimentado de maneira que ele possa sempre levar a uma acurácia da informação. Então, é dessa maneira que ele vai fazer uma predição.
+
+Machine Learning e Modelos
+	Então, como eu havia dito, modelos para o Machine Learning são muito importantes porque são por eles que eu defino qual é o aprendizado da máquina, onde eu quero chegar com o aprendizado da máquina. Na educação, eu tenho alguns modelos que têm sido discutidos, principalmente nessa fonte aqui, que tem sido muito explorada e citada, que é o modelo pedagógico, domínio e do estudante. O modelo pedagógico é a relação que eu tenho com a própria área de conhecimento, como eu vou executar uma forma pedagógica de ensinar usando uma tecnologia.
+
+	Uma das formas é através de perguntas e respostas. Daí eu tenho o modelo do domínio, que é exatamente a representação da área de conhecimento, ou seja, um conjunto de artefatos que vai representar, de artefatos que possam ser identificados, entidades de conhecimento que possam ser identificadas. O modelo do estudante, conhecimento sobre o estudante, sobre o perfil dele, os interesses, os modos comportamentais afetivos e cognitivos de aprendizagem, incluindo também os níveis que ele se encontra em um dado momento do aprendizado.
+
+	Então aqui é interessante que esses modelos são utilizados em processamento de Machine Learning, de maneira que esse conteúdo possa ser previsto, que possa ser sugerido um conteúdo, mas de acordo com os modelos aqui, um conteúdo adaptativo, ou seja, uma recomendação de conteúdo para o estudante. Ao mesmo tempo esses dados são capturados, é feita uma série de outras análises, e essa análise serve como entrada para feedback, para poder sempre aprimorar a resposta que o sistema dá. Então aqui está a retroalimentação.
+
+	E esse reconhecimento é feito em todos os passos, que de certa forma vai ter o papel da inteligência artificial a partir desses algoritmos de Machine Learning. E por fim, o modelo aberto do estudante, que é para tornar explícito o aprendizado para professores e estudantes, para o estudante checar o que a máquina tem usado a respeito do estudante e quais são os níveis de progresso que ele tem tido. Uma outra interface também importante, e é por ela que a gente vai tentar criar a nossa plataforma, que eu vou falar mais adiante, são os chatbots.
+
+Chatbots
+	Na educação a gente tem uma espécie de paralelo, tem muitas formas de chatbots na educação, você tem agentes pedagógicos, você tem agentes conversacionais, e você tem os sistemas de tutoria inteligente. Esses sistemas de tutoria inteligente, eles se aproximam do que se espera de um chatbot nesse contexto que a gente está falando de inteligência artificial. Os sistemas de tutoria inteligente, eles adequam as estratégias de ensino às necessidades de cada aluno.
+
+	Ou seja, a relação que ele tem entre esses domínios, esses aspectos pedagógicos de domínio, ele consegue fazer uma adaptação para o aluno. Só que nesse caso ele não usa inteligência artificial. Agora, imagine um STI sendo encapsulado por meio de um chatbot, onde esse chatbot é dotado de técnicas de IA, daí sim a gente tem capacidade de criar um sistema adaptativo de tutoria inteligente.
+
+Chatbots funcionamento
+
+	E como o chatbot funciona? Ele funciona a partir da simulação de conversas, da mimetização da comunicação humana para realizar alguma assistência em um domínio da informação. Ou seja, essa assistência é realizada com o intuito de permitir eu atingir um objetivo. Então a interação comunicacional, seja por voz ou por texto, é por ela que eu vou executar alguns comandos.
+
+	Só que a executar um comando, uma operação, na verdade eu vou estar executando esse comando em forma de uma linguagem natural. Então, usando técnicas de A, pode assumir roteiros interpretativos dinâmicos de operações e prover mecanismos de adaptação e centralização no ensino. Então, esse assumir roteiros interpretativos dinâmicos é porque o algoritmo não vai ser um algoritmo estático.
+
+	De acordo com o que se fala, com o texto que é enviado para o bot, ele assume um comportamento para poder executar uma operação. E à medida que o treinamento desse modelo de Machine Learning vai sendo aprimorado, a tendência é que sim, ele vai seguir um caminho para as mesmas frases, ele tende a seguir o mesmo caminho. Mas no começo não.
+
+	Isso a gente vai ver mais para frente depois que a plataforma estiver pronta. Pode assumir avatares e ter sua própria persona para ampliar o engajamento, aí é uma questão mais de ter um sistema humanizado. Eu levo uma questão humana para dentro dessas plataformas, de maneira que o chatbot possa fazer com que o professor diminua sua resistência a usar essa tecnologia e amplie o engajamento.
+
+	Se ele entender que ele não está lidando com a máquina, mas sim com um chatbot, com uma espécie de uma pessoa que está tentando dar assistência a ele na sua construção de conhecimento, na sua formação. Ele não cansa, tem alta escalabilidade, pode operar 24 por 7, por 365 dias no ano, pode ser distribuído em diferentes canais de comunicação. Bom, então essas são as duas interfaces que a gente vai utilizar da inteligência artificial, sendo portanto o Machine Learning mais o chatbot.
+	
+Objeto de Pesquisa
+	É importante também frisar que o Machine Learning, para ele executar os reconhecimentos de padrão em texto, reconhecimento de imagens, isso ele faz exatamente quando eu tenho até inclusive um treinamento supervisionado. Bom, então agora a gente já tem a relação de todos os conceitos que a gente vai trabalhar na pesquisa. Porém, dentro desses conceitos, as competências aqui, a gente não pode pegar todas as competências.
+
+Por onde começamos
+
+	Seria até para uma questão de escopo e prazo, para a gente fechar, delimitar mesmo o escopo da nossa pesquisa, a gente preferiu focar na competência digital, até porque ela tem uma característica transversal intrínseca às demais. A gente viu nesse quadro lá atrás que essa característica transversal é importante e ela está fundamentada nas habilidades tecnológicas, que fazem parte da competência digital.
+
+Por onde começamos figura do Andre
+	Eh está fundamentado nas habilidades tecnológicas, né? Que fazem parte da competência digital, o André também ele destaca a competência digital, inclusive ele fala lá que eu ia pedir para vocês o quão a competência digital é importante então seria em oportuno a gente aproveitar.
+	
+Objeto de Pesquisa - Relação dos conceitos da pesquisa
+	Eh a característica da competência digital para fazer um recorte dessas competências e fechar o nosso escopo nas competências digitais, mas esse processo ele pode prever depois eu trabalhar outras competências, né? Eu trabalhar um conjunto de competência sócio emocionais. Enfim, aí eu vou pegar uma categoria depois que eu fiz esse processo pra as competências digitais, eu posso executar esse mesmo processo para outras categorias de competência. Então agora sim, eu tenho aí o perfil do educador, que inovador que vai ser então primeiramente trabalhada através das competências digitais e do outro lado eu tenho aí há na educação e é por meio das interfaces de Inteligência Artificial, né usando chatbots.]
+
+Mas antes o que é a Inovação e como inserir uma Inovação na Educação?
+	XXXXXXXXXXXXXXXXXXXXXXX
+
+Objeto de Pesquisa - Relação dos conceitos da pesquisa - Hipotese de pesquisa
+	Imagine que a gente vai conseguir ter então uma inovação na educação, né? E daí então vem a nossa hipótese principal 
+	
+	"É possível uma inovação na educação a partir da construção de uma plataforma baseada em IA e chatbot para apoiar o educador buscar um perfil inovador durante seu exercício profissional estimulando-o e sugerindo recomendações para aperfeiçoar seus conhecimentos habilidades e atitudes em competências digitais."
+
+	Então é a nossa plataforma que é uma plataforma mediadora, né de aprendizagem e que essa aprendizagem é justamente para estimular sugerir recomendações ali para o professor, para que ele possa formar a competência nele e como isso aí funcionaria?
+
+Funcionamento previo de como seria a plataforma	
+	Então essa essa imagem ela eu tento explicar isso de uma maneira, que seja é mais simples, né? Então eu tenho aqui.
+
+	O professor e o contexto dele com o celular e esse celular vai ter um Chatbot instalado aqui de maneira que ele possa acessar abrir esse esse chatbot e começar a trabalhar com ele, primeiramente seria interessante fazer uma avaliação Inicial, né? Uma uma fotografia de como estão os níveis de competências, níveis de progressão do professor, né? E essa avaliação vai ser feita através de uma matriz de competência e eu faço essa avaliação e depois que executar essa avaliação então eu tenho mapeado, quais são os níveis em cada competência em cada a que eu coloquei habilidade, mas poderia ser competência e o que pode ser feito para melhorar essa habilidade. Então já junto com a resposta a máquina proveria também algumas recomendações o material para que ele possa aprimorar aqui nessa habilidade que tá nessa habilidades que estão abaixo de 60% vamos dizer assim, né? 
+	
+	E depois um terceiro passo teria uma monitoração, um monitoramento das ações do professor para que para checar se ele tem seguido as recomendações, né? Aí ele vai conversar ali com o bot de maneira que o bote possa dar assistência para ele no que é importante ele fazer. 
+	
+	Bom o fundamental dessa desse dessa imagem aqui é a matriz competência, porque é por ela que a gente precisa avaliar então há uma necessidade de fundamentação de uma matriz de competências digitais tanto para auto avaliação do atual momento do professor como também para promover nele um perfil inovador.
+
+Funcionamento previo de como seria a plataforma	
+
+	Então assim a gente precisa fundamentar? Não a gente não precisa fundamentar, há muitas matrizes de competências digitais, vamos ver ao menos três delas.
+	
+Matrizes de Competências Digitais
+	Nós avaliamos algumas matrizes baseada em três perspectivas práticas, de acordo com a nossa necessidade para embutir o algoritmo que acabei de explicar. Então nos temos nessas três perspectivas, a necessidade de uma estrutura sólida, com os conceitos sobre as competências digitais claros e definidas em hierarquia e como o professor pode se apropriar dessas competencias no cotidiado. 
+	A segunda perspectiva prática é o nivel de progressão, a matriz tem que oferecer uma maneira de o professor se posicionar nas competencias estabelecidas no item 1, em qual posição ele está em cada competência. 
+	E por último, tem que existir uma autoavaliação, mas de maneira que o professor possa executa-la de forma autonoma, que eu possa obter o algoritmo desta autoavaliação e incorpora-la dentro do Chatbot em forma de questionario. Ate pq seria muito dificil para nós, definir este item a partir das competencias e dos niveis.
+	Bom dito isso, nós exploramos primeiramente o que existe no Brasil.
+
+Matriz BNC-Formação Continuada para professores	
+	A estrutura da matriz é formada por 10 competências gerais com uma hierarquia das competências específicas
+
+Matriz BNC-Formação Continuada para professores	- niveis
+	Os niveis de progressão que vai do 1 ao 4, e ai está bem destacada. Porém, a autoavaliação é realizada juntamente com as diretorias de ensino ou seja, não ha autonomia;
+
+Matriz da Unesco
+	essa matriz é um pouco mais suscinta e clara porém foi concebida em consulta a grandes empresas, como a Cisco, Microsoft, Intel. Na sua estrutura e nos niveis, entao temos ali destacada a importancia das tecnologias digitais em 6 areas chave e os niveis de progressão, sendo 3, aquisição do conhecimento, aprofundamemnto e criação de conhecimento.
+	A matriz da Unesco não tem mecanismo de autoavaliação.
+		
+Matriz DigCompEdu
+	
+	O DigCompEdu que é a matriz de competências digitais da União Europeia que contem 22 competências elementares organizadas em seis áreas. Então eu tenho aqui essa imagem que representa essa seis áreas de desconto de compedu basicamente é é é é esse quadro contendo essas seis áreas e mais o quadro de nível de progressão que eu vou mostrar Logo em seguida. Então eu tenho aqui um envolvimento profissional que é uma questão mais de de da execução do sistema dentro da instituição a colaboração que ele tem com outros educadores e com e com e com aluno e com a secretaria e por aí vai né? Aqui o dois e o três o dois são recursos digitais seleção criação modificação, né, gestão, proteção e partilha.
+	
+Um resumo do porque escolhemos o DigCompEdu
+	Então devido ao nosso requisito que teria como particularidade principal a questão da autonomia da autoavaliação, então optamos por considerar a matriz de competências DigCompEdu
+	
+Objeto de Pesquisa - RElação dos conceitos
+	Então agora a relação dos conceitos a gente consegue fechar esse escopo e entender. Qual o material vou utilizar aqui no caso do perfil educador inovador, eu vou utilizar o digcompu, a tese do do André Garcia, né? Perfil do educador e as competencias digitais vão ser amparadas pelos digCompEdu e a tese do Garcia enquanto esses esses meses documentos também fornecerão apoio para poder treinar o Machine learn tanto para construção do modelo de domínio, quanto o modelo do educador e isso e e também né para poder acomodar as interfaces de de a tanto para Machine quanto pra chatbot a gente vai utilizar os algoritmos de a que estão nessas plataformas que são abertas que são gratuitos obviamente que tem algumas que são pagas mas que essas plataformas elas permite tem uma cota lá que eu posso utilizar então é importante frisar que eu não vou construir uma rede neural do zero pra ter um algoritmo de Imaginário, na verdade todas as coisas já estão prontas. Seja para um processamento.
+
+
+

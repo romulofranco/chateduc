@@ -1,0 +1,226 @@
+Slide 0
+	Então vou começar a apresentar para vocês a ChatEduc, que é uma plataforma de chatbot para autoavaliação e apoio à formação de competências digitais nos educadores
+	
+Slide 1
+	Então eu vou falar sobre essa transformação digital que ocorre na sociedade e que faz a gente ter que compreender sobre competencias, e como é essa transformação na Educação, surgem então os quadroes de competencias que fomentam um perfil de indivudo na sociedade preparado pra lidar com essa transformação
+	A partir dai, ja falo sobre a IA e algumas interfaces para dar base ao que foi utilizado pela plataforma
+	As matrizes de competencias digitais algumas que obtive e porque escolhi apenas um para criar a plataforma
+	Falarei também bem pouco sobre o Estado da arte sobre chatbots esse que forneceu um template de chatbot para ser utilizado como a arquitetura da plataforma, arquitetura em software
+	vou falar sobre uma abordagem da engenharia de software como nós criamos a plataforma
+	e apresento no final a ChatEduc pelo browser e encerro com considerações finais
+	
+Slide 2
+	Estamos então na Era Digital, ou 4a. revolução industrial, sociedade do conhecimento, são muitos os nomes que se dá essa transformação, ha muitos modos com essa transformação ocorre, mas principalmente devido a ampliação do uso de tecnologia pautando todos nossos aspectos na sociedade
+	E essa transformação na sociedade surgem tecnologias que trazem muitas incertezas a nós, principalmente no que diz respeito a IA, a IA traz muitas vantagens mas traz problemas sérios de ética, fake news, nos força a ter que lidar com situações que não estamos preparados para lidar
+	A questão talvez uma das principais é a redução de emprego, ja que a IA tem o poder de automatizar muitas tarefas rotineiras eliminando posições
+	Então surgem os quadroes de competencias no intuito de fomentar um perfil adequado preparado para enfrentar essas transformações
+Slide 3
+	Se estamos falando de competencia, é importante entender o termo:
+	Esse tripe da competencia traz uma sintese em 3 categorias, o Conhecimento que é conhecer, conscientizar, saber o que eo porque diante de um problema a ser resolvido, enquanto a habilidade é a capacidade técnica de como fazer, enquanto as atitudes, é a motivação que leva um individuo uma correlação de valores de querer resolver um problema a partir de um determinado conhecimento e aplicar sua técnica para resolver um problema 
+
+Slide 4
+	As competencias para o progresso social tem sido consideradas ha bastante tempo e esse quadro da OECD de 2014 ele traz dois conjuntos de competencias, competencias socioemocionais que está ligado a competencias que forma o individuo para posicionar socialmente, saber ser, lidar com as emoções na sociedade. Enquanto as competencias cognitivas estaria ligado a sua carreira, aos aspectios de sobrevivencia na sociedade ao obter um conjunto de competencias que empodere o individuo a executar sua atividade laboral.
+Slide 5 
+	E estes dois grandes conjuntos de competencias estariam sendo fomentadas no indivudo desde a sua infancia ate a sua completa formação na sociedade
+	
+Slide 6
+	E como essa transformação tem ocorrido no setor educacional.
+	A gente ja sabe que a Escola está a margem deste circuito de evolução tecnológica como se evitasse essa simbiose, ocorre em todo seu entorno mas não é apropriada pela educação
+	então acaba tendo muitos desafios para ter que lidar, como rever a infraestrutura pedagogica e rever dos perfis e curriculos dos colaboradores
+	Isso ocorre devido a forma como o ensino-aprendizagem é executado, não mais nos moldes do ensino tradicional, dependendo da apropriação de recursos tecnologicos em todos os aspectos da instituição, desde os processos burocráticos ate o ensino na prática pelo educadores
+	E é o educador que tem esse poder, ja que ele é o elo entre a instituição de ensino e o aluno
+	Nos acreditamos que o Educador é que fara essa ponte. Ai eu deixo algumas reflexões, para entender como devemos trabalhar o Perfil de um Educador inovador preparado para essa reestrutração na Educação pela tecnologia digital
+
+Slide 7
+	Embora ja tenha falado de quadro de competencias, esse alem disso é mais antigo de 2009, mas ele é especifico pra educação, e traz um entendimento das disciplinas que deveriamos trabalhar na educação, e sempre considerando a competencia digital como uma competencia transversal as demais
+	Entao por exemplo, aqui nesse quadro que é dividido em tres grandes categorias, onde vc tem a informação a comunicação eo impacto social
+	A informação é como irei trabalhar ela pra construir, elaborar algum produto, ou seja, como construo conhecimento a partir da informação que busco e para iso algumas disciplinas são necessarias como a alfabetizacao informaciomnal, a mediatica, tendo sempre um perfil criativo, inovador, exercendo sempre um pensamento critico.
+	Entao se produzo um conhecimento, passo pelas etapas de inforamção como fonte, buscando a informação relevante, comunico aos meus pares e como pano de fundo a responsabilidade social, a ética, o papel da cidadania
+	
+Slide 8
+	Então sempre considerando que estas atividades estariam a maioria delas, sendo executadas por um midia, tendo que lidar com algum dispositivo tecnologico digital, alguma tela ou algum recurso similar
+	
+
+Slide 9
+	E sintetizando, esses quadros de competencias, eles trazem varios aspectos e sao como apelos para a mudança no ensino para que faça sentido o ensino nos moldes da sociedade digital
+	Entao o primeiro diz respeito a mudança propriamente dita, os processos da realização do trabalho, não sao mais nos moldes do modelo industrial, mas sim em moldes orientado pela tecnologia
+	A apropriação de tecnologia para embarcar os processos de ensino para dentro da tecologia buscando a otimização destes processos e a inclusão de inovação
+	terceiro, ter um ensino mais relevante para a vida das pessoas, empoderar o individuo para a sua rotina com o que é transmitido em termos de conhecimento
+	E por ultimo, o quarto, que é trabalhar uma formação do educador com um perfil inovador
+
+Slide 10
+	E como estes quadroes representam o educador inovador
+	
+Slide 11
+	Nesse diagrama podemos perceber em quais competencias o professor inovador deveria considerar
+	Dentro de uma cultura de inovação, ele estaria imerso principalmente a competencias que envolvam formas de inovar, como experimentar, ser criativo, a propria competencia digital com as subcompetencias envolvendo literagia em varios aspectos tecnologicos
+	Enquanto a aprendizagem ao longo da vida
+	Entao no caso, um professor inovador é aquele que....
+	
+Slide 12
+	o perfil do educador inovador estaria envolvendo, em sintese, pela criatividade e inovação, tendo autonomia e constante aprendizado, e tendo dominio das tecnologias tanro pra execução de a quanto de b
+
+Slide 13
+	Entao ja temos alguns conceitos mapeados, que é o Perfil do Educador, e as competencias a partir dos quadros de competencias. 
+	
+Slide 14
+	E sobre um dos apelos para a mudança no ensino, seria a inclusão de inovações tecnologias para aprofundar e transformar a aprendizagem
+	A inserção de uma inovação
+
+Slide 15
+	Ler como podemos obter uma inovação na educação para apoiar o educador que esteja relacionado com esses quadros de competencias?
+	A partir, a partir de uma tecnologia digital mediadora, utilizando a IA
+
+Slide 16
+	O que é a IA hoje em dia e como ela poderia ser apropriada na educação.
+	Hoje a IA é utilizada principalmente pra centralizar conteudo em torno de nós mesmo para que nos mantenha preso em redes sociais, engajar para consumir conteudos, sempre colhendo e monitorando os dados que a gente gera dentro dessas plataformas tecnologicas, seja redes sociais, comunicadores, plataformas de streaming de video, tudo que fazemos e coletado para influenciar nosso comportamento.
+	Esse mesmo principio seria apropriado para buscar engajar os estudantes naquilo que ele está obtendo como conhecimento, entao a centralização de conteudos que desperte no aluno o interesse dele em manter-se sempre engajado a estudar
+	
+Slide 17
+	E como isso é realizado? Como a IA funciona
+	Um conceito muito importante para a IA é o Machine Learning
+	Ou aprendizagem de máquina, é ensinar a maquina como ela vai funcionar, o machine learning é utilizado principalmente para reconhecer padrões, seja de imagens, ou de textos
+	Ou seja, eu treino um algoritmo de machine learning com um conjunto de dados, no caso, muitos dados, dados massivos ou Big Datas, para realizar uma determinada tarefas que espero que a maquina execute para mim e ao faze-lo, quanto mais dado eu insiro como entrada com dados mistos diferentes e que represente varias posições situações, maior será acurácia como resultado 
+
+
+Slide 18
+	Então um algoritmo como de machine learning pode ser utilizado em conjunto com o chatbot, uma interface comunicacional, capaz de receber a informação de um usuario e envia-la para um algoritmo de IA para trazer como resposta e estar sempre ali disponivel para eu executar e ele me orientar naquilo que eu preciso ou no proposito no qual o Chatbot foi desenvolvido
+	
+Slide 19
+	Bo, com todos os conceitos relacionados, nós não iriamos abordar todas as competencias, somente um grupo de competencias, a competencia digital, ate pelo seu carater transversal visto nos quadros de competencias, e tb por uma questão de escopo
+	
+Slide 20
+	Entao temos a nossa hipotese que a inserção de uma inovação na educação a partir da construção da plataforma de chatbot ligada com IA para estimular no educador um conjunto de competencias digitais na sua formação continua
+	
+	
+Slide 20
+	É complexo e talvez um pouco arrogante dizer que ja iremos inserir uma inovação na educação a partir da plataforma que foi desenvolvida, nós estamos num estagio muito embrionario, falta muitas outras etapas ate a inserção da inovação, mas ao estudar sobre inovação na educação, de certa forma estariamos trazendo esses conceitos aproximando eles dos processos educacionais.
+	Entao aqui nesse slide eu trago o que é o termo inovação, diferenciando o termo qdo aplicado na Educação e quais são os elementos basicos que confere uma inovação na educação
+	Nós podemos, se a ChatEduc é inovadora, se perguntando, ela usa de novos materiais, sim novos materiais mas nao revisados, pq eu estou usando uma IA generalista tendenciosa e com muitos erros, 
+	mas usa de novas abordagens de ensino, sao novas estrategisa que difere da forma que o professor busca formação no ensino
+	E alteração das crenças, pressupostos pedagogicos, creio que altera de certa forma as crenças de formação
+	
+Slide 21
+	Entao o que se esperava da plataforma, que uma vez que o professor acesse a plataforma, que ele execute uma avaliação inicial baseada numa matriz de competencias digitais, no 2, que ofereça o resultado em termos de niveis de competencia que o professor se encontra em cada competencia e que a partir dai, a plataforma ofereça a ele modos de aperfeiçoar, avançar nos niveis de progressão afim de ter proficiencia em cada competencia descrita na matriz
+
+
+Slide 22
+	Entao houve a necessidade ter uma matriz de competencias digitais bem fundamentada. E quais matrizes de competencias nós buscamos?
+	
+Slide 23
+	Primeiramente, nós definimos o que deveria ter nessas matrizes, ate para apropriar delas como algoritmos para ser executada dentro da plataforma, tanto considerando o machine learning envolvido nos processos quanto os algoritmos estáticos para executar a autoavaliação do professor
+	Deveria ter uma estrutura solida da hierarquia, descrevendo as competencias de forma clara e que o professor pudesse se apropriar no seu cotidiano
+	Os niveis de progressao, para que o professor conheça esses niveis e como ele pode evoluir de nivel para nivel
+	E por fim, a autoavaliação o mecanismo por onde o professor pudesse ter autonomia para executa-la e compreender e se posicionar dentro da matriz com seu nivel de proficiencia.
+
+Slide 24
+	A Matriz brasileira a BNC-Formação COntinuada para professores, contrem 10 competencias gerais e 3 competencias especificas, divididas em 4 subcompetencias
+	Tem os niveis de progfressao que vai do 1 ao 4
+	Porem, não tem autoavaliação, possui avaliação que é restrita a diretoria de ensino, que realiza juntamente ao professor, ou seja, o professor nao tem autonomia para executar uma autoavaliação, ele depende da direotira de ensino
+
+Slide 25
+	A matri de competencis da Unesco que foi concebida em consulta a grandes empresas privadas, entao aqui so corremos o risco de formar um professor com um perfil tecnicista, sabendo usar as tecnologias que essas grandes empresas querem que a gente use
+	Ela tem 6 conjuntos de competencias e 3 niveis de progressao, e nao tem autoavaliação
+
+Slide 26
+	E temos por fim, a DigCompEdu que é uma matriz relevante e que tem sido aplicada na União Europeia, ela tem 22 competencias elementares organizadas em 6 areas
+	E possui 6 niveis de competencias que evolui do A1, A2, para B1 e B2, ate o C1 e C2
+	E ela possui, um mecanismo de autoavaliação baseado numa boa abordagem de avaliar competencias digitais, que é a partir da experiencia pratica do professor na sua rotina, é um questionario com perguntas para cada area-subarea da matriz e o professor pode executar com autonomia e quantas vezes quiser
+	O problema é que essa autoavaliação, ele somente posiciona o professor no nivel em cada area, mas nao recomenda materiais para ser colocado em prática e por isso ai vem a ChatEduc
+
+Slide 27
+	Em resumo, entao nós escolhemos o DigCompEdu, pq ele preenchia todos os requisitos que precisavamos para elaborar a plataforma da ChatEduc
+
+Slide 28
+	Entao agora temos os conceitos mapeados, com os respectivos recursos necessarios para a construção da plataforma
+
+Slide 29
+	Objetivos gerais
+	é entao criar a plataforma com o chatbot ligada a matriz de competencias digitais do DigCOmpEdu 
+	O professor poder executar a autoavaliação
+	e obter maneiras de consultar sobre a matriz de competencias
+	e dissemina esses recursos como um projeto open-source e gratuito para a educação poder se apropriar destes e reutiliza-los da maneira que puder
+	
+slide 30
+	De onde surgiu essa ideia, ao explorar no estado da arte observamos como esses chatbots fucnionava
+	o mais semelhante é o Jil Watson que usa o IBM Watson e para seu treinamento foi utilizado um forum de discusoes com 40 mil posts e isso permitiu que a Jill Watson pudesse responder a duvidas dos alunos sobre uma determinada disciplinas
+Slide 31
+	Aqui alguns exemplos, as plataformas internas da universidade na qual o chatbot foi acoplado como um canal de comunicação
+Slide 32
+	ALgumas informações relevantes para nós para que o chatbot funcione com eficiencia, cobertura, precisao e autenticidade
+
+Slide 33
+	o Estado da arte acabou por nos fornecer, um template de chatbot e como esses recursos tecnologicos sao organizados para executar algo especifico, esse template ele pode ser apropriado por qualquer disciplina na educação
+	Entao temos ali, o estudante pode acionar esse chatbot por algum canal de comunicação, o chatbot pode ser uma persona, uma representação de uma pessoa, q ao receber uma pergunta, faz o reconhecimento do texto a partir de tecnicas de IA como o Natural Language Processing e Understanding
+	Uma classificação para saber onde vai enviar essa pergunta, a resposta é processada mediante o treinamento previo do machine learning utilizado essas bases de dados
+	Entao é isso
+
+Slide 34
+	Bom entao, com toda essa inforamção, de panorama, de competencias, de matrizes de competencias, de funcionamento de chatbots, precisavamos colocar em pratica a construção da plataforma
+	Para nossa organização, utilizamos uma abordagem da Engenharia de Software direcioanda para sistemas especificos desse tipo, uma metodologia ágil
+	A FDD, que é o desenvolvimento guiado por características, sendo a caracteristica uma funcionalidade uma operação da aplicação
+	A FDD é executa em 5 etapas, mas que é um ciclo evolucionario, entao sempre podendo executar esse ciclo desde o começo por iteração
+
+Slide 35
+	Entao na primeira parte para desenvolver o modelo abrangente que é um documento de visão de como a aplicação deve funcionar e o mapeamento dos artefatos disponiveis para criar a lista de funcionalidades
+	A terceira o planejamento considerando as especifidades de cada feature, algo particular, alguma maquina de estado, um requisito do banco de dados, e analisando os riscos de execução
+	Por fim a 4a e a 5a etapa diz respeito ao desenvolvimento da funcionalidade em termos de codigo
+	Entao para cada etapa tem um conjunto de artefatos que sao os proprios insumos gerados durante a pesquisa e os artefatos de saida, que geralmente sao diagramas, diagramas da engenharia de software que capturam as informações e colocam numa linguagem mais técnica para entendimento, prever como as coisas devem funcionar e tentando mitigar e lidar com os riscos
+	Ali embaixo as ferramentas utilizadas, ferramentas de diagramação, kanbans para anotar as tarefas, e colocar na prioridade com as interdependencias, as ferramentas de implementação de codigo, banco de dados e frameworks utilizados para facilitar o trabalho, hoje tem muita coisa pronta que pode ser reutilizada e sao na maioria delas, gratuita
+	
+
+Slide 36
+	A aplicação da IA Generativa e IA Semantica
+	Nos começamos pelo IBM Watson Assistante programando de forma semanticas as intents e entities, mas isso iria depender de uma massa de dados enorme para poder treinar e eu nao dispunha disso a nao ser alguns poucos pdfs sobre o digcompedu 
+	Entao no meio do doutorado surge o ChatGPT uma IA generativa e qdo comecei a fazer os testes serviria para uma dar visão geral de como o prototipo deveria funcionar. A IA Generativa respondendo as questoes dos professores
+	Um comparativo entre as IAs estudadas para ser utilizada dentro da plataforma, o Chatgpt tem 175 bilhoes, enquanto o Bard tem 137 bi de parametros, ja o IBM Watson, depende do tamanho do modelo que foi utilizado, isso é personalizado por cada aplicação
+	Ai tem muita informação um pouco incoerente e isso é a titulo de uma análise, por ser um prototipo, para a gente compreender a dinamica de um algoritmo de Question/Answer pergunta e resposta, o que poderiamos utilizar de forma mais simples foi o ChatGPT
+	O IBM Watson Assistant como falei, funciona de um modo mais complexo e mais demorado para treinar o modelo, o ChatGPT e o GOogle Bard tem abordagens generalistas e que para gente nesse ponto que estamos, uma abordagem generalista seria mais que suficiente
+	
+	
+Slide 37
+	Mais um comparativo o foco de cada IA desta, casos de uso, a abordagem de treinamento, e a versatilidade
+	
+Slide 38
+	Aqui um comparativo para entender as forças e fraquezas, as IAs generativas tem tendencia a preconceito e potencial de desinformação
+	
+Slide 39
+	Na prática, para entendermos as respostas a uma mesma pergunta
+	
+Slide 40
+	Eles alertam que as respostas nesse atual estágio podem nao ser coerentes
+	
+Slide 41
+	Entao sim, as respostas a definição do DigCompEdu, infelizmente as IAs erraram, quase acertaram mas ta muito incoerente tudo.
+	
+Slide 42
+	E o funcionamento da centralização em torno do professor
+	A nossa preocupação era que, se o professor estivesse num nivel, principalmente nos primeiros, as respostas a perguntas do chatgpot considerasse informações incompativeis com o nivel atual do professor
+	Entao inserimos um parser que acrescenta uma informação do nivel do professor antes de ser submetido ao chatgpt, isso ira garantir que as respostas serao mais proximas do nivel dele, tentando buscar o mesmo principio de centralização
+	Agora obviamente que isso nao é o suficiente para fazer o professor ficar engajado na plataforma, aqui carece de muitos recursos, dai precisamos discutir os modelos de um algoritmo dinamico vivo, onde ha uma colaboração de varias pessoas simultanemanete dentro da plataforma nos moldes de redes sociais
+
+Slide 43
+	Porem ao menos para ter coerencia, combinar as abordagens dos diferentes modelos de IA, e treinar uma IA especifica com uma base com dados massivos sobre a formação continua do educador, onde obteriamos isso?
+	
+	Isso traria respostas mais proximas da realidade e do que de fato o professor estaria buscando
+
+Slide 44
+	A relevancia do tema, as preocupações que essa parafernalia tecnologica nos traz, e deixo um quadro da Unesco para reflexão, o que envolve muito mais que a pesquisa que nós fazemos, mas como um alerta. Estamos ainda em um momento inciial da IA, mas a medida que ela evolui, mais riscos poderá nos trazer caso as incertezas não sejam compreendidas
+
+Slide 45
+	A inserçaão de uma nova tecnologia na educação, é mais complexo que se imagina, mas não podemos enxergar nessa dificuldade muitos obstaculos, as coisas estão ocorrendo
+	mas a priori, nao considerar que toda tecnologia inovadora sofisticada pode ser apropriada como tecnologia educacional
+	Isso pq a maioria delas, estarão plugadas nessas IAs de mercado e deve ser avaliado, se as questões eticas podem ser mitigadas e os riscos serem menores que as vantagens que elas proporcionam
+	
+	Sobre a ChatEduc, é um prototipo, um estagio muito embrionario que serviu para dar um entendimento de como estes conceitos poderiam ser vistos na Educação, mas ainda falta muitas etapas
+	E a questão de utilizar uma matriz da UNiao Europeia, a realidade brasileira é muito distinta entao como a matriz brasileira poderia ser apropriada para dentro da ChatEduc ? ai moda outro ponto de complexidade, os niveis, as areas nao estao completamente claros, a principio, parece ser um escorpo muito mais abrangente pq a matriz nao fornece os algoritmos que poderiam ser apropriados para dentro da plataforma.
+	
+	
+	
+
+	
+	
+	
+
+	
+	
